@@ -1,4 +1,4 @@
-# Palestine SME Social Media Intelligence Platform (Student-Project Friendly, Production-Like)
+# Palestine SME Social Media Intelligence Platform 
 
 ## 1. Project Purpose
 This project is an end-to-end analytics platform for Palestinian SMEs' organic social media posts. It supports:
