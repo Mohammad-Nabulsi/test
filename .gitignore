@@ -1,4 +1,4 @@
-# Python
+# Python modified to ignore extras
 __pycache__/
 *.py[cod]
 *.pyo
