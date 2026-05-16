@@ -17,6 +17,10 @@ from app.api import (
     recommendations,
     upload,
 )
+from app.api.recommendation_apis_final import router as recommendation_apis_single_router
+from app.api.forecast_final import router as forecast_single_router
+from app.api.anomalies_final import router as anomalies_single_router
+from app.api.business_momentum_final import router as business_momentum_single_router
 from app.utils.file_utils import ensure_dir
 
 
@@ -56,9 +60,12 @@ def create_app() -> FastAPI:
     app.include_router(business_clustering.router, prefix="/api", tags=["business-clustering"])
     app.include_router(cluster_visualization.router, prefix="/api", tags=["cluster-visualization"])
     app.include_router(me.router, prefix="/api", tags=["me"])
+    app.include_router(recommendation_apis_single_router)
+    app.include_router(forecast_single_router)
+    app.include_router(anomalies_single_router)
+    app.include_router(business_momentum_single_router)
 
     return app
 
 
 app = create_app()
-
