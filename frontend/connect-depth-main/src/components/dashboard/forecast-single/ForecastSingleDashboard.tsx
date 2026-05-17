@@ -168,6 +168,12 @@ function qualityToneClasses(tone: ForecastQuality["tone"]): string {
   return "border-rose-300/60 bg-rose-500/10 text-rose-700";
 }
 
+function resolveChartUrl(apiBase: string, chartUrl: string | undefined): string {
+  if (!chartUrl) return "";
+  if (chartUrl.startsWith("http://") || chartUrl.startsWith("https://")) return chartUrl;
+  return `${apiBase.replace(/\/$/, "")}/${chartUrl.replace(/^\/+/, "")}`;
+}
+
 function buildInsights(resp: ForecastResponse, rows: NormalizedForecastRow[], stats: PredictionStats | null, quality: ForecastQuality): string[] {
   const insights: string[] = [];
   insights.push(`Model selected: ${resp.best_model || "unknown model"}.`);
@@ -365,10 +371,12 @@ function ForecastEndpointCard({
   endpoint,
   state,
   onRun,
+  apiBase,
 }: {
   endpoint: EndpointConfig;
   state: EndpointState;
   onRun: () => Promise<void>;
+  apiBase: string;
 }) {
   const rows = useMemo(() => normalizeForecastRows(state.data?.future_forecast), [state.data?.future_forecast]);
   const stats = useMemo(() => getPredictionStats(rows), [rows]);
@@ -387,6 +395,7 @@ function ForecastEndpointCard({
   const avgPrediction = stats ? formatPrediction(stats.avg) : "-";
   const peakPrediction = stats ? formatPrediction(stats.peak) : "-";
   const lowPrediction = stats ? formatPrediction(stats.low) : "-";
+  const backendChartSrc = resolveChartUrl(apiBase, state.data?.chart_url);
 
   return (
     <section className="rounded-3xl border border-border/80 bg-card p-5 md:p-6 shadow-card space-y-4">
@@ -473,6 +482,18 @@ function ForecastEndpointCard({
 
           <ForecastInsights items={insights} />
           <ForecastTable rows={rows} />
+
+          {backendChartSrc ? (
+            <div className="rounded-2xl border border-border/80 bg-background p-4 shadow-card">
+              <h4 className="text-sm font-semibold mb-3">Backend Forecast Chart</h4>
+              <img
+                src={backendChartSrc}
+                alt={`${endpoint.title} backend forecast chart`}
+                className="w-full max-h-[460px] object-contain rounded-xl border border-border/70 bg-muted/20"
+              />
+              <p className="mt-2 text-xs text-muted-foreground break-all">{state.data.chart_url}</p>
+            </div>
+          ) : null}
 
           {state.data.chart_url ? (
             <div className="rounded-2xl border border-border/80 bg-background p-4 shadow-card">
@@ -682,10 +703,9 @@ export function ForecastSingleDashboard({ apiBase, defaultDatasetPath }: { apiBa
       </section>
 
       <div className="grid grid-cols-1 gap-6">
-        <ForecastEndpointCard endpoint={ENDPOINTS[0]} state={states.analyze} onRun={() => runEndpoint(ENDPOINTS[0])} />
-        <ForecastEndpointCard endpoint={ENDPOINTS[1]} state={states.static} onRun={() => runEndpoint(ENDPOINTS[1])} />
+        <ForecastEndpointCard endpoint={ENDPOINTS[0]} state={states.analyze} onRun={() => runEndpoint(ENDPOINTS[0])} apiBase={apiBase} />
+        <ForecastEndpointCard endpoint={ENDPOINTS[1]} state={states.static} onRun={() => runEndpoint(ENDPOINTS[1])} apiBase={apiBase} />
       </div>
     </div>
   );
 }
-
