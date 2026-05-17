@@ -1,0 +1,6 @@
+insight_title,finding,evidence,recommendation,priority,metric_used
+Top Performing Theme,رسايل الصفحه عبر is the strongest theme by avg_engagement_rate.,avg_engagement_rate=0.0160,Scale this theme with consistent creative direction and test stronger CTA variants.,High,avg_engagement_rate
+Weakest Theme,Vanilla تشيزكيك is the weakest theme by avg_engagement_rate.,avg_engagement_rate=0.0081,"Do not scale this theme until the hook, visual, format, or offer framing is improved.",High,avg_engagement_rate
+Theme Performance Gap,The top theme outperforms the weakest theme by 1.97x.,رسايل الصفحه عبر vs Vanilla تشيزكيك,Shift content volume toward proven themes while redesigning weaker themes.,Medium,avg_engagement_rate
+CTA Usage Pattern,رسايل الصفحه عبر has the highest CTA share.,CTA share=55.6%,Compare CTA-heavy posts against softer community captions to avoid over-selling.,Medium,percentage_CTA_present
+Format Signal,كريم Homemade uses reels the most among detected themes.,Reel share=100.0%,Check whether reel-heavy themes also rank high in performance before increasing reel production.,Medium,percentage_reels

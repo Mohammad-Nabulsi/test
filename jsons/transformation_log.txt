@@ -1,0 +1,37 @@
+=== Processing letter-series fashion ===
+a.json: rows 9->9, dominant_business="LOFT Palestine", unique_sector=1, unique_business=1
+b.json: rows 9->9, dominant_business="Balcon Boutique & Cafe", unique_sector=1, unique_business=1
+c.json: rows 4->4, dominant_business="drift.for.men", unique_sector=1, unique_business=1
+d.json: rows 8->8, dominant_business="Fashion Shop Ramallah", unique_sector=1, unique_business=1
+e.json: rows 9->9, dominant_business="Grand Stores Mall", unique_sector=1, unique_business=1
+f.json: rows 8->8, dominant_business="KOTON Palestine", unique_sector=1, unique_business=1
+g.json: rows 9->9, dominant_business="Mikkawi 1955", unique_sector=1, unique_business=1
+h.json: rows 8->8, dominant_business="EUROMODA", unique_sector=1, unique_business=1
+WROTE fashion.json: rows 64->64
+=== Processing letter-series gyms ===
+a.json: rows 16->16, dominant_business="Hulk Gym / Diaa Shabaro", unique_sector=1, unique_business=1
+b.json: rows 16->16, dominant_business="Pulse Gym & Fitness", unique_sector=1, unique_business=1
+c.json: rows 8->8, dominant_business="Xtreme Fitness Ramallah", unique_sector=1, unique_business=1
+WROTE gym_final.json: rows 40->40
+=== Processing letter-series supermarkets ===
+a.json: rows 11->11, dominant_business="Jumbo Supermarket", unique_sector=1, unique_business=1
+b.json: rows 16->16, dominant_business="Family Market PS", unique_sector=1, unique_business=1
+c.json: rows 8->8, dominant_business="Katusha Supermarket", unique_sector=1, unique_business=1
+d.json: rows 16->16, dominant_business="Bravo Supermarket", unique_sector=1, unique_business=1
+e.json: rows 16->16, dominant_business="Metro Market Nablus", unique_sector=1, unique_business=1
+f.json: rows 8->8, dominant_business="Supermarket 25st", unique_sector=1, unique_business=1
+WROTE supermarket_final.json: rows 75->75
+=== Processing clothing_data.json ===
+clothing_data.json: rows 218->218, unique_business 20->20, sector set to Fashion
+WROTE final_fashion.json: rows 282->282
+=== Processing cafes directory transformed copies ===
+2.json -> 2_transformed.json: rows 76->76, unique_business=3, sector=Cafes/Restaurants
+jericho.json -> jericho_transformed.json: rows 49->49, unique_business 5->5, sector=Cafes/Restaurants
+resturant_data.json -> resturant_data_transformed.json: rows 108->108, unique_business 6->6, sector=Cafes/Restaurants
+WROTE resturnats_final.json: rows 233->233
+Influancers.json -> influencers.json: rows 80->80, unique_business 17->17, sector=Influencers
+WROTE all_final_appended.json: rows 710->710
+
+=== SUMMARY ===
+Total warnings: 0
+No row-count integrity issues detected.

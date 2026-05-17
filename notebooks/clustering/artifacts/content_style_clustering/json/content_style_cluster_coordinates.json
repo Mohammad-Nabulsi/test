@@ -1,0 +1,6993 @@
+{
+  "project": "content_style_clustering",
+  "coordinates_type": {
+    "x": "tsne_1",
+    "y": "tsne_2"
+  },
+  "dbscan_params": {
+    "eps": 2.0,
+    "min_samples": 30
+  },
+  "cluster_columns": {
+    "kmeans": "cluster",
+    "dbscan": "dbscan_fixed_cluster"
+  },
+  "n_rows": 775,
+  "records": [
+    {
+      "business_name": "LOFT Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 3.7064521312713623,
+      "tsne_2": 16.169391632080078,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "LOFT Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 3.9983909130096436,
+      "tsne_2": 15.952373504638672,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "LOFT Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 4.0232062339782715,
+      "tsne_2": 16.167573928833008,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "LOFT Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 3.609572172164917,
+      "tsne_2": 16.325754165649414,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "LOFT Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -16.08429718017578,
+      "tsne_2": 23.550024032592773,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "LOFT Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 3.491117000579834,
+      "tsne_2": 16.35886001586914,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "LOFT Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -15.27015209197998,
+      "tsne_2": 35.66633224487305,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "LOFT Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -27.747161865234375,
+      "tsne_2": 1.3739845752716064,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "LOFT Palestine",
+      "sector": "Fashion",
+      "post_type": "post",
+      "tsne_1": 17.737899780273438,
+      "tsne_2": 15.496986389160156,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Balcon Boutique & Cafe",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -12.396888732910156,
+      "tsne_2": 36.313289642333984,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Balcon Boutique & Cafe",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -11.980416297912598,
+      "tsne_2": 35.46706008911133,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Balcon Boutique & Cafe",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -12.097825050354004,
+      "tsne_2": 34.74687194824219,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Balcon Boutique & Cafe",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -12.448960304260254,
+      "tsne_2": 35.66459655761719,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Balcon Boutique & Cafe",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -12.72491455078125,
+      "tsne_2": 36.41912078857422,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Balcon Boutique & Cafe",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -22.08631706237793,
+      "tsne_2": -21.513336181640625,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Balcon Boutique & Cafe",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -13.120697021484375,
+      "tsne_2": 35.43000030517578,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Balcon Boutique & Cafe",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -11.481837272644043,
+      "tsne_2": 35.778533935546875,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Balcon Boutique & Cafe",
+      "sector": "Fashion",
+      "post_type": "post",
+      "tsne_1": -8.224104881286621,
+      "tsne_2": -6.230289936065674,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "drift.for.men",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -12.723584175109863,
+      "tsne_2": 34.395511627197266,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "drift.for.men",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -13.222014427185059,
+      "tsne_2": 35.84733581542969,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "drift.for.men",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 11.452001571655273,
+      "tsne_2": 10.771355628967285,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "drift.for.men",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -7.799398422241211,
+      "tsne_2": 14.813714027404785,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Fashion Shop Ramallah",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 12.925564765930176,
+      "tsne_2": -7.67475700378418,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Fashion Shop Ramallah",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 13.74678897857666,
+      "tsne_2": -7.67833948135376,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Fashion Shop Ramallah",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 13.74678897857666,
+      "tsne_2": -7.67833948135376,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Fashion Shop Ramallah",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 13.74678897857666,
+      "tsne_2": -7.67833948135376,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Fashion Shop Ramallah",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 13.74678897857666,
+      "tsne_2": -7.67833948135376,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Fashion Shop Ramallah",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 13.74678897857666,
+      "tsne_2": -7.67833948135376,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Fashion Shop Ramallah",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 13.74678897857666,
+      "tsne_2": -7.67833948135376,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Fashion Shop Ramallah",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 13.74678897857666,
+      "tsne_2": -7.67833948135376,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Grand Stores Mall",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 21.7956600189209,
+      "tsne_2": 14.783404350280762,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Grand Stores Mall",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 21.79652976989746,
+      "tsne_2": 14.78367805480957,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Grand Stores Mall",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 22.172740936279297,
+      "tsne_2": 14.259061813354492,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Grand Stores Mall",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 22.35841941833496,
+      "tsne_2": 14.601941108703613,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Grand Stores Mall",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -27.42759132385254,
+      "tsne_2": -1.443843960762024,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Grand Stores Mall",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -21.00493621826172,
+      "tsne_2": -22.726184844970703,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Grand Stores Mall",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 21.690196990966797,
+      "tsne_2": 15.807995796203613,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Grand Stores Mall",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 22.050615310668945,
+      "tsne_2": 15.169397354125977,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Grand Stores Mall",
+      "sector": "Fashion",
+      "post_type": "post",
+      "tsne_1": 18.13357162475586,
+      "tsne_2": 14.479037284851074,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "KOTON Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -20.1861515045166,
+      "tsne_2": 3.4738972187042236,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "KOTON Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 9.357734680175781,
+      "tsne_2": 7.846255779266357,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "KOTON Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 21.30608558654785,
+      "tsne_2": 16.544240951538086,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "KOTON Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 14.450925827026367,
+      "tsne_2": 8.500908851623535,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "KOTON Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 14.007429122924805,
+      "tsne_2": 6.89296293258667,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "KOTON Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -6.997989177703857,
+      "tsne_2": -5.231104850769043,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "KOTON Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -16.822235107421875,
+      "tsne_2": -25.34136390686035,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "KOTON Palestine",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -9.909385681152344,
+      "tsne_2": -16.186243057250977,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Mikkawi 1955",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.50648021697998,
+      "tsne_2": 8.578137397766113,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mikkawi 1955",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.322888374328613,
+      "tsne_2": 8.315098762512207,
+      "cluster": 2,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mikkawi 1955",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.863326072692871,
+      "tsne_2": 7.505971431732178,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mikkawi 1955",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.347515106201172,
+      "tsne_2": 6.9324164390563965,
+      "cluster": 2,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mikkawi 1955",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.240443229675293,
+      "tsne_2": 7.063413619995117,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Mikkawi 1955",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.013809204101562,
+      "tsne_2": 6.442484378814697,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Mikkawi 1955",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.58694839477539,
+      "tsne_2": 7.105766773223877,
+      "cluster": 2,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mikkawi 1955",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.050731658935547,
+      "tsne_2": 6.626084327697754,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Mikkawi 1955",
+      "sector": "Fashion",
+      "post_type": "post",
+      "tsne_1": 21.5424861907959,
+      "tsne_2": -0.8850055932998657,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "EUROMODA",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 19.529041290283203,
+      "tsne_2": 12.989143371582031,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "EUROMODA",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -0.6886671781539917,
+      "tsne_2": 5.1527862548828125,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "EUROMODA",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -0.47019052505493164,
+      "tsne_2": 4.645589828491211,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "EUROMODA",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 12.319255828857422,
+      "tsne_2": 10.69742202758789,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "EUROMODA",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 0.40934935212135315,
+      "tsne_2": 24.074054718017578,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "EUROMODA",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -17.285221099853516,
+      "tsne_2": 31.899812698364258,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "EUROMODA",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -17.84068489074707,
+      "tsne_2": 31.901248931884766,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "EUROMODA",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -2.0693352222442627,
+      "tsne_2": 25.48196792602539,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Fashion strawberry",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -27.61774253845215,
+      "tsne_2": 0.6077556610107422,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Fashion strawberry",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 7.26760196685791,
+      "tsne_2": -40.22677993774414,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Fashion strawberry",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -28.014305114746094,
+      "tsne_2": 0.19181720912456512,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Fashion strawberry",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -27.32160186767578,
+      "tsne_2": 0.4863469898700714,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Fashion strawberry",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -27.878185272216797,
+      "tsne_2": 0.23371918499469757,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Fashion strawberry",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 7.779405117034912,
+      "tsne_2": -39.19744873046875,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Fashion strawberry",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 7.971846580505371,
+      "tsne_2": -38.540096282958984,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Fashion strawberry",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 6.743781089782715,
+      "tsne_2": -41.36381530761719,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Fashion strawberry",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 19.699007034301758,
+      "tsne_2": 18.749155044555664,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Ghazala__store غزالة ستور",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -22.563047409057617,
+      "tsne_2": -23.329679489135742,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Ghazala__store غزالة ستور",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -22.327512741088867,
+      "tsne_2": -22.620704650878906,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Ghazala__store غزالة ستور",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -22.101367950439453,
+      "tsne_2": -22.788999557495117,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Ghazala__store غزالة ستور",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 6.522274017333984,
+      "tsne_2": -41.55680847167969,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Ghazala__store غزالة ستور",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 9.144966125488281,
+      "tsne_2": -40.130313873291016,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Ghazala__store غزالة ستور",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 8.496593475341797,
+      "tsne_2": -40.236812591552734,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Lujain fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 15.115846633911133,
+      "tsne_2": 13.23240852355957,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Lujain fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 16.939449310302734,
+      "tsne_2": 13.160304069519043,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Lujain fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 14.590984344482422,
+      "tsne_2": 9.787188529968262,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Lujain fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 14.917947769165039,
+      "tsne_2": 12.832090377807617,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Lujain fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 13.648488998413086,
+      "tsne_2": 12.035481452941895,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Lujain fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 15.004962921142578,
+      "tsne_2": 12.96291732788086,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Lujain fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 13.251384735107422,
+      "tsne_2": 10.870026588439941,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Lujain fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 14.92158031463623,
+      "tsne_2": 10.742534637451172,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Lujain fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 14.8466157913208,
+      "tsne_2": 12.754666328430176,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Lujain fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 6.037673473358154,
+      "tsne_2": -40.904296875,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Lujain fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 14.917724609375,
+      "tsne_2": 12.832115173339844,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mabella - مابيلا",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 29.475929260253906,
+      "tsne_2": 3.3940682411193848,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mabella - مابيلا",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 29.72554588317871,
+      "tsne_2": 3.5003302097320557,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mabella - مابيلا",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 29.867055892944336,
+      "tsne_2": 4.024637222290039,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mabella - مابيلا",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 29.499675750732422,
+      "tsne_2": 3.7724013328552246,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mabella - مابيلا",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 29.90048599243164,
+      "tsne_2": 4.094736099243164,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mabella - مابيلا",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 29.959674835205078,
+      "tsne_2": 3.9337522983551025,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mabella - مابيلا",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 23.948381423950195,
+      "tsne_2": 6.9414873123168945,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mabella - مابيلا",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 24.110698699951172,
+      "tsne_2": 6.700003623962402,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mabella - مابيلا",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 19.249664306640625,
+      "tsne_2": 2.3160157203674316,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Hijjawi Fashion - الحجاوي للأزياء",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 23.028230667114258,
+      "tsne_2": 4.6546125411987305,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Hijjawi Fashion - الحجاوي للأزياء",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 21.231094360351562,
+      "tsne_2": 3.301004409790039,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Hijjawi Fashion - الحجاوي للأزياء",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 19.271575927734375,
+      "tsne_2": 2.2223172187805176,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Hijjawi Fashion - الحجاوي للأزياء",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 23.18195343017578,
+      "tsne_2": 4.2427754402160645,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Hijjawi Fashion - الحجاوي للأزياء",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 8.751791000366211,
+      "tsne_2": -32.704349517822266,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Hijjawi Fashion - الحجاوي للأزياء",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 0.12450383603572845,
+      "tsne_2": -18.343769073486328,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Hijjawi Fashion - الحجاوي للأزياء",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -0.9925928115844727,
+      "tsne_2": -18.710399627685547,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Hijjawi Fashion - الحجاوي للأزياء",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -1.1728551387786865,
+      "tsne_2": -13.106822967529297,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Hijjawi Fashion - الحجاوي للأزياء",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -1.0019947290420532,
+      "tsne_2": -12.91445541381836,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Hijjawi Fashion - الحجاوي للأزياء",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -1.1367931365966797,
+      "tsne_2": -13.064879417419434,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Hijjawi Fashion - الحجاوي للأزياء",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 8.49203872680664,
+      "tsne_2": -33.07130813598633,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Hijjawi Fashion - الحجاوي للأزياء",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 21.570493698120117,
+      "tsne_2": 0.25044530630111694,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 18.131540298461914,
+      "tsne_2": 16.469881057739258,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 19.647977828979492,
+      "tsne_2": 15.125636100769043,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 19.08049964904785,
+      "tsne_2": 17.142549514770508,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 19.149507522583008,
+      "tsne_2": 16.384429931640625,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 19.379919052124023,
+      "tsne_2": 17.079246520996094,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 19.554039001464844,
+      "tsne_2": 16.78190040588379,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 19.377626419067383,
+      "tsne_2": 16.444934844970703,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 18.81688690185547,
+      "tsne_2": 17.10845375061035,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 18.609888076782227,
+      "tsne_2": 16.182147979736328,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 18.582225799560547,
+      "tsne_2": 16.20149803161621,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 18.627092361450195,
+      "tsne_2": 17.038841247558594,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 18.61743927001953,
+      "tsne_2": 17.030290603637695,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 19.515268325805664,
+      "tsne_2": 16.961471557617188,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 19.16311264038086,
+      "tsne_2": 16.38382339477539,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -21.68900489807129,
+      "tsne_2": -25.39128875732422,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -22.63751220703125,
+      "tsne_2": -22.885726928710938,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -21.590614318847656,
+      "tsne_2": -23.47873306274414,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -21.874303817749023,
+      "tsne_2": -24.14164161682129,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -21.934778213500977,
+      "tsne_2": -23.091033935546875,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -21.518115997314453,
+      "tsne_2": -23.69941520690918,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -22.741897583007812,
+      "tsne_2": -23.14371681213379,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -21.3592586517334,
+      "tsne_2": -24.514047622680664,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -21.20206642150879,
+      "tsne_2": -25.796768188476562,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -22.242366790771484,
+      "tsne_2": -23.72911834716797,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -22.225820541381836,
+      "tsne_2": -25.062318801879883,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -22.618179321289062,
+      "tsne_2": -24.78627586364746,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -23.124574661254883,
+      "tsne_2": -22.608844757080078,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -15.11509895324707,
+      "tsne_2": 31.500913619995117,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 19.731935501098633,
+      "tsne_2": 18.548662185668945,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 19.065874099731445,
+      "tsne_2": 18.416088104248047,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 19.350032806396484,
+      "tsne_2": 18.48186683654785,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 6.412466049194336,
+      "tsne_2": -42.58668899536133,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 6.795741558074951,
+      "tsne_2": -42.86313247680664,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 6.619973659515381,
+      "tsne_2": -42.6139030456543,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 7.444824695587158,
+      "tsne_2": -42.68214797973633,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 7.444824695587158,
+      "tsne_2": -42.68214797973633,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 18.706649780273438,
+      "tsne_2": 18.26375961303711,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 7.444824695587158,
+      "tsne_2": -42.68214797973633,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 8.064496040344238,
+      "tsne_2": -43.2051887512207,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 7.762104034423828,
+      "tsne_2": -43.27657699584961,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 17.576854705810547,
+      "tsne_2": 17.60215950012207,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 17.909652709960938,
+      "tsne_2": 17.809249877929688,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "99streetwear",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 20.81647300720215,
+      "tsne_2": 11.401215553283691,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "99streetwear",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 20.305696487426758,
+      "tsne_2": 12.033186912536621,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "99streetwear",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 20.48069190979004,
+      "tsne_2": 11.362395286560059,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "99streetwear",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 21.079004287719727,
+      "tsne_2": 10.747029304504395,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "99streetwear",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 20.71962547302246,
+      "tsne_2": 11.242520332336426,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "99streetwear",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 20.57729148864746,
+      "tsne_2": 12.542407035827637,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "99streetwear",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 20.3717041015625,
+      "tsne_2": 11.578495025634766,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "99streetwear",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 20.47597885131836,
+      "tsne_2": 12.280467987060547,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "99streetwear",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 20.672622680664062,
+      "tsne_2": 12.1077299118042,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Baby Bump",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 27.44297981262207,
+      "tsne_2": -2.594001054763794,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Baby Bump",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 28.203214645385742,
+      "tsne_2": -1.8071039915084839,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Baby Bump",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 27.920246124267578,
+      "tsne_2": -2.0773956775665283,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Baby Bump",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 26.848426818847656,
+      "tsne_2": -3.0171844959259033,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Baby Bump",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 26.848590850830078,
+      "tsne_2": -3.017228841781616,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Baby Bump",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 14.665231704711914,
+      "tsne_2": -36.05998611450195,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Baby Bump",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 18.88991355895996,
+      "tsne_2": -1.1004102230072021,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Baby Bump",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 18.69057273864746,
+      "tsne_2": 0.7393887042999268,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Baby Bump",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 22.519729614257812,
+      "tsne_2": -0.6214770674705505,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Baby Bump",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 30.732728958129883,
+      "tsne_2": 1.41416335105896,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Ronza Elegant",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -23.0103816986084,
+      "tsne_2": -26.84625244140625,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Ronza Elegant",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 8.536438941955566,
+      "tsne_2": -43.24555587768555,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Ronza Elegant",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -23.001989364624023,
+      "tsne_2": -27.021238327026367,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Ronza Elegant",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 27.926387786865234,
+      "tsne_2": 4.570257663726807,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Ronza Elegant",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 27.92880630493164,
+      "tsne_2": 4.56449031829834,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Ronza Elegant",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -22.99874496459961,
+      "tsne_2": -27.05611801147461,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Ronza Elegant",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 8.609167098999023,
+      "tsne_2": -42.85380554199219,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Ronza Elegant",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 27.614683151245117,
+      "tsne_2": 4.405961990356445,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Ronza Elegant",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 8.609435081481934,
+      "tsne_2": -42.85489273071289,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Ronza Elegant",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 8.607318878173828,
+      "tsne_2": -42.848392486572266,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Ronza Elegant",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 27.858427047729492,
+      "tsne_2": 4.274184703826904,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Ronza Elegant",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 27.93374252319336,
+      "tsne_2": 4.504495620727539,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "ROZAL",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 24.98092269897461,
+      "tsne_2": 5.144331932067871,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "ROZAL",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 25.27959442138672,
+      "tsne_2": 5.092789649963379,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "ROZAL",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 24.64504623413086,
+      "tsne_2": 4.799292087554932,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "ROZAL",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 25.438447952270508,
+      "tsne_2": 4.924851417541504,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "ROZAL",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 24.772232055664062,
+      "tsne_2": 5.0298051834106445,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "ROZAL",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 24.60305404663086,
+      "tsne_2": 4.612756729125977,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "ROZAL",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 25.259323120117188,
+      "tsne_2": 4.154695987701416,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "ROZAL",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 25.00128173828125,
+      "tsne_2": 4.029172897338867,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "ROZAL",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 25.38943099975586,
+      "tsne_2": 4.35953426361084,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "ROZAL",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 25.43697738647461,
+      "tsne_2": 4.5975446701049805,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "ROZAL",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 24.626707077026367,
+      "tsne_2": 4.211410999298096,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "ROZAL",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 24.679222106933594,
+      "tsne_2": 4.114950180053711,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "ROZAL",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 30.842172622680664,
+      "tsne_2": 3.288296699523926,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Bella Kids",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 1.7937957048416138,
+      "tsne_2": -14.020770072937012,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Bella Kids",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 1.8984183073043823,
+      "tsne_2": -13.65274429321289,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Bella Kids",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -8.058727264404297,
+      "tsne_2": -6.166248798370361,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Bella Kids",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 1.8983972072601318,
+      "tsne_2": -13.42553424835205,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Bella Kids",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 1.945508360862732,
+      "tsne_2": -13.658760070800781,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Bella Kids",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 1.8984322547912598,
+      "tsne_2": -13.652728080749512,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Bella Kids",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -2.0316429138183594,
+      "tsne_2": -13.921887397766113,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Bella Kids",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -6.568359375,
+      "tsne_2": -13.504711151123047,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Bella Kids",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -1.0755711793899536,
+      "tsne_2": -13.984230995178223,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Bella Kids",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 20.613561630249023,
+      "tsne_2": -0.34224602580070496,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Bella Kids",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -7.694334030151367,
+      "tsne_2": -13.726789474487305,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Bella Kids",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 1.770922064781189,
+      "tsne_2": -13.398458480834961,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "MAS CO",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -24.145801544189453,
+      "tsne_2": -24.155412673950195,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "MAS CO",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -11.828492164611816,
+      "tsne_2": 36.30635070800781,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "MAS CO",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -21.766395568847656,
+      "tsne_2": -21.730506896972656,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "MAS CO",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -15.172578811645508,
+      "tsne_2": 31.51471710205078,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "MAS CO",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -12.49387264251709,
+      "tsne_2": 35.157615661621094,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "MAS CO",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -0.8223981261253357,
+      "tsne_2": 5.26140832901001,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "MAS CO",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -23.82473373413086,
+      "tsne_2": -23.379823684692383,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "MAS CO",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -12.097825050354004,
+      "tsne_2": 34.74687194824219,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "MAS CO",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -11.4630126953125,
+      "tsne_2": 35.19858932495117,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "متجر الأميرات للسيدات",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -0.020154336467385292,
+      "tsne_2": -19.935842514038086,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "متجر الأميرات للسيدات",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -0.34965217113494873,
+      "tsne_2": -19.831714630126953,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "متجر الأميرات للسيدات",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -0.020154336467385292,
+      "tsne_2": -19.935842514038086,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "متجر الأميرات للسيدات",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 13.268946647644043,
+      "tsne_2": -37.673282623291016,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "متجر الأميرات للسيدات",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 0.30376675724983215,
+      "tsne_2": -19.877870559692383,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "متجر الأميرات للسيدات",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 15.112777709960938,
+      "tsne_2": -36.46318054199219,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "متجر الأميرات للسيدات",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 0.6735641956329346,
+      "tsne_2": -20.039688110351562,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "متجر الأميرات للسيدات",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 14.045652389526367,
+      "tsne_2": -37.492340087890625,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "متجر الأميرات للسيدات",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -0.17283810675144196,
+      "tsne_2": -19.459300994873047,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "متجر الأميرات للسيدات",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 0.5411532521247864,
+      "tsne_2": -19.902841567993164,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "متجر الأميرات للسيدات",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 0.8180359601974487,
+      "tsne_2": -19.720726013183594,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "متجر الأميرات للسيدات",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -1.263485312461853,
+      "tsne_2": -19.170175552368164,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "528 Fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 12.3567476272583,
+      "tsne_2": 11.533316612243652,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "528 Fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 12.085468292236328,
+      "tsne_2": 11.676229476928711,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "528 Fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 12.3567476272583,
+      "tsne_2": 11.533316612243652,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "528 Fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 12.086711883544922,
+      "tsne_2": 11.672392845153809,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "528 Fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 12.768320083618164,
+      "tsne_2": 12.18015193939209,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "528 Fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 12.695907592773438,
+      "tsne_2": 12.173299789428711,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "528 Fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 12.521995544433594,
+      "tsne_2": 11.481253623962402,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "528 Fashion",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 13.237800598144531,
+      "tsne_2": 11.757509231567383,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Grand Shop",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -7.062660217285156,
+      "tsne_2": -5.925345420837402,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Grand Shop",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.304485321044922,
+      "tsne_2": -38.71919631958008,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Grand Shop",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.10775375366211,
+      "tsne_2": -37.501930236816406,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Grand Shop",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.784926414489746,
+      "tsne_2": -38.39248275756836,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Grand Shop",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.784926414489746,
+      "tsne_2": -38.39248275756836,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Grand Shop",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 11.007543563842773,
+      "tsne_2": -38.2482795715332,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Grand Shop",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 9.711309432983398,
+      "tsne_2": -37.92353439331055,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Grand Shop",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.577738761901855,
+      "tsne_2": -36.93113708496094,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Grand Shop",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.822758674621582,
+      "tsne_2": -2.10420298576355,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Grand Shop",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 11.027697563171387,
+      "tsne_2": -36.531002044677734,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Angel shop PS",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 6.975064754486084,
+      "tsne_2": -43.138153076171875,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Angel shop PS",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 12.263960838317871,
+      "tsne_2": -36.668861389160156,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Angel shop PS",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 12.167546272277832,
+      "tsne_2": -38.208595275878906,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Angel shop PS",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -1.9798868894577026,
+      "tsne_2": -19.02521324157715,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Angel shop PS",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -2.2977771759033203,
+      "tsne_2": -18.650127410888672,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Angel shop PS",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -2.060631275177002,
+      "tsne_2": -18.397598266601562,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Angel shop PS",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 12.260210037231445,
+      "tsne_2": -36.81732940673828,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Angel shop PS",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 13.167851448059082,
+      "tsne_2": -37.11869430541992,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Angel shop PS",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 11.622897148132324,
+      "tsne_2": -36.79197311401367,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Angel shop PS",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 11.427550315856934,
+      "tsne_2": -37.51709747314453,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Angel shop PS",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -2.119206666946411,
+      "tsne_2": -17.5897216796875,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Angel shop PS",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 11.452857971191406,
+      "tsne_2": -37.406494140625,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Hala Fashion هلا فاشن",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 17.429025650024414,
+      "tsne_2": -0.6746425032615662,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Hala Fashion هلا فاشن",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -12.212013244628906,
+      "tsne_2": 36.287845611572266,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Hala Fashion هلا فاشن",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 21.25513458251953,
+      "tsne_2": 4.22049617767334,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Hala Fashion هلا فاشن",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -11.724845886230469,
+      "tsne_2": 34.66573715209961,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Hala Fashion هلا فاشن",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 21.255136489868164,
+      "tsne_2": 4.220520496368408,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Hala Fashion هلا فاشن",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 18.689411163330078,
+      "tsne_2": 1.3923102617263794,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Hala Fashion هلا فاشن",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 17.9941349029541,
+      "tsne_2": -1.7086271047592163,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Hala Fashion هلا فاشن",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -11.647539138793945,
+      "tsne_2": 35.970829010009766,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Hala Fashion هلا فاشن",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 18.607229232788086,
+      "tsne_2": 1.999301791191101,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "متجر تبارك للزي الشرعي",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -12.321843147277832,
+      "tsne_2": 35.50185775756836,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "متجر تبارك للزي الشرعي",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -13.009249687194824,
+      "tsne_2": 36.298545837402344,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "متجر تبارك للزي الشرعي",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -11.4630126953125,
+      "tsne_2": 35.19858932495117,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "متجر تبارك للزي الشرعي",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": -13.228775978088379,
+      "tsne_2": 35.84063720703125,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "متجر تبارك للزي الشرعي",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.520541191101074,
+      "tsne_2": -42.410438537597656,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "متجر تبارك للزي الشرعي",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 29.957090377807617,
+      "tsne_2": 0.5795240998268127,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "متجر تبارك للزي الشرعي",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 27.71695327758789,
+      "tsne_2": -2.21286678314209,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "متجر تبارك للزي الشرعي",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 30.87465476989746,
+      "tsne_2": 1.9090371131896973,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "متجر تبارك للزي الشرعي",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 29.368179321289062,
+      "tsne_2": -0.5865474939346313,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "متجر تبارك للزي الشرعي",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 30.326765060424805,
+      "tsne_2": 1.9104944467544556,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "متجر تبارك للزي الشرعي",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 10.557466506958008,
+      "tsne_2": -42.39665603637695,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "متجر تبارك للزي الشرعي",
+      "sector": "Fashion",
+      "post_type": "reel",
+      "tsne_1": 30.805389404296875,
+      "tsne_2": 2.423854351043701,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 20.16262435913086,
+      "tsne_2": 2.5898232460021973,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -0.6633920669555664,
+      "tsne_2": -13.359257698059082,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -12.433004379272461,
+      "tsne_2": 24.075294494628906,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 13.026032447814941,
+      "tsne_2": -35.78348922729492,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -0.46112966537475586,
+      "tsne_2": 1.2282638549804688,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -0.4193335771560669,
+      "tsne_2": 1.1544736623764038,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 20.064165115356445,
+      "tsne_2": 3.134967803955078,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 1.799572467803955,
+      "tsne_2": -8.7127685546875,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -19.2728328704834,
+      "tsne_2": 32.27635192871094,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 21.7093448638916,
+      "tsne_2": 7.951113224029541,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -26.610759735107422,
+      "tsne_2": -1.0459046363830566,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -19.660472869873047,
+      "tsne_2": -27.696420669555664,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 13.261260032653809,
+      "tsne_2": -37.642478942871094,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 13.908031463623047,
+      "tsne_2": -37.020851135253906,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -0.8472980260848999,
+      "tsne_2": 24.494768142700195,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -25.402565002441406,
+      "tsne_2": -1.264714241027832,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 21.106409072875977,
+      "tsne_2": 5.60700798034668,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 14.526018142700195,
+      "tsne_2": -37.24388885498047,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -20.30649757385254,
+      "tsne_2": 3.9562835693359375,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -2.5061748027801514,
+      "tsne_2": -19.457080841064453,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -27.05340576171875,
+      "tsne_2": -1.3726550340652466,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 7.588096618652344,
+      "tsne_2": -40.261348724365234,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -3.138112783432007,
+      "tsne_2": -19.189056396484375,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -17.58734703063965,
+      "tsne_2": -7.436422824859619,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -3.380171060562134,
+      "tsne_2": -19.005891799926758,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -18.682119369506836,
+      "tsne_2": 32.50999450683594,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -18.878665924072266,
+      "tsne_2": 32.823909759521484,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -18.165929794311523,
+      "tsne_2": 33.00014114379883,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -17.596384048461914,
+      "tsne_2": 33.01396942138672,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -16.390886306762695,
+      "tsne_2": 33.614200592041016,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -17.317989349365234,
+      "tsne_2": 32.72479248046875,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -18.166696548461914,
+      "tsne_2": 32.43387222290039,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -16.95698356628418,
+      "tsne_2": 32.776485443115234,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -19.07242774963379,
+      "tsne_2": 29.19765853881836,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -18.237926483154297,
+      "tsne_2": 32.99728775024414,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -21.3336181640625,
+      "tsne_2": -24.243688583374023,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -21.60724449157715,
+      "tsne_2": -25.45072364807129,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -19.88067054748535,
+      "tsne_2": -27.409221649169922,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -17.27928924560547,
+      "tsne_2": 32.76154327392578,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -19.859106063842773,
+      "tsne_2": 3.9884140491485596,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -21.288362503051758,
+      "tsne_2": -25.58955955505371,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -25.22638702392578,
+      "tsne_2": -0.5965408682823181,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 11.540700912475586,
+      "tsne_2": -39.10038375854492,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -18.404205322265625,
+      "tsne_2": 32.35050582885742,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -2.4010965824127197,
+      "tsne_2": -18.151473999023438,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -2.3455958366394043,
+      "tsne_2": -18.7273006439209,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -17.04798126220703,
+      "tsne_2": -8.274707794189453,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Jericho Resort Village - قرية أريحا السياحية",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 22.566965103149414,
+      "tsne_2": 5.9409966468811035,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Jericho Resort Village - قرية أريحا السياحية",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -0.8491649031639099,
+      "tsne_2": -12.739041328430176,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Jericho Resort Village - قرية أريحا السياحية",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -0.38945263624191284,
+      "tsne_2": -12.874842643737793,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Jericho Resort Village - قرية أريحا السياحية",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 1.2984545230865479,
+      "tsne_2": -2.0643672943115234,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Jericho Resort Village - قرية أريحا السياحية",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 3.298840045928955,
+      "tsne_2": -13.48586654663086,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Jericho Resort Village - قرية أريحا السياحية",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -1.225199580192566,
+      "tsne_2": -13.15982437133789,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Jericho Resort Village - قرية أريحا السياحية",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 18.60051155090332,
+      "tsne_2": -2.6295382976531982,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Jericho Resort Village - قرية أريحا السياحية",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 20.26943588256836,
+      "tsne_2": -2.1766655445098877,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Jericho Resort Village - قرية أريحا السياحية",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 20.031932830810547,
+      "tsne_2": 3.492111921310425,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Abu shukri restaurant-مطعم حمص ابو شكري",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -17.790607452392578,
+      "tsne_2": 19.467126846313477,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Abu shukri restaurant-مطعم حمص ابو شكري",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -15.878210067749023,
+      "tsne_2": 22.76331329345703,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Abu shukri restaurant-مطعم حمص ابو شكري",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -15.668383598327637,
+      "tsne_2": 21.111799240112305,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vienna Restaurant & Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -22.20703887939453,
+      "tsne_2": -23.77756118774414,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vienna Restaurant & Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -16.11882972717285,
+      "tsne_2": 31.265453338623047,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Vienna Restaurant & Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -14.976395606994629,
+      "tsne_2": 32.54697799682617,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Vienna Restaurant & Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -3.213207244873047,
+      "tsne_2": 4.583706855773926,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vienna Restaurant & Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -12.722678184509277,
+      "tsne_2": 34.10633850097656,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 29.973384857177734,
+      "tsne_2": 0.8584538698196411,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 28.730098724365234,
+      "tsne_2": -1.9898464679718018,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 30.344457626342773,
+      "tsne_2": 0.0701056495308876,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 30.45049476623535,
+      "tsne_2": 2.277545213699341,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 29.807415008544922,
+      "tsne_2": 0.029820146039128304,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -10.466517448425293,
+      "tsne_2": -15.665398597717285,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 30.715700149536133,
+      "tsne_2": 0.8985533714294434,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 30.5518856048584,
+      "tsne_2": 0.41565778851509094,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -22.845613479614258,
+      "tsne_2": -27.46470069885254,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 29.547327041625977,
+      "tsne_2": -1.2365225553512573,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -1.9559482336044312,
+      "tsne_2": -12.107818603515625,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -1.4510809183120728,
+      "tsne_2": -11.273847579956055,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 30.724353790283203,
+      "tsne_2": 2.732407808303833,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -9.965535163879395,
+      "tsne_2": -16.730831146240234,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 11.67755126953125,
+      "tsne_2": -33.80245590209961,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 26.539735794067383,
+      "tsne_2": -3.4168684482574463,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -7.446258544921875,
+      "tsne_2": 3.9297542572021484,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 6.114425182342529,
+      "tsne_2": 7.109914779663086,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -21.590614318847656,
+      "tsne_2": -23.47873306274414,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 6.33947229385376,
+      "tsne_2": 6.860397815704346,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 7.578305244445801,
+      "tsne_2": -35.266014099121094,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 6.106025695800781,
+      "tsne_2": 7.078989028930664,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 21.95956039428711,
+      "tsne_2": 7.331346035003662,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 5.806888103485107,
+      "tsne_2": 6.569406986236572,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -5.425425052642822,
+      "tsne_2": 1.3559285402297974,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 1.2363289594650269,
+      "tsne_2": -16.72822380065918,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 8.230371475219727,
+      "tsne_2": -39.14130783081055,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 6.246062278747559,
+      "tsne_2": 7.036913871765137,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 7.108832836151123,
+      "tsne_2": -41.46136474609375,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 6.5607218742370605,
+      "tsne_2": 6.603973865509033,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 6.276784896850586,
+      "tsne_2": 6.855465888977051,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 6.243771553039551,
+      "tsne_2": 6.849700450897217,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Pardo Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -10.942705154418945,
+      "tsne_2": 22.47081756591797,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Pardo Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -10.988028526306152,
+      "tsne_2": 22.4623966217041,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Pardo Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -0.46598032116889954,
+      "tsne_2": 23.932199478149414,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Pardo Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -0.5302631258964539,
+      "tsne_2": 24.09019660949707,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Pardo Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -0.5371235013008118,
+      "tsne_2": 24.09108543395996,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Pardo Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -0.4799477458000183,
+      "tsne_2": 23.9299373626709,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Pardo Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -10.996602058410645,
+      "tsne_2": 22.453706741333008,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Pardo Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -17.83169937133789,
+      "tsne_2": 32.58610534667969,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Orgada Burgers",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -18.838279724121094,
+      "tsne_2": -28.438383102416992,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Orgada Burgers",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -25.479137420654297,
+      "tsne_2": 0.025080490857362747,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Orgada Burgers",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 12.466696739196777,
+      "tsne_2": -35.16114044189453,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Orgada Burgers",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -7.400241851806641,
+      "tsne_2": 3.904111385345459,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Orgada Burgers",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -26.909622192382812,
+      "tsne_2": 1.969543695449829,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Orgada Burgers",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 14.281679153442383,
+      "tsne_2": 7.050490856170654,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Orgada Burgers",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 7.734726905822754,
+      "tsne_2": -40.272029876708984,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Orgada Burgers",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -19.550559997558594,
+      "tsne_2": -28.014347076416016,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Orgada Burgers",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 12.254491806030273,
+      "tsne_2": -37.340545654296875,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -32.343318939208984,
+      "tsne_2": 2.576103925704956,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -7.922824382781982,
+      "tsne_2": -13.580015182495117,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 20.216733932495117,
+      "tsne_2": 19.047340393066406,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -8.238838195800781,
+      "tsne_2": -6.238287925720215,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -8.213546752929688,
+      "tsne_2": -6.22449254989624,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -7.931735992431641,
+      "tsne_2": -13.58012580871582,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -3.571713924407959,
+      "tsne_2": 5.471801280975342,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -8.22620677947998,
+      "tsne_2": -6.231441974639893,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 20.484954833984375,
+      "tsne_2": 19.209501266479492,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -3.7162539958953857,
+      "tsne_2": -13.882488250732422,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 20.564430236816406,
+      "tsne_2": 19.27287483215332,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -3.6966054439544678,
+      "tsne_2": -13.870007514953613,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 22.49947738647461,
+      "tsne_2": -0.7547644376754761,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 30.109962463378906,
+      "tsne_2": 1.3069252967834473,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 30.636337280273438,
+      "tsne_2": 0.9196162819862366,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -2.114223003387451,
+      "tsne_2": -12.324825286865234,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 22.463592529296875,
+      "tsne_2": -0.9473244547843933,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -1.2899006605148315,
+      "tsne_2": 3.108452081680298,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 25.9998722076416,
+      "tsne_2": 1.2716693878173828,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 22.517826080322266,
+      "tsne_2": -0.48170021176338196,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -2.1147427558898926,
+      "tsne_2": -12.325736999511719,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 22.517351150512695,
+      "tsne_2": -0.3706037998199463,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -4.231637954711914,
+      "tsne_2": 1.1309821605682373,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -1.9747116565704346,
+      "tsne_2": -12.129283905029297,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 27.97334098815918,
+      "tsne_2": -2.4187815189361572,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 27.97334098815918,
+      "tsne_2": -2.4187815189361572,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -2.114223003387451,
+      "tsne_2": -12.324825286865234,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -1.7782233953475952,
+      "tsne_2": 4.594421863555908,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -2.642552375793457,
+      "tsne_2": 5.165541172027588,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -5.10062313079834,
+      "tsne_2": 4.444413661956787,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -2.7915308475494385,
+      "tsne_2": 4.255030155181885,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 15.545644760131836,
+      "tsne_2": 13.432517051696777,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -6.0154900550842285,
+      "tsne_2": 7.786611080169678,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -5.992046356201172,
+      "tsne_2": 7.782106876373291,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -4.386399269104004,
+      "tsne_2": 1.1977049112319946,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -5.935118675231934,
+      "tsne_2": 7.786618709564209,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -28.665334701538086,
+      "tsne_2": 0.6604982018470764,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -0.2649269104003906,
+      "tsne_2": 3.8379199504852295,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 1.1245919466018677,
+      "tsne_2": -1.1214733123779297,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -2.0964744091033936,
+      "tsne_2": 5.004322052001953,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -3.1258385181427,
+      "tsne_2": 5.051001071929932,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -3.020017147064209,
+      "tsne_2": 4.806582450866699,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -3.12937593460083,
+      "tsne_2": 5.046111106872559,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -2.3623788356781006,
+      "tsne_2": 4.6384148597717285,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 8.820415496826172,
+      "tsne_2": -41.824073791503906,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -3.1383609771728516,
+      "tsne_2": 5.25372314453125,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -2.361198902130127,
+      "tsne_2": 5.31761360168457,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 22.775348663330078,
+      "tsne_2": -2.444293975830078,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 17.932939529418945,
+      "tsne_2": -0.7888791561126709,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 11.970871925354004,
+      "tsne_2": -34.26271438598633,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -27.49541473388672,
+      "tsne_2": 0.43542468547821045,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 27.41156578063965,
+      "tsne_2": -1.5708757638931274,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 4.060373783111572,
+      "tsne_2": 16.586027145385742,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 11.721002578735352,
+      "tsne_2": -1.9703603982925415,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 0.2818242013454437,
+      "tsne_2": -8.538633346557617,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 23.789369583129883,
+      "tsne_2": -2.881746292114258,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 29.614154815673828,
+      "tsne_2": -0.46203872561454773,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 29.431745529174805,
+      "tsne_2": 2.1519815921783447,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 23.986572265625,
+      "tsne_2": -2.9770991802215576,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 22.54221534729004,
+      "tsne_2": -1.4589293003082275,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 25.092418670654297,
+      "tsne_2": -2.4066739082336426,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 23.918704986572266,
+      "tsne_2": -2.4809694290161133,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 24.914087295532227,
+      "tsne_2": -3.18685245513916,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 21.155126571655273,
+      "tsne_2": -2.5369279384613037,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 22.581819534301758,
+      "tsne_2": -1.6085457801818848,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 25.285676956176758,
+      "tsne_2": -2.1328327655792236,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 11.760584831237793,
+      "tsne_2": -1.964015245437622,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -22.259639739990234,
+      "tsne_2": -27.585880279541016,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -20.560314178466797,
+      "tsne_2": 4.02924108505249,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -6.822931289672852,
+      "tsne_2": 7.0521345138549805,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 30.031749725341797,
+      "tsne_2": -0.38723963499069214,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 0.09392760694026947,
+      "tsne_2": 2.2075140476226807,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -16.59537124633789,
+      "tsne_2": -7.678211688995361,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 2.4945900440216064,
+      "tsne_2": 0.5546711683273315,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 2.1565136909484863,
+      "tsne_2": -1.952926516532898,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 0.40339016914367676,
+      "tsne_2": 3.3865702152252197,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 0.40339016914367676,
+      "tsne_2": 3.3865702152252197,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 2.265854835510254,
+      "tsne_2": -1.9855281114578247,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 1.4758719205856323,
+      "tsne_2": -2.171658754348755,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -3.5413336753845215,
+      "tsne_2": -18.513473510742188,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -0.36643126606941223,
+      "tsne_2": 2.939222812652588,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 0.13387995958328247,
+      "tsne_2": 2.170117139816284,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -0.711633563041687,
+      "tsne_2": 2.846621036529541,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 2.4945900440216064,
+      "tsne_2": 0.5546711683273315,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 0.724321186542511,
+      "tsne_2": -3.8836734294891357,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -0.711633563041687,
+      "tsne_2": 2.846621036529541,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -17.75615882873535,
+      "tsne_2": -6.773351192474365,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 2.076927423477173,
+      "tsne_2": -2.0214428901672363,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -17.68541145324707,
+      "tsne_2": -6.768028259277344,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": 0.33963343501091003,
+      "tsne_2": 3.477019786834717,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "post_type": "post",
+      "tsne_1": -0.711633563041687,
+      "tsne_2": 2.846621036529541,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -13.732112884521484,
+      "tsne_2": 21.241676330566406,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -11.55784797668457,
+      "tsne_2": 10.356843948364258,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -8.563650131225586,
+      "tsne_2": 6.992006778717041,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -13.727855682373047,
+      "tsne_2": 21.24020767211914,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Foundation",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -8.63465690612793,
+      "tsne_2": 12.15075969696045,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -10.84525203704834,
+      "tsne_2": 13.41015911102295,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Foundation",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -8.550758361816406,
+      "tsne_2": 7.04232931137085,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -15.337150573730469,
+      "tsne_2": 23.31458282470703,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -10.802165985107422,
+      "tsne_2": 7.455749034881592,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Foundation",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -9.737292289733887,
+      "tsne_2": 14.607114791870117,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Foundation",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -12.606964111328125,
+      "tsne_2": 11.438984870910645,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -9.65402889251709,
+      "tsne_2": 14.612030029296875,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Foundation",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -12.046517372131348,
+      "tsne_2": 11.120030403137207,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Foundation",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -11.557635307312012,
+      "tsne_2": 10.356887817382812,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": 20.732995986938477,
+      "tsne_2": 13.297785758972168,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -14.85617446899414,
+      "tsne_2": 23.49521255493164,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -13.764008522033691,
+      "tsne_2": 21.241798400878906,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -15.485864639282227,
+      "tsne_2": 23.81940460205078,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Foundation",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -9.859323501586914,
+      "tsne_2": 12.970725059509277,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -14.987100601196289,
+      "tsne_2": 23.987241744995117,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -10.223772048950195,
+      "tsne_2": 13.176640510559082,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -15.219026565551758,
+      "tsne_2": 23.270788192749023,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Yalda Hakim and Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -10.102581977844238,
+      "tsne_2": 12.418122291564941,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -16.03933334350586,
+      "tsne_2": 24.336162567138672,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -10.593406677246094,
+      "tsne_2": 13.209883689880371,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -13.752374649047852,
+      "tsne_2": 21.237064361572266,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Ahmed Sh Ajwa",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -7.90646505355835,
+      "tsne_2": 8.107608795166016,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -14.957786560058594,
+      "tsne_2": 23.9979305267334,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Foundation",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -9.655548095703125,
+      "tsne_2": 14.660858154296875,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Foundation",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -12.039740562438965,
+      "tsne_2": 11.088932991027832,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -12.037513732910156,
+      "tsne_2": 11.114686965942383,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Motaz Foundation",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -9.4541015625,
+      "tsne_2": 14.684164047241211,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Hind Khoudary",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -6.645894527435303,
+      "tsne_2": 13.245386123657227,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Moath Kahlout",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -9.916589736938477,
+      "tsne_2": 13.034767150878906,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "FPAIspal",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -6.92504358291626,
+      "tsne_2": 13.95880126953125,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Fekreebrahem",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -12.029255867004395,
+      "tsne_2": 11.110557556152344,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Gintifada",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -10.038938522338867,
+      "tsne_2": 12.728078842163086,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "The Tatreez Grove",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -6.659914493560791,
+      "tsne_2": 13.274456977844238,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Fekreebrahem",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -10.224435806274414,
+      "tsne_2": 13.1530179977417,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Hamdan ElDahdouh",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -10.858118057250977,
+      "tsne_2": 7.355920791625977,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Hamdan ElDahdouh",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -2.1367928981781006,
+      "tsne_2": 3.789121389389038,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Fekreebrahem",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -8.632608413696289,
+      "tsne_2": 12.14895248413086,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Al Jazeera English",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -10.42040729522705,
+      "tsne_2": 12.452605247497559,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Nour Alsaqa",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -9.734789848327637,
+      "tsne_2": 14.606929779052734,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "MIFTAH",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -8.634980201721191,
+      "tsne_2": 12.150150299072266,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Nour Alsaqa",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -17.150724411010742,
+      "tsne_2": -7.664178848266602,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Plestia Alaqad",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -10.682419776916504,
+      "tsne_2": 13.287299156188965,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Al Jazeera English",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -10.225176811218262,
+      "tsne_2": 12.499661445617676,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": 7.014642238616943,
+      "tsne_2": -41.430076599121094,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -20.124813079833984,
+      "tsne_2": -23.87230682373047,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -32.29469680786133,
+      "tsne_2": 2.531588315963745,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": 18.362363815307617,
+      "tsne_2": 16.704687118530273,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": 7.102106094360352,
+      "tsne_2": -35.75093078613281,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -27.593141555786133,
+      "tsne_2": -0.5006248950958252,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -20.624046325683594,
+      "tsne_2": 3.2097644805908203,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": 7.567590713500977,
+      "tsne_2": -41.570106506347656,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": 6.522170066833496,
+      "tsne_2": -41.557342529296875,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -15.158086776733398,
+      "tsne_2": -8.683954238891602,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": 19.50376319885254,
+      "tsne_2": 20.113140106201172,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -27.853290557861328,
+      "tsne_2": -0.6237200498580933,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -28.944313049316406,
+      "tsne_2": -0.2022264003753662,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -20.653512954711914,
+      "tsne_2": 3.2899057865142822,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": 5.444677829742432,
+      "tsne_2": -40.25568771362305,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -32.121910095214844,
+      "tsne_2": 2.2556307315826416,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -22.990192413330078,
+      "tsne_2": -21.906652450561523,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -28.33086395263672,
+      "tsne_2": -0.8587406277656555,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": 21.4344539642334,
+      "tsne_2": 16.619670867919922,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -32.32693099975586,
+      "tsne_2": 1.9208139181137085,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -32.7194938659668,
+      "tsne_2": 2.289328098297119,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -28.768068313598633,
+      "tsne_2": -0.19007353484630585,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -28.4161319732666,
+      "tsne_2": 0.8091248869895935,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -27.933246612548828,
+      "tsne_2": -1.5364075899124146,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -32.7880744934082,
+      "tsne_2": 1.7225687503814697,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -32.7194938659668,
+      "tsne_2": 2.289328098297119,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -28.58704948425293,
+      "tsne_2": 0.014157584868371487,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -17.771926879882812,
+      "tsne_2": -23.992847442626953,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -32.120033264160156,
+      "tsne_2": 2.2445671558380127,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -17.0621280670166,
+      "tsne_2": -8.262317657470703,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -28.77647590637207,
+      "tsne_2": 0.3918130695819855,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "ahmedalhenawi1",
+      "sector": "Influencers",
+      "post_type": "reel",
+      "tsne_1": -21.61716651916504,
+      "tsne_2": -21.871078491210938,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": 19.263771057128906,
+      "tsne_2": 6.728061676025391,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": 20.68495750427246,
+      "tsne_2": 10.000600814819336,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": 20.09003257751465,
+      "tsne_2": 5.173338890075684,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -25.65004539489746,
+      "tsne_2": -0.7255530953407288,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -17.223649978637695,
+      "tsne_2": -7.975872993469238,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -17.58746910095215,
+      "tsne_2": -7.8255839347839355,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": 9.597208023071289,
+      "tsne_2": -38.96903991699219,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": 12.238550186157227,
+      "tsne_2": -37.80750274658203,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -25.854219436645508,
+      "tsne_2": -0.00859665684401989,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": 8.260099411010742,
+      "tsne_2": -41.707427978515625,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": 9.043357849121094,
+      "tsne_2": -40.155155181884766,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -2.4258806705474854,
+      "tsne_2": -18.877893447875977,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": 9.848612785339355,
+      "tsne_2": -41.90885925292969,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -2.921949863433838,
+      "tsne_2": -18.76425552368164,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -10.271693229675293,
+      "tsne_2": -15.107464790344238,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -23.260072708129883,
+      "tsne_2": -24.151805877685547,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -22.80912971496582,
+      "tsne_2": -27.52733612060547,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -28.155242919921875,
+      "tsne_2": -0.7861881256103516,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -15.009926795959473,
+      "tsne_2": 23.32067108154297,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -16.86841583251953,
+      "tsne_2": -7.427128791809082,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -16.701114654541016,
+      "tsne_2": -7.861034870147705,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -26.32439422607422,
+      "tsne_2": -0.991442084312439,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -27.260665893554688,
+      "tsne_2": -0.3723500370979309,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -16.09272003173828,
+      "tsne_2": 22.06746482849121,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -26.8536319732666,
+      "tsne_2": -1.1073172092437744,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -14.837767601013184,
+      "tsne_2": 23.525903701782227,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -26.331436157226562,
+      "tsne_2": -0.12953880429267883,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -12.454795837402344,
+      "tsne_2": 24.065616607666016,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": 7.930192947387695,
+      "tsne_2": -34.49098587036133,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -16.71532440185547,
+      "tsne_2": -7.670984268188477,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -26.680782318115234,
+      "tsne_2": 0.49331220984458923,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -15.635642051696777,
+      "tsne_2": 23.172250747680664,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Xtreme Fitness Ramallah",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -15.324971199035645,
+      "tsne_2": 24.211423873901367,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Xtreme Fitness Ramallah",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -0.4989546835422516,
+      "tsne_2": 23.603601455688477,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Xtreme Fitness Ramallah",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -0.42742908000946045,
+      "tsne_2": 23.64920425415039,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Xtreme Fitness Ramallah",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": 8.925731658935547,
+      "tsne_2": -34.198097229003906,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Xtreme Fitness Ramallah",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -17.690109252929688,
+      "tsne_2": 19.436805725097656,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Xtreme Fitness Ramallah",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": 0.7320438027381897,
+      "tsne_2": 23.790464401245117,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Xtreme Fitness Ramallah",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": 0.5299587845802307,
+      "tsne_2": 23.76900863647461,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Xtreme Fitness Ramallah",
+      "sector": "Gym",
+      "post_type": "reel",
+      "tsne_1": -26.32710838317871,
+      "tsne_2": 2.5520339012145996,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Jumbo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 6.858260154724121,
+      "tsne_2": -40.17253112792969,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Jumbo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -20.880935668945312,
+      "tsne_2": -26.32435417175293,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Jumbo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 14.724990844726562,
+      "tsne_2": -36.333091735839844,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Jumbo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -16.83342742919922,
+      "tsne_2": -25.448116302490234,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Jumbo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -19.732288360595703,
+      "tsne_2": 4.24011754989624,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Jumbo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -20.321020126342773,
+      "tsne_2": 4.070010185241699,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Jumbo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 12.357837677001953,
+      "tsne_2": -36.0042610168457,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Jumbo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 13.109710693359375,
+      "tsne_2": -36.52391815185547,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Jumbo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -10.216811180114746,
+      "tsne_2": -15.031111717224121,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Jumbo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 0.40673044323921204,
+      "tsne_2": -17.600629806518555,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Jumbo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 0.2532227337360382,
+      "tsne_2": -17.745630264282227,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 0.6550450325012207,
+      "tsne_2": -4.066166400909424,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 1.5248147249221802,
+      "tsne_2": -8.581791877746582,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -14.917496681213379,
+      "tsne_2": -8.789360046386719,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 0.6357850432395935,
+      "tsne_2": -4.110433578491211,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 1.6850919723510742,
+      "tsne_2": -8.251167297363281,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 1.4514647722244263,
+      "tsne_2": -8.147161483764648,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 1.3631892204284668,
+      "tsne_2": -8.033491134643555,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -6.091501712799072,
+      "tsne_2": 7.727906227111816,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 1.3304636478424072,
+      "tsne_2": -8.618813514709473,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 1.0271960496902466,
+      "tsne_2": -8.588961601257324,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 1.0131616592407227,
+      "tsne_2": -8.553337097167969,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -7.869009017944336,
+      "tsne_2": 8.120950698852539,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 0.9775040745735168,
+      "tsne_2": -8.243882179260254,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -6.087975978851318,
+      "tsne_2": 7.728212356567383,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 0.9839125871658325,
+      "tsne_2": -8.174753189086914,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Family Market PS",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -7.913458347320557,
+      "tsne_2": 8.092375755310059,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Katusha Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 10.717560768127441,
+      "tsne_2": 8.865378379821777,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Katusha Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 21.859615325927734,
+      "tsne_2": 7.560727596282959,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Katusha Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -1.3543744087219238,
+      "tsne_2": -11.228744506835938,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Katusha Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 13.969222068786621,
+      "tsne_2": 11.310193061828613,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Katusha Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 19.499881744384766,
+      "tsne_2": 14.657584190368652,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Katusha Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 29.480405807495117,
+      "tsne_2": 3.3284389972686768,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Katusha Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 16.253877639770508,
+      "tsne_2": 13.112977027893066,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Katusha Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 22.810630798339844,
+      "tsne_2": 5.345664978027344,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 23.848430633544922,
+      "tsne_2": -2.22735857963562,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 23.031328201293945,
+      "tsne_2": 4.738382816314697,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 21.143232345581055,
+      "tsne_2": 5.3277268409729,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 21.542375564575195,
+      "tsne_2": -0.8850690722465515,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 18.546669006347656,
+      "tsne_2": 2.3433032035827637,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 11.290273666381836,
+      "tsne_2": -37.962074279785156,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 20.334163665771484,
+      "tsne_2": 8.450774192810059,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 19.50263786315918,
+      "tsne_2": 14.303319931030273,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 20.08738899230957,
+      "tsne_2": 6.918455600738525,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 18.844663619995117,
+      "tsne_2": -0.6784030199050903,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 20.992259979248047,
+      "tsne_2": 6.319212436676025,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 19.787477493286133,
+      "tsne_2": 8.094040870666504,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 17.543975830078125,
+      "tsne_2": -0.14155669510364532,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 4.984052658081055,
+      "tsne_2": 15.322921752929688,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 8.414198875427246,
+      "tsne_2": -34.481483459472656,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 14.73181438446045,
+      "tsne_2": 7.850883960723877,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 20.544422149658203,
+      "tsne_2": 7.954874038696289,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 5.0459675788879395,
+      "tsne_2": 15.263947486877441,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 22.97039222717285,
+      "tsne_2": 5.094346046447754,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 4.083633899688721,
+      "tsne_2": 16.168888092041016,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 19.535518646240234,
+      "tsne_2": -1.6249053478240967,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 20.24873161315918,
+      "tsne_2": 2.1897130012512207,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 21.229206085205078,
+      "tsne_2": 2.736833333969116,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 21.577682495117188,
+      "tsne_2": -0.1518818438053131,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 18.84892463684082,
+      "tsne_2": -0.7105499505996704,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 17.992294311523438,
+      "tsne_2": -1.3134193420410156,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 22.81062126159668,
+      "tsne_2": 5.34565544128418,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 4.250006675720215,
+      "tsne_2": 15.930808067321777,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 4.846083641052246,
+      "tsne_2": 15.418244361877441,
+      "cluster": 0,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 2.748643636703491,
+      "tsne_2": -13.622705459594727,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 19.986032485961914,
+      "tsne_2": -2.8578877449035645,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 20.31911277770996,
+      "tsne_2": -1.8341662883758545,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Supermarket 25st",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -18.342636108398438,
+      "tsne_2": -25.57181167602539,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Supermarket 25st",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -9.82802677154541,
+      "tsne_2": -16.260534286499023,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Supermarket 25st",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -18.342851638793945,
+      "tsne_2": -25.70685577392578,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Supermarket 25st",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -15.303397178649902,
+      "tsne_2": 31.551483154296875,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Supermarket 25st",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -16.357885360717773,
+      "tsne_2": 30.817453384399414,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Supermarket 25st",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -15.391705513000488,
+      "tsne_2": 35.011539459228516,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Supermarket 25st",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": -12.887873649597168,
+      "tsne_2": 35.28445816040039,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Supermarket 25st",
+      "sector": "Supermarkets",
+      "post_type": "reel",
+      "tsne_1": 7.6595940589904785,
+      "tsne_2": -34.36935043334961,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -21.038427352905273,
+      "tsne_2": 4.099676132202148,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -12.446547508239746,
+      "tsne_2": 24.071496963500977,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -26.393571853637695,
+      "tsne_2": 0.9980917572975159,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -17.668718338012695,
+      "tsne_2": -6.498987197875977,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -24.93085479736328,
+      "tsne_2": 5.05087423324585,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -25.365528106689453,
+      "tsne_2": 4.422982215881348,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -23.769882202148438,
+      "tsne_2": 5.643913745880127,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -27.05340576171875,
+      "tsne_2": -1.3726550340652466,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -22.45404052734375,
+      "tsne_2": 4.84071683883667,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -25.067947387695312,
+      "tsne_2": 4.872408866882324,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 10.178969383239746,
+      "tsne_2": 7.975314617156982,
+      "cluster": 2,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -23.744155883789062,
+      "tsne_2": 5.624758720397949,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -24.921436309814453,
+      "tsne_2": 5.05991792678833,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 11.895905494689941,
+      "tsne_2": 10.98507022857666,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -25.379404067993164,
+      "tsne_2": 4.400644779205322,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -18.662372589111328,
+      "tsne_2": 23.431068420410156,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -18.870397567749023,
+      "tsne_2": 23.4266300201416,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 17.611461639404297,
+      "tsne_2": -3.288721799850464,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -18.81340217590332,
+      "tsne_2": 23.438905715942383,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -18.642187118530273,
+      "tsne_2": 23.437089920043945,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -15.49494457244873,
+      "tsne_2": -26.571611404418945,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 8.619706153869629,
+      "tsne_2": -32.30445861816406,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -15.56159782409668,
+      "tsne_2": -27.109525680541992,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -15.741928100585938,
+      "tsne_2": -27.47464370727539,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -16.640460968017578,
+      "tsne_2": -25.877742767333984,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -6.979073524475098,
+      "tsne_2": -5.155890464782715,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -7.391554832458496,
+      "tsne_2": 3.8938426971435547,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 8.184772491455078,
+      "tsne_2": -34.18305206298828,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 9.885403633117676,
+      "tsne_2": -34.74958038330078,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -18.20874786376953,
+      "tsne_2": -26.246469497680664,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -18.534927368164062,
+      "tsne_2": -24.63625144958496,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -17.225330352783203,
+      "tsne_2": -25.900558471679688,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -15.135024070739746,
+      "tsne_2": -27.96214485168457,
+      "cluster": 2,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -19.6795597076416,
+      "tsne_2": -25.966371536254883,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 10.288515090942383,
+      "tsne_2": -35.420230865478516,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 8.563822746276855,
+      "tsne_2": -32.857749938964844,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 8.563822746276855,
+      "tsne_2": -32.857749938964844,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 8.563822746276855,
+      "tsne_2": -32.857749938964844,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 0.3940884470939636,
+      "tsne_2": -13.99465560913086,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -18.430143356323242,
+      "tsne_2": -27.02965545654297,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -19.127979278564453,
+      "tsne_2": -26.94363784790039,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 0.3940884470939636,
+      "tsne_2": -13.99465560913086,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 0.23429816961288452,
+      "tsne_2": -14.030649185180664,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -19.84914779663086,
+      "tsne_2": -25.514745712280273,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -9.846673965454102,
+      "tsne_2": -16.32889747619629,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 10.441038131713867,
+      "tsne_2": -2.169679641723633,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -17.633359909057617,
+      "tsne_2": -26.638545989990234,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 9.002912521362305,
+      "tsne_2": -39.30021667480469,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 4
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -14.013507843017578,
+      "tsne_2": 33.891414642333984,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -20.534923553466797,
+      "tsne_2": -21.883596420288086,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -15.456986427307129,
+      "tsne_2": 35.991188049316406,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -18.64883804321289,
+      "tsne_2": -23.71735954284668,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -13.075995445251465,
+      "tsne_2": 34.82903289794922,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -15.530428886413574,
+      "tsne_2": 31.635269165039062,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -18.300933837890625,
+      "tsne_2": -26.030025482177734,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": 18.861427307128906,
+      "tsne_2": 19.219148635864258,
+      "cluster": 0,
+      "dbscan_fixed_cluster": 2
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -14.339897155761719,
+      "tsne_2": 34.1379280090332,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -20.47239875793457,
+      "tsne_2": 3.442528009414673,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -14.625411033630371,
+      "tsne_2": 34.07986831665039,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -10.17098331451416,
+      "tsne_2": -14.938726425170898,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -14.085006713867188,
+      "tsne_2": 33.6902961730957,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -17.09072494506836,
+      "tsne_2": 19.166946411132812,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -3.4562134742736816,
+      "tsne_2": -19.11818504333496,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -14.870895385742188,
+      "tsne_2": 33.84916687011719,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -23.278289794921875,
+      "tsne_2": -22.217884063720703,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -15.191088676452637,
+      "tsne_2": 33.84495544433594,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -22.82404899597168,
+      "tsne_2": -22.123620986938477,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -11.586459159851074,
+      "tsne_2": 33.01984405517578,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -20.47953224182129,
+      "tsne_2": 3.4610378742218018,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -15.547032356262207,
+      "tsne_2": 23.776060104370117,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -14.667902946472168,
+      "tsne_2": 33.761295318603516,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -32.716827392578125,
+      "tsne_2": 2.2733402252197266,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -7.807226181030273,
+      "tsne_2": -13.840487480163574,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -17.133853912353516,
+      "tsne_2": -24.472991943359375,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -16.74335289001465,
+      "tsne_2": -8.136409759521484,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -3.0961222648620605,
+      "tsne_2": -14.020602226257324,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -7.811896800994873,
+      "tsne_2": -13.841227531433105,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -10.239835739135742,
+      "tsne_2": -15.019377708435059,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -17.592145919799805,
+      "tsne_2": 19.411054611206055,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -5.471410751342773,
+      "tsne_2": 1.3904057741165161,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -9.892088890075684,
+      "tsne_2": -15.350473403930664,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -9.93600845336914,
+      "tsne_2": -15.476983070373535,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -14.93179702758789,
+      "tsne_2": -8.785675048828125,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -3.127997398376465,
+      "tsne_2": -14.033944129943848,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -3.3504981994628906,
+      "tsne_2": -13.824078559875488,
+      "cluster": 3,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -18.088420867919922,
+      "tsne_2": 31.128732681274414,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -15.48507308959961,
+      "tsne_2": 24.39760971069336,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -28.101058959960938,
+      "tsne_2": 0.7461166977882385,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -5.090748310089111,
+      "tsne_2": 4.437599182128906,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -18.388864517211914,
+      "tsne_2": -23.310054779052734,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -27.288166046142578,
+      "tsne_2": 2.0744357109069824,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -14.013507843017578,
+      "tsne_2": 33.891414642333984,
+      "cluster": 4,
+      "dbscan_fixed_cluster": 0
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -32.609493255615234,
+      "tsne_2": 1.8176780939102173,
+      "cluster": 1,
+      "dbscan_fixed_cluster": -1
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -21.353843688964844,
+      "tsne_2": -24.512094497680664,
+      "cluster": 1,
+      "dbscan_fixed_cluster": 3
+    },
+    {
+      "business_name": "Vanilla Palestine",
+      "sector": "Cafes/Restaurants",
+      "post_type": "reel",
+      "tsne_1": -13.711161613464355,
+      "tsne_2": 21.25480079650879,
+      "cluster": 4,
+      "dbscan_fixed_cluster": -1
+    }
+  ]
+}

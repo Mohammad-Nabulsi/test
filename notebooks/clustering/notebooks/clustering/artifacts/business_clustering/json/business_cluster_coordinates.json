@@ -1,0 +1,546 @@
+{
+  "project": "business_clustering",
+  "coordinates_type": "tsne_2d",
+  "dbscan_params": {
+    "eps": 3.1,
+    "min_samples": 4
+  },
+  "kmeans_params": {
+    "n_clusters": 3
+  },
+  "cluster_columns": {
+    "kmeans": "kmeans_cluster",
+    "dbscan": "dbscan_cluster"
+  },
+  "n_rows": 66,
+  "records": [
+    {
+      "business_name": "528 Fashion",
+      "sector": "Fashion",
+      "tsne_1": 2.9633548259735107,
+      "tsne_2": -5.112013339996338,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "99streetwear",
+      "sector": "Fashion",
+      "tsne_1": 2.7683119773864746,
+      "tsne_2": -3.290241003036499,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Abu shukri restaurant-مطعم حمص ابو شكري",
+      "sector": "Cafes/Restaurants",
+      "tsne_1": -4.079989910125732,
+      "tsne_2": -11.232211112976074,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Ahmed Sh Ajwa",
+      "sector": "Influencers",
+      "tsne_1": -7.9279351234436035,
+      "tsne_2": 12.044297218322754,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": 1
+    },
+    {
+      "business_name": "Al Jazeera English",
+      "sector": "Influencers",
+      "tsne_1": -7.672862529754639,
+      "tsne_2": 10.870121955871582,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": 1
+    },
+    {
+      "business_name": "Angel shop PS",
+      "sector": "Fashion",
+      "tsne_1": 3.3627564907073975,
+      "tsne_2": 3.0761709213256836,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Baby Bump",
+      "sector": "Fashion",
+      "tsne_1": 5.6125335693359375,
+      "tsne_2": -3.1309125423431396,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Balcon Boutique & Cafe",
+      "sector": "Fashion",
+      "tsne_1": -6.868040561676025,
+      "tsne_2": -1.1541204452514648,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Bella Kids",
+      "sector": "Fashion",
+      "tsne_1": 6.563854694366455,
+      "tsne_2": 1.134852647781372,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "Supermarkets",
+      "tsne_1": 4.203668594360352,
+      "tsne_2": -2.0832507610321045,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "EUROMODA",
+      "sector": "Fashion",
+      "tsne_1": 0.8568024635314941,
+      "tsne_2": -1.4196621179580688,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "FPAIspal",
+      "sector": "Influencers",
+      "tsne_1": -1.7870399951934814,
+      "tsne_2": 10.629446983337402,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "Cafes/Restaurants",
+      "tsne_1": -2.05084490776062,
+      "tsne_2": -10.536504745483398,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": 2
+    },
+    {
+      "business_name": "Fashion Shop Ramallah",
+      "sector": "Fashion",
+      "tsne_1": 4.121004581451416,
+      "tsne_2": -0.23253652453422546,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Fashion strawberry",
+      "sector": "Fashion",
+      "tsne_1": -2.943341016769409,
+      "tsne_2": -0.13457033038139343,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Fekreebrahem",
+      "sector": "Influencers",
+      "tsne_1": -5.963113307952881,
+      "tsne_2": 9.67386531829834,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": 1
+    },
+    {
+      "business_name": "Ghazala__store غزالة ستور",
+      "sector": "Fashion",
+      "tsne_1": -3.5820839405059814,
+      "tsne_2": -0.6141521334648132,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Gintifada",
+      "sector": "Influencers",
+      "tsne_1": -6.943790435791016,
+      "tsne_2": 10.547630310058594,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": 1
+    },
+    {
+      "business_name": "Grand Shop",
+      "sector": "Fashion",
+      "tsne_1": -1.9176936149597168,
+      "tsne_2": -2.4188406467437744,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Grand Stores Mall",
+      "sector": "Fashion",
+      "tsne_1": 0.10192885249853134,
+      "tsne_2": -4.0546441078186035,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Hala Fashion هلا فاشن",
+      "sector": "Fashion",
+      "tsne_1": 2.500776529312134,
+      "tsne_2": -1.1364246606826782,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Hamdan ElDahdouh",
+      "sector": "Influencers",
+      "tsne_1": -4.909458637237549,
+      "tsne_2": 8.413375854492188,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Hijjawi Fashion - الحجاوي للأزياء",
+      "sector": "Fashion",
+      "tsne_1": 6.636668682098389,
+      "tsne_2": -0.36763861775398254,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Hind Khoudary",
+      "sector": "Influencers",
+      "tsne_1": -2.9933533668518066,
+      "tsne_2": 11.26528549194336,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": 1
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "Gym",
+      "tsne_1": 0.2689652144908905,
+      "tsne_2": 5.512657165527344,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Jericho Resort Village - قرية أريحا السياحية",
+      "sector": "Cafes/Restaurants",
+      "tsne_1": -1.4430352449417114,
+      "tsne_2": -12.189067840576172,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Jumbo Supermarket",
+      "sector": "Supermarkets",
+      "tsne_1": 3.1569125652313232,
+      "tsne_2": 2.9590952396392822,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "Cafes/Restaurants",
+      "tsne_1": 3.9682416915893555,
+      "tsne_2": -7.765540599822998,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "KOTON Palestine",
+      "sector": "Fashion",
+      "tsne_1": 1.2954378128051758,
+      "tsne_2": -2.548994779586792,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Katusha Supermarket",
+      "sector": "Supermarkets",
+      "tsne_1": 3.9109275341033936,
+      "tsne_2": -4.478885173797607,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "LOFT Palestine",
+      "sector": "Fashion",
+      "tsne_1": -0.6358095407485962,
+      "tsne_2": 0.5528560280799866,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Lujain fashion",
+      "sector": "Fashion",
+      "tsne_1": 2.3173348903656006,
+      "tsne_2": -4.141728401184082,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "MAS CO",
+      "sector": "Fashion",
+      "tsne_1": -5.53422212600708,
+      "tsne_2": -0.503574788570404,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "MIFTAH",
+      "sector": "Influencers",
+      "tsne_1": -4.853772163391113,
+      "tsne_2": 11.210329055786133,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": 1
+    },
+    {
+      "business_name": "Mabella - مابيلا",
+      "sector": "Fashion",
+      "tsne_1": 3.8112592697143555,
+      "tsne_2": -3.2314677238464355,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "Cafes/Restaurants",
+      "tsne_1": 6.551383972167969,
+      "tsne_2": -1.7370095252990723,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "Supermarkets",
+      "tsne_1": 5.115713596343994,
+      "tsne_2": -1.5851984024047852,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Mikkawi 1955",
+      "sector": "Fashion",
+      "tsne_1": 3.9783847332000732,
+      "tsne_2": -7.276100158691406,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Moath Kahlout",
+      "sector": "Influencers",
+      "tsne_1": -6.4172515869140625,
+      "tsne_2": 10.917717933654785,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": 1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "Influencers",
+      "tsne_1": -6.802785873413086,
+      "tsne_2": 7.114060878753662,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": 1
+    },
+    {
+      "business_name": "Motaz Foundation",
+      "sector": "Influencers",
+      "tsne_1": -6.348578929901123,
+      "tsne_2": 8.45794677734375,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": 1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "Cafes/Restaurants",
+      "tsne_1": -1.5546218156814575,
+      "tsne_2": -10.262535095214844,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": 2
+    },
+    {
+      "business_name": "Nour Alsaqa",
+      "sector": "Influencers",
+      "tsne_1": -0.010916844010353088,
+      "tsne_2": 5.776854515075684,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Orgada Burgers",
+      "sector": "Cafes/Restaurants",
+      "tsne_1": -3.043491840362549,
+      "tsne_2": -8.149264335632324,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Pardo Cafe",
+      "sector": "Cafes/Restaurants",
+      "tsne_1": -1.8677629232406616,
+      "tsne_2": -6.847021579742432,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Plestia Alaqad",
+      "sector": "Influencers",
+      "tsne_1": -6.632514476776123,
+      "tsne_2": 11.711139678955078,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": 1
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "Gym",
+      "tsne_1": -3.2333874702453613,
+      "tsne_2": 1.4535914659500122,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "Cafes/Restaurants",
+      "tsne_1": -2.5410242080688477,
+      "tsne_2": -9.507238388061523,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": 2
+    },
+    {
+      "business_name": "ROZAL",
+      "sector": "Fashion",
+      "tsne_1": 4.644891262054443,
+      "tsne_2": -2.9943392276763916,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "Cafes/Restaurants",
+      "tsne_1": 7.366501331329346,
+      "tsne_2": -7.0785908699035645,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Ronza Elegant",
+      "sector": "Fashion",
+      "tsne_1": -1.1458507776260376,
+      "tsne_2": -2.499877452850342,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "Fashion",
+      "tsne_1": -4.6251044273376465,
+      "tsne_2": 0.8522897958755493,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "Cafes/Restaurants",
+      "tsne_1": -0.9069349765777588,
+      "tsne_2": -11.7487154006958,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Supermarket 25st",
+      "sector": "Supermarkets",
+      "tsne_1": -5.032447814941406,
+      "tsne_2": -0.9167607426643372,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "The Tatreez Grove",
+      "sector": "Influencers",
+      "tsne_1": -3.0906615257263184,
+      "tsne_2": 11.283049583435059,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": 1
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "Fashion",
+      "tsne_1": 0.984117329120636,
+      "tsne_2": -4.534242153167725,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Vienna Restaurant & Cafe",
+      "sector": "Cafes/Restaurants",
+      "tsne_1": -5.6299896240234375,
+      "tsne_2": 0.33878767490386963,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "Cafes/Restaurants",
+      "tsne_1": -3.145408868789673,
+      "tsne_2": -8.919849395751953,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": 2
+    },
+    {
+      "business_name": "Xtreme Fitness Ramallah",
+      "sector": "Gym",
+      "tsne_1": 0.2635292112827301,
+      "tsne_2": -0.4323394298553467,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "Yalda Hakim and Motaz Azaiza",
+      "sector": "Influencers",
+      "tsne_1": -7.747697353363037,
+      "tsne_2": 10.073819160461426,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": 1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "Influencers",
+      "tsne_1": -6.728545188903809,
+      "tsne_2": 5.57456111907959,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "ahmedalhenawi1",
+      "sector": "Influencers",
+      "tsne_1": -7.364067077636719,
+      "tsne_2": -2.2845208644866943,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "drift.for.men",
+      "sector": "Fashion",
+      "tsne_1": -5.988338947296143,
+      "tsne_2": -1.4011770486831665,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "Fashion",
+      "tsne_1": -1.3110374212265015,
+      "tsne_2": -3.9708845615386963,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "متجر الأميرات للسيدات",
+      "sector": "Fashion",
+      "tsne_1": 5.120358467102051,
+      "tsne_2": 2.548468828201294,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    },
+    {
+      "business_name": "متجر تبارك للزي الشرعي",
+      "sector": "Fashion",
+      "tsne_1": -0.7315075397491455,
+      "tsne_2": -2.6620373725891113,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": 0
+    }
+  ]
+}

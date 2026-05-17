@@ -1,0 +1,10 @@
+{
+  "project": "content_style_clustering",
+  "generated_at": "2026-05-14",
+  "artifacts": {
+    "json": "notebooks/clustering/artifacts/content_style_clustering/json/content_style_cluster_coordinates.json",
+    "script": "notebooks/clustering/artifacts/content_style_clustering/scripts/content_style_clustering_pipeline.py",
+    "kmeans_plot": "notebooks/clustering/photos/content_style_clustering/content_style_kmeans_clusters.png",
+    "dbscan_plot": "notebooks/clustering/photos/content_style_clustering/content_style_dbscan_clusters.png"
+  }
+}

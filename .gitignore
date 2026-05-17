@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Env
+.env
+
+# Storage artifacts (keep folders, ignore contents)
+backend/storage/raw/**
+backend/storage/cleaned/**
+backend/storage/outputs/**
+backend/storage/reports/**
+!backend/storage/raw/.gitkeep
+!backend/storage/cleaned/.gitkeep
+!backend/storage/outputs/.gitkeep
+!backend/storage/reports/.gitkeep
+
+# Root storage artifacts (generated at runtime)
+storage/raw/**
+storage/cleaned/**
+storage/outputs/**
+storage/reports/**
+!storage/raw/.gitkeep
+!storage/cleaned/.gitkeep
+!storage/outputs/.gitkeep
+!storage/reports/.gitkeep
+
+bert-venv/
+bert-venv/
+.local_models/
+bert-venv/
+bert-venv/
+venv-bert/
+.local_models/
+notebooks/.local_models/
+venv-bert/
+path/to/local-model/
+*.bin
+*.pt
+*.pth
+*.safetensors
+venv-bert/
+notebooks/.local_models/
+
+# local/cache artifacts
+backend/.local_model/
+notebooks/.local_model/
+**/.cache/
+**/__pycache__/
+.venv/
