@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import logging
+import os
+import time
 from pathlib import Path
 from typing import Literal
 
@@ -15,6 +17,8 @@ from app.services.dataset_staged_pipeline import (
     run_hashtag_stage_from_upload,
     run_preprocess_kpi_pipeline,
     run_staged_pipeline,
+    run_topic_stage_for_dataset_local_cpu_no_openai,
+    run_topic_stage_from_upload_local_cpu_no_openai,
     run_topic_stage_for_dataset,
     run_topic_stage_from_upload,
 )
@@ -29,6 +33,72 @@ TOPIC_VISUALIZATION_FILES = {
     "barchart": "business_topic_barchart.html",
     "heatmap": "business_topic_heatmap.html",
 }
+
+
+def _resolve_topic_visualization_path(
+    dataset_id: str,
+    view: Literal["intertopic", "barchart", "heatmap"],
+) -> tuple[Path | None, str | None]:
+    outputs_dir = (settings.storage_path() / "outputs" / dataset_id / "business_topic_outputs").resolve()
+    stage_json_path = settings.storage_path() / "outputs" / dataset_id / "topic_stage_response.json"
+
+    stage_payload: dict | None = None
+    if stage_json_path.exists() and stage_json_path.is_file():
+        try:
+            stage_payload = read_json(stage_json_path)
+        except Exception:
+            stage_payload = None
+
+    # Prefer the path produced by the latest topic stage response.
+    files_map = {}
+    if isinstance(stage_payload, dict):
+        files_map = (stage_payload.get("visualizations", {}) or {}).get("files", {}) or {}
+    if isinstance(files_map, dict):
+        raw_path = files_map.get(view)
+        if raw_path:
+            candidate = Path(str(raw_path))
+            if candidate.is_absolute():
+                candidate = outputs_dir / candidate.name
+            else:
+                candidate = outputs_dir / candidate
+            candidate = candidate.resolve()
+            try:
+                candidate.relative_to(outputs_dir)
+            except Exception:
+                candidate = None
+            if candidate and candidate.exists() and candidate.is_file():
+                return candidate, None
+
+    # Backward-compatible fallback to conventional filename.
+    fallback = (outputs_dir / TOPIC_VISUALIZATION_FILES[view]).resolve()
+    try:
+        fallback.relative_to(outputs_dir)
+    except Exception:
+        fallback = None
+    if fallback and fallback.exists() and fallback.is_file():
+        return fallback, None
+
+    # If generation failed for this specific view, expose the reason.
+    if isinstance(stage_payload, dict):
+        visualizations = stage_payload.get("visualizations", {}) or {}
+        errors = visualizations.get("errors", []) or []
+        for item in errors:
+            if isinstance(item, dict) and str(item.get("view", "")).strip().lower() == view:
+                err = str(item.get("error", "")).strip()
+                if err:
+                    return None, err
+
+    return None, None
+
+
+def _timing_debug_enabled() -> bool:
+    return os.getenv("TOPIC_TIMING_DEBUG", "0").strip().lower() in {"1", "true", "yes"}
+
+
+def _timing_log(stage: str, started_at: float) -> None:
+    if _timing_debug_enabled():
+        elapsed = time.perf_counter() - started_at
+        logger.info("[TOPIC_TIMING] %s elapsed=%.3fs", stage, elapsed)
 
 
 @router.get("/datasets/static-topic-content")
@@ -187,22 +257,28 @@ async def business_topic_insights_from_upload(file: UploadFile = File(...)) -> d
     Run the production BERTopic business-topic insight stage from an upload.
     """
     logger.info("business-topic-insights-from-upload started filename=%s", file.filename)
+    _req_t0 = time.perf_counter()
     if not file.filename:
         raise HTTPException(status_code=400, detail="Missing filename.")
     try:
+        _read_t0 = time.perf_counter()
         content = await file.read()
+        _timing_log("endpoint file read", _read_t0)
         if not content:
             raise HTTPException(status_code=400, detail="Uploaded file is empty.")
         stage_result = run_topic_stage_from_upload(file.filename, content)
+        _ser_t0 = time.perf_counter()
         response = {
             "dataset_id": stage_result["dataset_id"],
             "output_files": stage_result["output_files"],
             "result": stage_result["topic_stage"],
         }
+        _timing_log("endpoint response serialization", _ser_t0)
         logger.info(
             "business-topic-insights-from-upload completed dataset_id=%s",
             response.get("dataset_id"),
         )
+        _timing_log("endpoint total", _req_t0)
         return response
     except ValueError as exc:
         logger.warning("business-topic-insights-from-upload validation failed: %s", exc)
@@ -210,6 +286,68 @@ async def business_topic_insights_from_upload(file: UploadFile = File(...)) -> d
     except Exception as exc:
         logger.exception("business-topic-insights-from-upload unexpected failure")
         raise HTTPException(status_code=500, detail=f"Business topic insights failed: {exc}")
+
+
+@router.post("/datasets/stages/business-topic-insights-local-cpu")
+async def business_topic_insights_local_cpu_from_upload(file: UploadFile = File(...)) -> dict:
+    """
+    Run BERTopic from upload with strict local+CPU mode:
+    - OpenAI disabled
+    - local model only
+    - CPU device only
+    - no KMeans fallback
+    """
+    logger.info("business-topic-insights-local-cpu started filename=%s", file.filename)
+    if not file.filename:
+        raise HTTPException(status_code=400, detail="Missing filename.")
+    try:
+        content = await file.read()
+        if not content:
+            raise HTTPException(status_code=400, detail="Uploaded file is empty.")
+        stage_result = run_topic_stage_from_upload_local_cpu_no_openai(file.filename, content)
+        response = {
+            "dataset_id": stage_result["dataset_id"],
+            "output_files": stage_result["output_files"],
+            "result": stage_result["topic_stage"],
+        }
+        logger.info(
+            "business-topic-insights-local-cpu completed dataset_id=%s",
+            response.get("dataset_id"),
+        )
+        return response
+    except ValueError as exc:
+        logger.warning("business-topic-insights-local-cpu validation failed: %s", exc)
+        raise HTTPException(status_code=400, detail=str(exc))
+    except Exception as exc:
+        logger.exception("business-topic-insights-local-cpu unexpected failure")
+        raise HTTPException(status_code=500, detail=f"Business topic insights local-cpu failed: {exc}")
+
+
+@router.post("/datasets/{dataset_id}/stages/business-topic-insights-local-cpu")
+def business_topic_insights_local_cpu_for_dataset(dataset_id: str) -> dict:
+    """
+    Run BERTopic for an existing dataset with strict local+CPU mode:
+    - OpenAI disabled
+    - local model only
+    - CPU device only
+    - no KMeans fallback
+    """
+    logger.info("business-topic-insights-local-cpu-for-dataset started dataset_id=%s", dataset_id)
+    try:
+        stage_result = run_topic_stage_for_dataset_local_cpu_no_openai(dataset_id)
+        response = {
+            "dataset_id": stage_result["dataset_id"],
+            "output_files": stage_result["output_files"],
+            "result": stage_result["topic_stage"],
+        }
+        logger.info("business-topic-insights-local-cpu-for-dataset completed dataset_id=%s", dataset_id)
+        return response
+    except ValueError as exc:
+        logger.warning("business-topic-insights-local-cpu-for-dataset validation failed dataset_id=%s: %s", dataset_id, exc)
+        raise HTTPException(status_code=400, detail=str(exc))
+    except Exception as exc:
+        logger.exception("business-topic-insights-local-cpu-for-dataset unexpected failure dataset_id=%s", dataset_id)
+        raise HTTPException(status_code=500, detail=f"Business topic insights local-cpu failed: {exc}")
 
 
 @router.post("/datasets/{dataset_id}/stages/business-topic-insights")
@@ -275,21 +413,19 @@ def get_business_topic_visualization(
     - heatmap: topic similarity heatmap
     """
     logger.info("get-business-topic-visualization started dataset_id=%s view=%s", dataset_id, view)
-    outputs_dir = settings.storage_path() / "outputs" / dataset_id / "business_topic_outputs"
-    path = (outputs_dir / TOPIC_VISUALIZATION_FILES[view]).resolve()
-    try:
-        path.relative_to(outputs_dir.resolve())
-    except Exception as exc:
-        raise HTTPException(status_code=400, detail="Invalid visualization path.") from exc
-
-    if not path.exists() or not path.is_file():
-        logger.warning("visualization file not found dataset_id=%s view=%s path=%s", dataset_id, view, path)
+    path, view_error = _resolve_topic_visualization_path(dataset_id, view)
+    if path is None:
+        logger.warning("visualization file not found dataset_id=%s view=%s", dataset_id, view)
+        detail = (
+            "Visualization file was not found. Run a topic stage first: "
+            "POST /api/datasets/{dataset_id}/stages/business-topic-insights-local-cpu "
+            "(or /stages/business-topic-insights), then retry."
+        )
+        if view_error:
+            detail = f"Visualization for '{view}' is unavailable for this run: {view_error}"
         raise HTTPException(
             status_code=404,
-            detail=(
-                "Visualization file was not found. Run the business-topic-insights POST endpoint first. "
-                "If this dataset was generated before visualization support was added, rerun the topic stage."
-            ),
+            detail=detail,
         )
 
     logger.info("get-business-topic-visualization completed dataset_id=%s view=%s", dataset_id, view)

@@ -1,0 +1,3 @@
+business_label,post_count,performance_score,opportunity_score,action,reason,suggested_next_step,confidence
+Book Book Table,7,1.0,1.0,Scale,Strong performance with enough repeated examples.,"Create more posts using this theme, then A/B test hook, creative, and CTA variants.",High
+Deal Try Family,5,0.0,0.21428571428571427,Maintain,Average theme compared with the rest of the uploaded data.,Keep it in the mix but prioritize stronger opportunity-score themes.,Medium

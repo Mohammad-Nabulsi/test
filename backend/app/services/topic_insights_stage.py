@@ -8,6 +8,7 @@ import tempfile
 import time
 import logging
 from dataclasses import dataclass
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
 
@@ -45,6 +46,25 @@ TOPIC_STAGE_SPEC = TopicStageSpec(
     ],
 )
 logger = logging.getLogger(__name__)
+
+
+@contextmanager
+def _temporary_env(updates: dict[str, str | None]):
+    old: dict[str, str | None] = {}
+    try:
+        for key, value in updates.items():
+            old[key] = os.environ.get(key)
+            if value is None:
+                os.environ.pop(key, None)
+            else:
+                os.environ[key] = value
+        yield
+    finally:
+        for key, value in old.items():
+            if value is None:
+                os.environ.pop(key, None)
+            else:
+                os.environ[key] = value
 
 
 def _load_business_topic_module() -> Any:
@@ -89,6 +109,13 @@ def run_topic_insights_stage(
     *,
     output_dir: str | None = None,
     include_posts: bool = False,
+    require_openai: bool | None = None,
+    disable_openai: bool = False,
+    allow_kmeans_fallback: bool = True,
+    require_bertopic: bool = False,
+    bert_device: str | None = None,
+    bert_model_dir: str | None = None,
+    bert_local_only: bool | None = None,
 ) -> tuple[dict[str, Any], dict[str, pd.DataFrame]]:
     """
     Run business-topic insights using notebooks/business_topic_insights_backend.py.
@@ -97,13 +124,17 @@ def run_topic_insights_stage(
     Set TOPIC_REQUIRE_OPENAI=1 to force hard failure when OpenAI key/client is missing.
     """
     module = _load_business_topic_module()
-    require_openai = os.getenv("TOPIC_REQUIRE_OPENAI", "0").strip().lower() in {"1", "true", "yes"}
+    require_openai_effective = (
+        require_openai
+        if require_openai is not None
+        else os.getenv("TOPIC_REQUIRE_OPENAI", "0").strip().lower() in {"1", "true", "yes"}
+    )
     started_at = time.perf_counter()
     logger.info(
         "topic-insights stage started rows=%s output_dir=%s require_openai=%s",
         len(kpi_df),
         output_dir or "business_topic_outputs",
-        require_openai,
+        require_openai_effective,
     )
 
     records = _json_records(kpi_df)
@@ -113,16 +144,25 @@ def run_topic_insights_stage(
 
     topic_output_dir = output_dir or "business_topic_outputs"
     try:
-        result = module.analyze_business_json(
-            input_path=temp_input_path,
-            output_dir=topic_output_dir,
-            text_col=None,
-            hashtags_col="hashtags",
-            openai_model=os.getenv("OPENAI_MODEL", "gpt-4.1-mini"),
-            require_openai=require_openai,
-            include_posts=include_posts,
-            verbose=False,
-        )
+        env_updates = {
+            "BERT_EMBEDDING_DEVICE": bert_device,
+            "BERT_EMBEDDING_MODEL_DIR": bert_model_dir,
+            "BERT_LOCAL_ONLY": None if bert_local_only is None else ("1" if bert_local_only else "0"),
+        }
+        with _temporary_env(env_updates):
+            result = module.analyze_business_json(
+                input_path=temp_input_path,
+                output_dir=topic_output_dir,
+                text_col=None,
+                hashtags_col="hashtags",
+                openai_model=os.getenv("OPENAI_MODEL", "gpt-4.1-mini"),
+                require_openai=require_openai_effective,
+                disable_openai=disable_openai,
+                include_posts=include_posts,
+                allow_kmeans_fallback=allow_kmeans_fallback,
+                require_bertopic=require_bertopic,
+                verbose=False,
+            )
     except AssertionError as exc:
         message = str(exc)
         if "Torch not compiled with CUDA enabled" in message:

@@ -1,0 +1,5 @@
+business_label,post_count,performance_score,opportunity_score,action,reason,suggested_next_step,confidence
+Special Family,11,0.7523560968537049,0.8266492677975934,Maintain,Average theme compared with the rest of the uploaded data.,Keep it in the mix but prioritize stronger opportunity-score themes.,Medium
+Salad Fresh,10,0.7661881977671451,0.8090590111642743,Scale,Strong performance with enough repeated examples.,"Create more posts using this theme, then A/B test hook, creative, and CTA variants.",High
+Delivery Quick,2,0.6666666666666666,0.5212121212121211,Monitor,"Very few posts, so the theme is not reliable enough for a strong decision.",Collect more examples before scaling or avoiding this theme.,Low
+Dinner Try Signature,7,0.3333333333333333,0.4242424242424242,Maintain,Average theme compared with the rest of the uploaded data.,Keep it in the mix but prioritize stronger opportunity-score themes.,Medium

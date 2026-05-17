@@ -1,0 +1,4 @@
+business_label,post_count,performance_score,opportunity_score,action,reason,suggested_next_step,confidence
+Family Special,7,1.0,0.8105263157894737,Scale,Strong performance with enough repeated examples.,"Create more posts using this theme, then A/B test hook, creative, and CTA variants.",High
+Salad Day,4,0.6227614095898332,0.4990908814497253,Maintain,Average theme compared with the rest of the uploaded data.,Keep it in the mix but prioritize stronger opportunity-score themes.,Medium
+Combo Coffee,19,0.14327485380116953,0.40029239766081864,Rework / Avoid Scaling,Repeated theme but weaker performance than other themes.,"Change the hook, visual format, offer framing, or CTA before increasing volume.",Medium

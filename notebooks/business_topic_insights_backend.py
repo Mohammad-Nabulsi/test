@@ -146,6 +146,16 @@ _EMBEDDING_MODEL_DIR: Optional[str] = None
 _EMBEDDING_DEVICE: Optional[str] = None
 
 
+def _timing_debug_enabled() -> bool:
+    return os.getenv("TOPIC_TIMING_DEBUG", "0").strip().lower() in {"1", "true", "yes"}
+
+
+def _timing_log(stage: str, started_at: float) -> None:
+    if _timing_debug_enabled():
+        elapsed = time.perf_counter() - started_at
+        print(f"[TOPIC_TIMING] {stage} elapsed={elapsed:.3f}s", flush=True)
+
+
 @dataclass
 class BusinessTopicConfig:
     """
@@ -180,10 +190,13 @@ class BusinessTopicConfig:
     openai_max_retries: int = 3
     openai_timeout_seconds: float = 60.0
     require_openai: bool = False
+    disable_openai: bool = False
 
     # Reporting
     preview_posts_limit: int = 100
     verbose: bool = True
+    allow_kmeans_fallback: bool = True
+    require_bertopic: bool = False
 
 
 def log(msg: str, verbose: bool = True) -> None:
@@ -611,8 +624,42 @@ def get_umap_neighbors_candidates(n_docs: int) -> List[int]:
     return out
 
 
+def _looks_like_sentence_transformer_dir(path: Path) -> bool:
+    return path.is_dir() and (
+        (path / "config_sentence_transformers.json").exists() or (path / "modules.json").exists()
+    )
+
+
+def _resolve_default_local_model_dir(backend_root: Path, embedding_model_name: str) -> Path:
+    local_root = Path(os.getenv("BERT_LOCAL_MODEL_ROOT", str(backend_root / ".local_model"))).resolve()
+    local_root.mkdir(parents=True, exist_ok=True)
+
+    if model_dir_env := os.getenv("BERT_EMBEDDING_MODEL_DIR", "").strip():
+        return Path(model_dir_env).resolve()
+
+    model_slug = embedding_model_name.rsplit("/", 1)[-1].strip()
+    if model_slug:
+        preferred = (local_root / model_slug).resolve()
+        if _looks_like_sentence_transformer_dir(preferred):
+            return preferred
+
+    candidates = sorted(
+        [
+            p
+            for p in local_root.iterdir()
+            if p.name != "_cache" and _looks_like_sentence_transformer_dir(p)
+        ]
+    )
+    if len(candidates) == 1:
+        return candidates[0]
+
+    # Keep deterministic default for first run/download behavior.
+    return (local_root / (model_slug or "paraphrase-multilingual-MiniLM-L12-v2")).resolve()
+
+
 def load_embedding_model(config: BusinessTopicConfig):
     global _EMBEDDING_MODEL, _EMBEDDING_MODEL_DIR, _EMBEDDING_DEVICE
+    _t0 = time.perf_counter()
 
     if SentenceTransformer is None:
         raise RuntimeError(
@@ -623,12 +670,7 @@ def load_embedding_model(config: BusinessTopicConfig):
 
     project_root = Path(__file__).resolve().parents[1]
     backend_root = project_root / "backend"
-    model_dir = Path(
-        os.getenv(
-            "BERT_EMBEDDING_MODEL_DIR",
-            str(backend_root / ".local_model" / "paraphrase-multilingual-MiniLM-L12-v2"),
-        )
-    ).resolve()
+    model_dir = _resolve_default_local_model_dir(backend_root, config.embedding_model_name)
     cache_dir = Path(
         os.getenv(
             "BERT_EMBEDDING_CACHE_DIR",
@@ -649,10 +691,10 @@ def load_embedding_model(config: BusinessTopicConfig):
 
     if requested_device == "auto":
         device = "cuda" if cuda_available else "cpu"
-    elif requested_device == "cuda" and not cuda_available:
+    elif requested_device.startswith("cuda") and not cuda_available:
         log("BERT_EMBEDDING_DEVICE=cuda requested but CUDA is unavailable; falling back to cpu.", True)
         device = "cpu"
-    elif requested_device in {"cpu", "cuda"}:
+    elif requested_device == "cpu" or requested_device.startswith("cuda"):
         device = requested_device
     else:
         device = "cpu"
@@ -667,15 +709,30 @@ def load_embedding_model(config: BusinessTopicConfig):
         and _EMBEDDING_MODEL_DIR == model_dir_str
         and _EMBEDDING_DEVICE == device
     ):
+        _timing_log("embedding model load (cached)", _t0)
         return _EMBEDDING_MODEL
 
     model_files_exist = (model_dir / "config_sentence_transformers.json").exists() or (model_dir / "modules.json").exists()
 
     if model_files_exist:
-        _EMBEDDING_MODEL = SentenceTransformer(str(model_dir), local_files_only=True, device=device)
-        _EMBEDDING_MODEL_DIR = model_dir_str
-        _EMBEDDING_DEVICE = device
-        return _EMBEDDING_MODEL
+        log(f"Loading local embedding model from {model_dir} on device={device}", config.verbose)
+        try:
+            _EMBEDDING_MODEL = SentenceTransformer(str(model_dir), local_files_only=True, device=device)
+            _EMBEDDING_MODEL_DIR = model_dir_str
+            _EMBEDDING_DEVICE = device
+            _timing_log("embedding model load (local)", _t0)
+            return _EMBEDDING_MODEL
+        except Exception as exc:
+            if local_only:
+                raise RuntimeError(
+                    f"Local embedding model exists but failed to load from {model_dir}. "
+                    "Set BERT_LOCAL_ONLY=0 to refresh from model hub, or upgrade sentence-transformers."
+                ) from exc
+            log(
+                f"Local model at {model_dir} failed to load ({exc!r}). "
+                "Refreshing from model hub.",
+                config.verbose,
+            )
 
     if local_only:
         raise RuntimeError(
@@ -684,6 +741,10 @@ def load_embedding_model(config: BusinessTopicConfig):
         )
 
     # First run: download once from model hub, persist to local dir.
+    log(
+        f"Downloading embedding model {config.embedding_model_name} to {model_dir} (device={device})",
+        config.verbose,
+    )
     downloaded = SentenceTransformer(config.embedding_model_name, cache_folder=str(cache_dir), device=device)
     downloaded.save(str(model_dir))
 
@@ -691,6 +752,7 @@ def load_embedding_model(config: BusinessTopicConfig):
     _EMBEDDING_MODEL = SentenceTransformer(str(model_dir), local_files_only=True, device=device)
     _EMBEDDING_MODEL_DIR = model_dir_str
     _EMBEDDING_DEVICE = device
+    _timing_log("embedding model load (download+local)", _t0)
     return _EMBEDDING_MODEL
 
 
@@ -797,6 +859,7 @@ def fit_bertopic_adaptive(
             }
 
             try:
+                _fit_t0 = time.perf_counter()
                 model = build_bertopic_model(
                     n_docs=n_docs,
                     config=config,
@@ -804,7 +867,11 @@ def fit_bertopic_adaptive(
                     min_cluster_size=min_cluster_size,
                     n_neighbors=n_neighbors,
                 )
-                topics_arr, probs = model.fit_transform(texts)
+                _enc_t0 = time.perf_counter()
+                embeddings = embedding_model.encode(texts, show_progress_bar=False, normalize_embeddings=True)
+                _timing_log(f"embedding encode (bertopic) attempt={tried}", _enc_t0)
+                topics_arr, probs = model.fit_transform(texts, embeddings=embeddings)
+                _timing_log(f"bertopic fit_transform attempt={tried}", _fit_t0)
                 topics = [int(t) for t in topics_arr]
                 k = count_non_outlier_topics_from_list(topics)
                 noise = outlier_ratio(topics)
@@ -905,9 +972,13 @@ def fallback_kmeans_topics(
             {"method": "kmeans_fallback", "status": "success", "k": 1, "reason": "tiny_dataset"}
         ]
 
+    _enc_t0 = time.perf_counter()
     embeddings = embedding_model.encode(texts, show_progress_bar=False, normalize_embeddings=True)
+    _timing_log("embedding encode (kmeans fallback)", _enc_t0)
+    _km_t0 = time.perf_counter()
     kmeans = KMeans(n_clusters=k, random_state=config.random_state, n_init="auto")
     labels = kmeans.fit_predict(embeddings).astype(int)
+    _timing_log("kmeans fallback fit", _km_t0)
 
     probs = None
     try:
@@ -948,6 +1019,10 @@ def fit_topics_adaptive(
     n_docs = len(texts)
 
     if n_docs < config.min_docs_for_bertopic:
+        if not config.allow_kmeans_fallback:
+            raise RuntimeError(
+                f"BERTopic requires at least {config.min_docs_for_bertopic} documents, got {n_docs}."
+            )
         model, topics, probs, attempts = fallback_kmeans_topics(texts, config, embedding_model)
         return model, topics, probs, "kmeans_fallback_tiny_dataset", attempts
 
@@ -955,6 +1030,8 @@ def fit_topics_adaptive(
         model, topics, probs, attempts = fit_bertopic_adaptive(texts, config, embedding_model)
         return model, topics, probs, "bertopic", attempts
     except Exception as exc:
+        if not config.allow_kmeans_fallback:
+            raise RuntimeError(f"BERTopic failed and fallback is disabled: {exc}") from exc
         attempts = [
             {
                 "method": "bertopic",
@@ -1644,6 +1721,7 @@ def write_interactive_visualizations(topic_model: Any, output_dir: str) -> Dict[
             "errors": [],
         }
 
+    _viz_t0 = time.perf_counter()
     visualizers = {
         "intertopic": "visualize_topics",
         "barchart": "visualize_barchart",
@@ -1667,12 +1745,14 @@ def write_interactive_visualizations(topic_model: Any, output_dir: str) -> Dict[
         except Exception as exc:
             errors.append({"view": name, "error": str(exc)[:500]})
 
-    return {
+    result = {
         "available": bool(files),
         "reason": None if files else "No BERTopic visualization could be generated for this run.",
         "files": files,
         "errors": errors,
     }
+    _timing_log("visualization generation", _viz_t0)
+    return result
 
 
 def write_outputs(
@@ -1713,7 +1793,10 @@ def analyze_business_json(
     hashtags_col: str = "hashtags",
     openai_model: str = "gpt-4.1-mini",
     require_openai: bool = False,
+    disable_openai: bool = False,
     include_posts: bool = False,
+    allow_kmeans_fallback: bool = True,
+    require_bertopic: bool = False,
     verbose: bool = True,
 ) -> Dict[str, Any]:
     """
@@ -1729,14 +1812,18 @@ def analyze_business_json(
         hashtags_col=hashtags_col,
         openai_model=openai_model,
         require_openai=require_openai,
+        disable_openai=disable_openai,
         include_posts=include_posts,
+        allow_kmeans_fallback=allow_kmeans_fallback,
+        require_bertopic=require_bertopic,
         verbose=verbose,
     )
 
     random.seed(config.random_state)
     np.random.seed(config.random_state)
+    _run_t0 = time.perf_counter()
 
-    client = make_openai_client(require_openai=config.require_openai)
+    client = None if config.disable_openai else make_openai_client(require_openai=config.require_openai)
 
     raw_df = load_posts_dataframe(config.input_path)
     detected_text_col = detect_text_column(raw_df, config.text_col)
@@ -1744,7 +1831,9 @@ def analyze_business_json(
     log(f"Loaded rows: {len(raw_df)}", config.verbose)
     log(f"Detected text column: {detected_text_col}", config.verbose)
 
+    _text_t0 = time.perf_counter()
     work_df, texts = prepare_texts(raw_df, detected_text_col, hashtags_col=config.hashtags_col)
+    _timing_log("text extraction", _text_t0)
     n_docs = len(texts)
 
     if n_docs == 0:
@@ -1752,6 +1841,11 @@ def analyze_business_json(
 
     embedding_model = load_embedding_model(config)
     topic_model, topics, probs, fit_method, fit_attempts = fit_topics_adaptive(texts, config, embedding_model)
+    if config.require_bertopic and fit_method != "bertopic":
+        raise RuntimeError(
+            f"BERTopic was required but fit method was '{fit_method}'. "
+            "Increase data quality/size or tune BERTopic parameters."
+        )
 
     posts_with_topics = attach_topics_to_posts(work_df, topics, probs)
 
@@ -1815,6 +1909,7 @@ def analyze_business_json(
     if include_posts:
         result["posts_with_topics"] = records_json_safe(posts_with_topics)
 
+    _serialize_t0 = time.perf_counter()
     files = write_outputs(
         output_dir=output_dir,
         result=result,
@@ -1825,6 +1920,8 @@ def analyze_business_json(
         insights_df=insight_cards,
     )
     result["files"] = files
+    _timing_log("response serialization", _serialize_t0)
+    _timing_log("analyze_business_json total", _run_t0)
 
     return result
 

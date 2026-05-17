@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import io
 import json
+import os
 import shutil
 import uuid
 from concurrent.futures import ThreadPoolExecutor
@@ -43,6 +44,24 @@ def _is_canonical_dataset_upload_name(filename: str) -> bool:
 
 def _cache_manifest_path() -> Path:
     return _cache_dir() / "cache_manifest.json"
+
+
+def _resolve_local_model_dir_for_cpu() -> str:
+    if env_path := os.getenv("BERT_EMBEDDING_MODEL_DIR", "").strip():
+        return env_path
+    backend_root = Path(__file__).resolve().parents[2]
+    snapshots_root = (
+        backend_root
+        / ".local_model"
+        / "_cache"
+        / "models--sentence-transformers--paraphrase-multilingual-MiniLM-L12-v2"
+        / "snapshots"
+    )
+    if snapshots_root.exists():
+        candidates = sorted([p for p in snapshots_root.iterdir() if p.is_dir()])
+        if candidates:
+            return str(candidates[0].resolve())
+    return str((backend_root / ".local_model" / "paraphrase-multilingual-MiniLM-L12-v2").resolve())
 
 
 def _copy_relative_path(src_root: Path, dst_root: Path, rel_path: str) -> None:
@@ -371,6 +390,30 @@ def run_topic_stage_for_dataset(dataset_id: str) -> dict[str, Any]:
     }
 
 
+def run_topic_stage_for_dataset_local_cpu_no_openai(dataset_id: str) -> dict[str, Any]:
+    kpi_df = _load_kpi_dataframe(dataset_id)
+    if kpi_df.empty:
+        raise ValueError("KPI dataset is empty; KPI stage did not produce rows.")
+    topic_response, topic_frames = run_topic_insights_stage(
+        kpi_df,
+        output_dir=str(_storage(dataset_id)["outputs"] / "business_topic_outputs"),
+        include_posts=False,
+        require_openai=False,
+        disable_openai=True,
+        allow_kmeans_fallback=False,
+        require_bertopic=True,
+        bert_device="cpu",
+        bert_model_dir=_resolve_local_model_dir_for_cpu(),
+        bert_local_only=True,
+    )
+    files = _save_topic_artifacts(dataset_id, topic_response, topic_frames)
+    return {
+        "dataset_id": dataset_id,
+        "topic_stage": topic_response,
+        "output_files": files,
+    }
+
+
 def run_topic_stage_from_upload(filename: str, content: bytes) -> dict[str, Any]:
     dataset_id = str(uuid.uuid4())
     kpi_df, file_type = _read_uploaded_bytes(filename, content)
@@ -401,6 +444,22 @@ def run_topic_stage_from_upload(filename: str, content: bytes) -> dict[str, Any]
         )
     topic_info["used_cached_stage_outputs"] = False
     return topic_info
+
+
+def run_topic_stage_from_upload_local_cpu_no_openai(filename: str, content: bytes) -> dict[str, Any]:
+    dataset_id = str(uuid.uuid4())
+    kpi_df, file_type = _read_uploaded_bytes(filename, content)
+    _save_kpi_artifacts(
+        dataset_id=dataset_id,
+        kpi_df=kpi_df,
+        kpi_meta={
+            "note": "kpi dataset was uploaded directly to topic stage (local-cpu, no-openai, no-fallback)",
+            "file_type": file_type,
+            "rows_uploaded": int(len(kpi_df)),
+        },
+    )
+    write_json(_storage(dataset_id)["reports"] / "stage_specs.json", get_stage_specs())
+    return run_topic_stage_for_dataset_local_cpu_no_openai(dataset_id)
 
 
 def run_staged_pipeline(filename: str, content: bytes) -> dict[str, Any]:

@@ -1,0 +1,110 @@
+{
+  "preprocess": {
+    "input_columns": [
+      "At least one row of tabular data (CSV or JSON).",
+      "business_name",
+      "sector",
+      "followers_count",
+      "post_date",
+      "posting_hour",
+      "day_of_week",
+      "month",
+      "post_type",
+      "caption_text",
+      "hashtags",
+      "caption_length",
+      "hashtags_count",
+      "emoji_count",
+      "likes_count",
+      "comments_count",
+      "views_count",
+      "language",
+      "CTA_present",
+      "promo_post",
+      "discount_percent",
+      "mentions_location",
+      "religious_theme",
+      "patriotic_theme",
+      "arabic_dialect_style",
+      "sponsored"
+    ],
+    "expected_outputs": [
+      "dataset with normalized schema",
+      "missingness/consistency report",
+      "cleaned JSON records"
+    ]
+  },
+  "kpi_engineering": {
+    "input_columns": [
+      "business_name",
+      "sector",
+      "followers_count",
+      "post_date",
+      "post_type",
+      "likes_count",
+      "comments_count",
+      "views_count",
+      "posting_hour",
+      "caption_length",
+      "hashtags_count",
+      "emoji_count",
+      "discount_percent",
+      "CTA_present",
+      "promo_post",
+      "mentions_location",
+      "arabic_dialect_style"
+    ],
+    "expected_outputs": [
+      "kpi dataset with engagement/view/comment KPIs",
+      "weekly key (week)",
+      "summary tables by sector/business/post_type/week"
+    ]
+  },
+  "hashtag_association_recommendations": {
+    "input_columns": [
+      "hashtags OR caption_text",
+      "business_name",
+      "sector",
+      "post_type",
+      "views_count",
+      "followers_count",
+      "likes_count",
+      "comments_count",
+      "performance_label"
+    ],
+    "expected_outputs": [
+      "hashtag_frequency",
+      "all_rules",
+      "recommended_rules",
+      "warning_rules",
+      "top_recommendations",
+      "fallback_recommendations",
+      "category_recommendations",
+      "summary"
+    ]
+  },
+  "business_topic_insights_backend": {
+    "input_columns": [
+      "JSON records with caption text (caption_text/caption/text/post_text).",
+      "hashtags",
+      "engagement_rate",
+      "view_rate",
+      "likes_count",
+      "comments_count",
+      "views_count",
+      "post_type",
+      "language"
+    ],
+    "expected_outputs": [
+      "summary",
+      "topic_labels",
+      "topic_kpis",
+      "topic_recommendations",
+      "insight_cards",
+      "posts_with_topics_preview",
+      "fit_attempts",
+      "files"
+    ],
+    "source_script": "notebooks/business_topic_insights_backend.py"
+  }
+}

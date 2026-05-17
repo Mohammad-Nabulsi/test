@@ -1,0 +1,4 @@
+business_label,post_count,performance_score,opportunity_score,action,reason,suggested_next_step,confidence
+Tonight Platter Book,4,1.0,0.8714285714285713,Scale,Strong performance with enough repeated examples.,"Create more posts using this theme, then A/B test hook, creative, and CTA variants.",Medium
+Weekend Family Weekend,7,0.5033054800496664,0.6523138360347664,Maintain,Average theme compared with the rest of the uploaded data.,Keep it in the mix but prioritize stronger opportunity-score themes.,Medium
+Ingredients Ingredients Day,1,0.0,0.04285714285714285,Monitor,"Very few posts, so the theme is not reliable enough for a strong decision.",Collect more examples before scaling or avoiding this theme.,Low

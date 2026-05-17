@@ -1,0 +1,346 @@
+{
+  "summary": {
+    "input_path": "C:\\Users\\LEGION\\AppData\\Local\\Temp\\tmpc35szvuy.json",
+    "rows_loaded": 12,
+    "valid_posts_analyzed": 12,
+    "text_col": "caption_text",
+    "fit_method": "bertopic",
+    "target_topic_range": {
+      "min": 2,
+      "max": 4
+    },
+    "actual_non_outlier_topics": 2,
+    "outlier_posts": 0,
+    "outlier_ratio": 0.0,
+    "ranking_metric": "avg_views_count",
+    "best_theme": "Brunch Brunch Deal",
+    "weakest_theme": "Best Shawarma Best",
+    "openai_used": false,
+    "openai_model_requested": "gpt-4.1-mini"
+  },
+  "topic_labels": [
+    {
+      "topic_id": 0,
+      "count": 7,
+      "top_words": "brunch, brunch deal, chef, chef special, combo, combo order, day, day discount, deal, deal fresh, delivery, delivery limited",
+      "representative_docs_sample": "new menu launch this week || weekend family brunch deal || fresh ingredients every day",
+      "business_label": "Brunch Brunch Deal",
+      "short_description": "Keyword-driven content theme detected from captions.",
+      "content_strategy_meaning": "Test this theme with clearer creative, hook, and CTA; compare against KPI leaders."
+    },
+    {
+      "topic_id": 1,
+      "count": 5,
+      "top_words": "best shawarma, best, book, coffee try, coffee, book table, dessert best, drinks, drinks book, dessert, great, happy hour",
+      "representative_docs_sample": "great coffee offer today || try our signature dessert || best shawarma in town",
+      "business_label": "Best Shawarma Best",
+      "short_description": "Keyword-driven content theme detected from captions.",
+      "content_strategy_meaning": "Test this theme with clearer creative, hook, and CTA; compare against KPI leaders."
+    }
+  ],
+  "topic_kpis": [
+    {
+      "business_label": "Brunch Brunch Deal",
+      "post_count": 7,
+      "dominant_topic_id": 0,
+      "topic_id_list": "0",
+      "avg_topic_probability": 0.8507670644251591,
+      "avg_likes_count": 15.571428571428571,
+      "median_likes_count": 15.0,
+      "avg_comments_count": 2.0,
+      "median_comments_count": 2.0,
+      "avg_views_count": 127.85714285714286,
+      "median_views_count": 125.0,
+      "percentage_reels": 42.857142857142854,
+      "percentage_images": 0.0,
+      "percentage_carousels": 0.0,
+      "dominant_post_type": "post",
+      "representative_posts": "new menu launch this week || weekend family brunch deal",
+      "performance_score": 0.6666666666666666,
+      "scored_metrics": "avg_views_count, avg_likes_count, avg_comments_count",
+      "support_score": 1.0,
+      "opportunity_score": 0.7666666666666666
+    },
+    {
+      "business_label": "Best Shawarma Best",
+      "post_count": 5,
+      "dominant_topic_id": 1,
+      "topic_id_list": "1",
+      "avg_topic_probability": 0.8402333216913963,
+      "avg_likes_count": 15.4,
+      "median_likes_count": 16.0,
+      "avg_comments_count": 3.2,
+      "median_comments_count": 4.0,
+      "avg_views_count": 127.0,
+      "median_views_count": 130.0,
+      "percentage_reels": 60.0,
+      "percentage_images": 0.0,
+      "percentage_carousels": 0.0,
+      "dominant_post_type": "reel",
+      "representative_posts": "great coffee offer today || try our signature dessert",
+      "performance_score": 0.3333333333333333,
+      "scored_metrics": "avg_views_count, avg_likes_count, avg_comments_count",
+      "support_score": 0.7142857142857143,
+      "opportunity_score": 0.4476190476190476
+    }
+  ],
+  "topic_recommendations": [
+    {
+      "business_label": "Brunch Brunch Deal",
+      "post_count": 7,
+      "performance_score": 0.6666666666666666,
+      "opportunity_score": 0.7666666666666666,
+      "action": "Scale",
+      "reason": "Strong performance with enough repeated examples.",
+      "suggested_next_step": "Create more posts using this theme, then A/B test hook, creative, and CTA variants.",
+      "confidence": "High"
+    },
+    {
+      "business_label": "Best Shawarma Best",
+      "post_count": 5,
+      "performance_score": 0.3333333333333333,
+      "opportunity_score": 0.4476190476190476,
+      "action": "Maintain",
+      "reason": "Average theme compared with the rest of the uploaded data.",
+      "suggested_next_step": "Keep it in the mix but prioritize stronger opportunity-score themes.",
+      "confidence": "Medium"
+    }
+  ],
+  "insight_cards": [
+    {
+      "insight_title": "Top Performing Theme",
+      "finding": "Brunch Brunch Deal is the strongest theme by avg_views_count.",
+      "evidence": "avg_views_count=127.8571",
+      "recommendation": "Scale this theme with consistent creative direction and test stronger CTA variants.",
+      "priority": "High",
+      "metric_used": "avg_views_count"
+    },
+    {
+      "insight_title": "Weakest Theme",
+      "finding": "Best Shawarma Best is the weakest theme by avg_views_count.",
+      "evidence": "avg_views_count=127.0000",
+      "recommendation": "Do not scale this theme until the hook, visual, format, or offer framing is improved.",
+      "priority": "High",
+      "metric_used": "avg_views_count"
+    },
+    {
+      "insight_title": "Theme Performance Gap",
+      "finding": "The top theme outperforms the weakest theme by 1.01x.",
+      "evidence": "Brunch Brunch Deal vs Best Shawarma Best",
+      "recommendation": "Shift content volume toward proven themes while redesigning weaker themes.",
+      "priority": "Medium",
+      "metric_used": "avg_views_count"
+    },
+    {
+      "insight_title": "Format Signal",
+      "finding": "Best Shawarma Best uses reels the most among detected themes.",
+      "evidence": "Reel share=60.0%",
+      "recommendation": "Check whether reel-heavy themes also rank high in performance before increasing reel production.",
+      "priority": "Medium",
+      "metric_used": "percentage_reels"
+    }
+  ],
+  "posts_with_topics_preview": [
+    {
+      "caption_text": "great coffee offer today",
+      "hashtags": "#food #offer",
+      "likes_count": 10,
+      "comments_count": 1,
+      "views_count": 100,
+      "post_type": "post",
+      "language": "English",
+      "_clean_text": "great coffee today",
+      "topic_id": 1,
+      "topic_probability": 1.0,
+      "business_label": "Best Shawarma Best",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "new menu launch this week",
+      "hashtags": "#food #offer",
+      "likes_count": 11,
+      "comments_count": 2,
+      "views_count": 105,
+      "post_type": "reel",
+      "language": "English",
+      "_clean_text": "new menu launch this week",
+      "topic_id": 0,
+      "topic_probability": 1.0,
+      "business_label": "Brunch Brunch Deal",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "weekend family brunch deal",
+      "hashtags": "#food #offer",
+      "likes_count": 12,
+      "comments_count": 3,
+      "views_count": 110,
+      "post_type": "post",
+      "language": "English",
+      "_clean_text": "weekend family brunch deal",
+      "topic_id": 0,
+      "topic_probability": 0.7491789471748456,
+      "business_label": "Brunch Brunch Deal",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "try our signature dessert",
+      "hashtags": "#food #offer",
+      "likes_count": 13,
+      "comments_count": 4,
+      "views_count": 115,
+      "post_type": "reel",
+      "language": "English",
+      "_clean_text": "try our signature dessert",
+      "topic_id": 1,
+      "topic_probability": 1.0,
+      "business_label": "Best Shawarma Best",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "fresh ingredients every day",
+      "hashtags": "#food #offer",
+      "likes_count": 14,
+      "comments_count": 1,
+      "views_count": 120,
+      "post_type": "post",
+      "language": "English",
+      "_clean_text": "fresh ingredients every day",
+      "topic_id": 0,
+      "topic_probability": 1.0,
+      "business_label": "Brunch Brunch Deal",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "discount on lunch combo",
+      "hashtags": "#food #offer",
+      "likes_count": 15,
+      "comments_count": 2,
+      "views_count": 125,
+      "post_type": "reel",
+      "language": "English",
+      "_clean_text": "discount on lunch combo",
+      "topic_id": 0,
+      "topic_probability": 0.6206197100797164,
+      "business_label": "Brunch Brunch Deal",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "best shawarma in town",
+      "hashtags": "#food #offer",
+      "likes_count": 16,
+      "comments_count": 3,
+      "views_count": 130,
+      "post_type": "post",
+      "language": "English",
+      "_clean_text": "best shawarma in town",
+      "topic_id": 1,
+      "topic_probability": 1.0,
+      "business_label": "Best Shawarma Best",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "happy hour drinks now",
+      "hashtags": "#food #offer",
+      "likes_count": 17,
+      "comments_count": 4,
+      "views_count": 135,
+      "post_type": "reel",
+      "language": "English",
+      "_clean_text": "happy hour drinks now",
+      "topic_id": 1,
+      "topic_probability": 0.6356383256017285,
+      "business_label": "Best Shawarma Best",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "order online with free delivery",
+      "hashtags": "#food #offer",
+      "likes_count": 18,
+      "comments_count": 1,
+      "views_count": 140,
+      "post_type": "post",
+      "language": "English",
+      "_clean_text": "order online with free delivery",
+      "topic_id": 0,
+      "topic_probability": 0.5855707937215521,
+      "business_label": "Brunch Brunch Deal",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "limited time dinner package",
+      "hashtags": "#food #offer",
+      "likes_count": 19,
+      "comments_count": 2,
+      "views_count": 145,
+      "post_type": "reel",
+      "language": "English",
+      "_clean_text": "limited time dinner package",
+      "topic_id": 0,
+      "topic_probability": 1.0,
+      "business_label": "Brunch Brunch Deal",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "chef special seafood platter",
+      "hashtags": "#food #offer",
+      "likes_count": 20,
+      "comments_count": 3,
+      "views_count": 150,
+      "post_type": "post",
+      "language": "English",
+      "_clean_text": "chef special seafood platter",
+      "topic_id": 0,
+      "topic_probability": 1.0,
+      "business_label": "Brunch Brunch Deal",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "book your table for tonight",
+      "hashtags": "#food #offer",
+      "likes_count": 21,
+      "comments_count": 4,
+      "views_count": 155,
+      "post_type": "reel",
+      "language": "English",
+      "_clean_text": "book your table for tonight",
+      "topic_id": 1,
+      "topic_probability": 0.5655282828552531,
+      "business_label": "Best Shawarma Best",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    }
+  ],
+  "visualizations": {
+    "available": true,
+    "reason": null,
+    "files": {
+      "barchart": "backend\\_runtime_outputs\\topic_strict_cpu_no_openai\\business_topic_barchart.html",
+      "heatmap": "backend\\_runtime_outputs\\topic_strict_cpu_no_openai\\business_topic_heatmap.html"
+    },
+    "errors": [
+      {
+        "view": "intertopic",
+        "error": "zero-size array to reduction operation maximum which has no identity"
+      }
+    ]
+  },
+  "fit_attempts": [
+    {
+      "method": "bertopic",
+      "attempt": 1,
+      "min_cluster_size": 3,
+      "n_neighbors": 3,
+      "status": "success",
+      "non_outlier_topics": 2,
+      "outlier_ratio": 0.0
+    }
+  ],
+  "files": {
+    "result_json": "backend\\_runtime_outputs\\topic_strict_cpu_no_openai\\business_topic_insights_result.json",
+    "posts_with_topics_csv": "backend\\_runtime_outputs\\topic_strict_cpu_no_openai\\posts_with_business_topics.csv",
+    "topic_labels_csv": "backend\\_runtime_outputs\\topic_strict_cpu_no_openai\\topic_business_labels.csv",
+    "topic_kpis_csv": "backend\\_runtime_outputs\\topic_strict_cpu_no_openai\\topic_kpi_benchmarks.csv",
+    "topic_recommendations_csv": "backend\\_runtime_outputs\\topic_strict_cpu_no_openai\\topic_recommendations.csv",
+    "insight_cards_csv": "backend\\_runtime_outputs\\topic_strict_cpu_no_openai\\topic_business_insights.csv"
+  }
+}

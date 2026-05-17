@@ -28,6 +28,18 @@ type HashtagResponse = {
   summary?: Array<{ metric?: string; value?: unknown }>;
 };
 
+type TopicStageResponse = {
+  summary?: Record<string, unknown>;
+  insight_cards?: Array<Record<string, unknown>>;
+  topic_recommendations?: Array<Record<string, unknown>>;
+  fit_attempts?: Array<Record<string, unknown>>;
+  visualizations?: {
+    available?: boolean;
+    files?: Record<string, string>;
+    errors?: Array<{ view?: string; error?: string }>;
+  };
+};
+
 type ApiCallState = {
   ok: boolean;
   data?: unknown;
@@ -36,27 +48,11 @@ type ApiCallState = {
 
 type RunState = {
   datasetId: string;
-  hashtagFromUpload: ApiCallState;
+  preprocessKpi: ApiCallState;
+  runHashtag: ApiCallState;
+  runTopic: ApiCallState;
   getHashtag: ApiCallState;
-};
-
-type StaticTopicCardCounts = {
-  topics_total?: number;
-  posts_with_topics?: number;
-  recommendations_total?: number;
-  terms_total?: number;
-};
-
-type StaticTopicPreview = {
-  topic_id: string;
-  terms: string[];
-};
-
-type StaticTopicResponse = {
-  cards?: StaticTopicCardCounts;
-  recommendations?: Array<Record<string, unknown>>;
-  topic_summary?: Array<Record<string, unknown>>;
-  topics_preview?: StaticTopicPreview[];
+  getTopic: ApiCallState;
 };
 
 function formatPercent(value?: number) {
@@ -77,18 +73,14 @@ function metricValue(summary: HashtagResponse["summary"], metric: string) {
   return summary?.find((item) => item.metric === metric)?.value;
 }
 
-function parseSimpleCsv(text: string): Array<Record<string, string>> {
-  const lines = text.split(/\r?\n/).filter(Boolean);
-  if (!lines.length) return [];
-  const headers = lines[0].split(",").map((h) => h.trim());
-  return lines.slice(1).map((line) => {
-    const cols = line.split(",");
-    const row: Record<string, string> = {};
-    headers.forEach((h, i) => {
-      row[h] = (cols[i] ?? "").trim();
-    });
-    return row;
-  });
+function pickTopicPill(row: Record<string, unknown>) {
+  const label = String(row.business_label ?? row.topic_label ?? row.label ?? row.topic_name ?? "").trim();
+  if (label) return label;
+  const topicId = row.topic_id;
+  if (topicId !== undefined && topicId !== null && String(topicId).trim()) {
+    return `Topic ${String(topicId)}`;
+  }
+  return "غير متوفر";
 }
 
 async function parseResponse(response: Response) {
@@ -118,8 +110,7 @@ function HashtagTipsPage() {
   const [runState, setRunState] = useState<RunState | null>(null);
   const [running, setRunning] = useState(false);
   const [runError, setRunError] = useState<string | null>(null);
-  const [staticData, setStaticData] = useState<StaticTopicResponse | null>(null);
-  const [staticError, setStaticError] = useState<string | null>(null);
+  const [vizView, setVizView] = useState<"intertopic" | "barchart" | "heatmap">("intertopic");
 
   useEffect(() => {
     const latest = getLatestCaptionAnalysis();
@@ -127,88 +118,59 @@ function HashtagTipsPage() {
     if (latest?.dataset_id) setDatasetIdInput(latest.dataset_id);
   }, []);
 
-  useEffect(() => {
-    let active = true;
-    (async () => {
-      try {
-        const [topicsRes, summaryRes, recsRes, datasetRes, termsRes] = await Promise.all([
-          fetch("/static-topic-content/topics.json"),
-          fetch("/static-topic-content/topic_summary.csv"),
-          fetch("/static-topic-content/dynamic_recommendations.csv"),
-          fetch("/static-topic-content/dataset_with_topics.csv"),
-          fetch("/static-topic-content/topic_terms_exact_1_2_3grams.csv"),
-        ]);
-        if (!active) return;
-        if (!topicsRes.ok || !summaryRes.ok || !recsRes.ok || !datasetRes.ok || !termsRes.ok) {
-          setStaticError("تعذر تحميل الملفات الثابتة من الواجهة.");
-          return;
-        }
-
-        const topicsJson = (await topicsRes.json()) as { topic_representations?: Record<string, Array<[string, number]>> };
-        const summaryRows = parseSimpleCsv(await summaryRes.text());
-        const recRows = parseSimpleCsv(await recsRes.text());
-        const datasetRows = parseSimpleCsv(await datasetRes.text());
-        const termRows = parseSimpleCsv(await termsRes.text());
-
-        const topicsPreview: StaticTopicPreview[] = Object.entries(topicsJson.topic_representations ?? {})
-          .slice(0, 8)
-          .map(([topicId, terms]) => ({
-            topic_id: topicId,
-            terms: (terms ?? []).slice(0, 8).map((item) => String(item[0] ?? "")).filter(Boolean),
-          }));
-
-        setStaticData({
-          cards: {
-            topics_total: summaryRows.length,
-            posts_with_topics: datasetRows.length,
-            recommendations_total: recRows.length,
-            terms_total: termRows.length,
-          },
-          topic_summary: summaryRows.slice(0, 8),
-          recommendations: recRows.slice(0, 8),
-          topics_preview: topicsPreview,
-        });
-        setStaticError(null);
-      } catch {
-        if (!active) return;
-        setStaticError("تعذر تحميل الملفات الثابتة من الواجهة.");
-      }
-    })();
-    return () => {
-      active = false;
-    };
-  }, []);
-
   const hashtagData =
     (runState?.getHashtag.data as HashtagResponse | undefined) ??
     (analysis?.hashtag_stage as HashtagResponse | undefined);
 
+  const topicData = (runState?.getTopic.data as TopicStageResponse | undefined) ?? null;
   const useTags = useMemo(() => (hashtagData?.top_recommendations ?? []).slice(0, 10), [hashtagData]);
   const avoidTags = useMemo(() => (hashtagData?.warning_recommendations ?? []).slice(0, 8), [hashtagData]);
   const hasData = Boolean(hashtagData);
   const adaptiveMinCount = metricValue(hashtagData?.summary, "adaptive_min_count");
   const activeDatasetId = runState?.datasetId || datasetIdInput || analysis?.dataset_id || "";
 
-  async function runHashtagFromUpload(selectedFile: File) {
+  const insightCards = (topicData?.insight_cards ?? []).slice(0, 12);
+  const topicRecs = (topicData?.topic_recommendations ?? []).slice(0, 8);
+  const fitMethod = String(topicData?.summary?.fit_method ?? "");
+  const vizFiles = (topicData?.visualizations?.files ?? {}) as Record<string, string>;
+  const hasVizMeta = Boolean(topicData?.visualizations);
+  const availableVizViews = useMemo(() => {
+    const order: Array<"intertopic" | "barchart" | "heatmap"> = ["intertopic", "barchart", "heatmap"];
+    return order.filter((view) => Boolean(vizFiles[view]));
+  }, [vizFiles]);
+  const isVizViewAvailable = (view: "intertopic" | "barchart" | "heatmap") => availableVizViews.includes(view);
+  const selectedVizError = (topicData?.visualizations?.errors ?? []).find((item) => item?.view === vizView)?.error;
+  const visualizationUrl = activeDatasetId
+    ? `${API_BASE}/api/datasets/${encodeURIComponent(activeDatasetId)}/business-topic-visualization?view=${vizView}`
+    : "";
+
+  useEffect(() => {
+    if (!hasVizMeta) return;
+    if (!availableVizViews.length) return;
+    if (availableVizViews.includes(vizView)) return;
+    setVizView(availableVizViews[0]);
+  }, [hasVizMeta, availableVizViews, vizView]);
+
+  async function runFromUpload(selectedFile: File) {
     setRunning(true);
     setRunError(null);
     setRunState(null);
 
-    const uploadForm = new FormData();
-    uploadForm.append("file", selectedFile);
+    const preprocessForm = new FormData();
+    preprocessForm.append("file", selectedFile);
 
-    const hashtagFromUpload = await callApi(`${API_BASE}/api/datasets/stages/hashtag`, {
+    const preprocessKpi = await callApi(`${API_BASE}/api/datasets/upload-preprocess-kpi`, {
       method: "POST",
-      body: uploadForm,
+      body: preprocessForm,
     });
 
-    if (!hashtagFromUpload.ok) {
+    if (!preprocessKpi.ok) {
       setRunning(false);
-      setRunError(hashtagFromUpload.error || "فشل تشغيل مرحلة الهاشتاقات.");
+      setRunError(preprocessKpi.error || "فشل preprocess/kpi.");
       return;
     }
 
-    const datasetId = String((hashtagFromUpload.data as { dataset_id?: string })?.dataset_id || "");
+    const datasetId = String((preprocessKpi.data as { dataset_id?: string })?.dataset_id || "");
     if (!datasetId) {
       setRunning(false);
       setRunError("لم يتم العثور على dataset_id في الاستجابة.");
@@ -216,9 +178,23 @@ function HashtagTipsPage() {
     }
 
     setDatasetIdInput(datasetId);
-    const getHashtag = await callApi(`${API_BASE}/api/datasets/${datasetId}/hashtag-recommendations`);
 
-    setRunState({ datasetId, hashtagFromUpload, getHashtag });
+    const [runHashtag, runTopic] = await Promise.all([
+      callApi(`${API_BASE}/api/datasets/${datasetId}/stages/hashtag`, { method: "POST" }),
+      callApi(`${API_BASE}/api/datasets/${datasetId}/stages/business-topic-insights-local-cpu`, { method: "POST" }),
+    ]);
+
+    const [getHashtag, getTopic] = await Promise.all([
+      callApi(`${API_BASE}/api/datasets/${datasetId}/hashtag-recommendations`),
+      callApi(`${API_BASE}/api/datasets/${datasetId}/dynamic-ngram-insights`),
+    ]);
+
+    setRunState({ datasetId, preprocessKpi, runHashtag, runTopic, getHashtag, getTopic });
+
+    if (!runHashtag.ok || !runTopic.ok || !getHashtag.ok || !getTopic.ok) {
+      setRunError(runHashtag.error || runTopic.error || getHashtag.error || getTopic.error || "فشل تشغيل/جلب النتائج.");
+    }
+
     setRunning(false);
   }
 
@@ -227,15 +203,34 @@ function HashtagTipsPage() {
       setRunError("أدخل dataset_id أولاً.");
       return;
     }
+
     setRunning(true);
     setRunError(null);
     const datasetId = datasetIdInput.trim();
-    const getHashtag = await callApi(`${API_BASE}/api/datasets/${datasetId}/hashtag-recommendations`);
+
+    const [runHashtag, runTopic] = await Promise.all([
+      callApi(`${API_BASE}/api/datasets/${datasetId}/stages/hashtag`, { method: "POST" }),
+      callApi(`${API_BASE}/api/datasets/${datasetId}/stages/business-topic-insights-local-cpu`, { method: "POST" }),
+    ]);
+
+    const [getHashtag, getTopic] = await Promise.all([
+      callApi(`${API_BASE}/api/datasets/${datasetId}/hashtag-recommendations`),
+      callApi(`${API_BASE}/api/datasets/${datasetId}/dynamic-ngram-insights`),
+    ]);
+
     setRunState({
       datasetId,
-      hashtagFromUpload: { ok: true, data: { note: "لم يتم التشغيل في وضع التحديث" } },
+      preprocessKpi: { ok: true, data: { note: "refresh mode" } },
+      runHashtag,
+      runTopic,
       getHashtag,
+      getTopic,
     });
+
+    if (!runHashtag.ok || !runTopic.ok || !getHashtag.ok || !getTopic.ok) {
+      setRunError(runHashtag.error || runTopic.error || getHashtag.error || getTopic.error || "فشل تحديث النتائج.");
+    }
+
     setRunning(false);
   }
 
@@ -247,9 +242,9 @@ function HashtagTipsPage() {
             <Sparkles className="h-3.5 w-3.5 text-[var(--brand)]" />
             تجميع المحتوى
           </div>
-          <h2 className="font-display text-2xl tracking-tight md:text-3xl">ارفع الملف واحصل على توصيات الهاشتاقات</h2>
+          <h2 className="font-display text-2xl tracking-tight md:text-3xl">تحليل ديناميكي للهاشتاقات وBERTopic</h2>
           <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            هذه الصفحة تشغّل واجهات توصيات الهاشتاق فقط، بدون استدعاءات BERTopic.
+            عند رفع الملف يتم تشغيل preprocess/KPI ثم hashtag recommendations وBERTopic المحلي على CPU، ثم عرض البطاقات والمرئيات مباشرة.
           </p>
         </div>
       </motion.div>
@@ -257,7 +252,7 @@ function HashtagTipsPage() {
       <section className="rounded-2xl border border-border bg-card p-5 shadow-card space-y-4">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-end">
           <div className="flex-1">
-            <label className="mb-2 block text-xs text-muted-foreground">ارفع ملف .json أو .csv لتشغيل ربط الهاشتاقات</label>
+            <label className="mb-2 block text-xs text-muted-foreground">ارفع ملف .json أو .csv</label>
             <input
               type="file"
               accept=".csv,.json"
@@ -267,11 +262,11 @@ function HashtagTipsPage() {
           </div>
           <button
             disabled={!file || running}
-            onClick={() => file && runHashtagFromUpload(file)}
+            onClick={() => file && runFromUpload(file)}
             className="inline-flex items-center gap-2 rounded-xl bg-[var(--brand)] px-4 py-2 text-sm font-medium text-white disabled:opacity-50"
           >
             <UploadCloud className="h-4 w-4" />
-            {running ? "جاري التشغيل..." : "تشغيل توصيات الهاشتاقات"}
+            {running ? "جاري التشغيل..." : "تشغيل التحليل الكامل"}
           </button>
         </div>
 
@@ -290,7 +285,7 @@ function HashtagTipsPage() {
             onClick={refreshForDatasetId}
             className="rounded-xl border border-border bg-muted px-4 py-2 text-sm font-medium disabled:opacity-50"
           >
-            {running ? "جاري التحديث..." : "جلب النتائج"}
+            {running ? "جاري التحديث..." : "تحديث النتائج"}
           </button>
         </div>
 
@@ -302,7 +297,7 @@ function HashtagTipsPage() {
 
       {!hasData && (
         <div className="rounded-2xl border border-border bg-card p-6 text-sm text-muted-foreground shadow-card">
-          ارفع ملفًا لعرض بطاقات توصيات الهاشتاقات.
+          ارفع ملفًا لعرض بطاقات الهاشتاقات ونتائج BERTopic.
         </div>
       )}
 
@@ -310,7 +305,12 @@ function HashtagTipsPage() {
         <>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <SummaryCard icon={Hash} label="هاشتاقات مقترحة" value={useTags.length} hint={`أدنى حد تكيفي: ${adaptiveMinCount ?? "غير متوفر"}`} />
-            <SummaryCard icon={AlertTriangle} label="هاشتاقات تحتاج حذرًا" value={avoidTags.length} hint={hashtagData?.used_fallback ? "تم استخدام بديل احتياطي" : "مستخرجة من قواعد الارتباط"} />
+            <SummaryCard
+              icon={AlertTriangle}
+              label="هاشتاقات تحتاج حذرًا"
+              value={avoidTags.length}
+              hint={hashtagData?.used_fallback ? "تم استخدام بديل احتياطي" : "مستخرجة من قواعد الارتباط"}
+            />
           </div>
 
           <section className="grid grid-cols-1 gap-4 xl:grid-cols-2">
@@ -349,65 +349,94 @@ function HashtagTipsPage() {
 
       <section className="rounded-2xl border border-border bg-card p-5 shadow-card space-y-4">
         <div className="flex items-center justify-between gap-3">
-          <h3 className="text-base font-semibold">Static Content</h3>
-          <span className="rounded-full border border-border bg-muted px-2.5 py-1 text-xs text-muted-foreground">ثابت</span>
+          <h3 className="text-base font-semibold">رؤى BERTopic الديناميكية</h3>
+          <span className="rounded-full border border-border bg-muted px-2.5 py-1 text-xs text-muted-foreground">
+            {fitMethod ? `fit_method: ${fitMethod}` : "غير متوفر"}
+          </span>
         </div>
 
-        {staticError && <div className="rounded-xl border border-destructive/30 bg-destructive/5 p-3 text-xs text-destructive">{staticError}</div>}
-
-        {!staticError && staticData?.cards && (
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-            <SummaryCard icon={Hash} label="إجمالي المواضيع" value={staticData.cards.topics_total ?? 0} hint="من topics.json" />
-            <SummaryCard icon={CheckCircle2} label="منشورات موسومة" value={staticData.cards.posts_with_topics ?? 0} hint="dataset_with_topics.csv" />
-            <SummaryCard icon={Sparkles} label="توصيات ثابتة" value={staticData.cards.recommendations_total ?? 0} hint="dynamic_recommendations.csv" />
-            <SummaryCard icon={AlertTriangle} label="مصطلحات ثابتة" value={staticData.cards.terms_total ?? 0} hint="topic_terms_exact_1_2_3grams.csv" />
-          </div>
-        )}
-
-        {!!staticData?.topics_preview?.length && (
-          <div className="rounded-xl border border-border p-4">
-            <h4 className="mb-3 text-sm font-semibold">مواضيع BERTopic (ثابتة)</h4>
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-              {staticData.topics_preview.map((item) => (
-                <div key={item.topic_id} className="rounded-lg border border-border bg-muted/20 p-3">
-                  <div className="mb-2 text-xs text-muted-foreground">Topic {item.topic_id}</div>
-                  <div className="flex flex-wrap gap-1.5">
-                    {item.terms.map((term) => (
-                      <span key={`${item.topic_id}-${term}`} className="rounded-full bg-card px-2 py-1 text-xs">
-                        {term}
-                      </span>
-                    ))}
-                  </div>
+        {!!topicRecs.length && (
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+            {topicRecs.map((row, idx) => (
+              <div key={`topic-rec-${idx}`} className="rounded-xl border border-border bg-gradient-soft p-4">
+                <div className="text-sm font-semibold">{String(row.action ?? "Recommendation")}</div>
+                <div className="mt-1 text-xs text-muted-foreground">{String(row.reason ?? "")}</div>
+                <div className="mt-2 text-xs">
+                  <span className="rounded-full bg-card px-2 py-1">{pickTopicPill(row)}</span>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         )}
 
-        {!!staticData?.recommendations?.length && (
-          <div className="rounded-xl border border-border p-4">
-            <h4 className="mb-3 text-sm font-semibold">توصيات ثابتة</h4>
-            <div className="space-y-2">
-              {staticData.recommendations.slice(0, 6).map((row, idx) => (
-                <div key={`static-rec-${idx}`} className="rounded-lg border border-border bg-muted/20 p-3 text-xs">
-                  <div className="font-medium">{String(row.action ?? "Action")}</div>
-                  <div className="mt-1 text-muted-foreground">{String(row.reason ?? "")}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {insightCards.length ? (
+            insightCards.map((card, idx) => <InsightCard key={`insight-${idx}`} card={card} />)
+          ) : (
+            <EmptyState text="لا توجد بطاقات insights بعد. شغّل التحليل أولًا." />
+          )}
+        </div>
 
         <div className="rounded-xl border border-border p-4">
-          <h4 className="mb-3 text-sm font-semibold">خريطة المسافات بين المواضيع (ثابتة)</h4>
-          <iframe
-            src="/static-topic-content/intertopic_distance_map.html"
-            title="Static Intertopic Map"
-            className="h-[500px] w-full rounded-lg border border-border bg-background"
-            loading="lazy"
-          />
+          <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+            <h4 className="text-sm font-semibold">تصور BERTopic</h4>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setVizView("intertopic")}
+                disabled={hasVizMeta && !isVizViewAvailable("intertopic")}
+                className={`rounded-lg px-2.5 py-1 text-xs ${vizView === "intertopic" ? "bg-[var(--brand)] text-white" : "bg-muted"} ${hasVizMeta && !isVizViewAvailable("intertopic") ? "cursor-not-allowed opacity-50" : ""}`}
+              >
+                Intertopic
+              </button>
+              <button
+                onClick={() => setVizView("barchart")}
+                disabled={hasVizMeta && !isVizViewAvailable("barchart")}
+                className={`rounded-lg px-2.5 py-1 text-xs ${vizView === "barchart" ? "bg-[var(--brand)] text-white" : "bg-muted"} ${hasVizMeta && !isVizViewAvailable("barchart") ? "cursor-not-allowed opacity-50" : ""}`}
+              >
+                Barchart
+              </button>
+              <button
+                onClick={() => setVizView("heatmap")}
+                disabled={hasVizMeta && !isVizViewAvailable("heatmap")}
+                className={`rounded-lg px-2.5 py-1 text-xs ${vizView === "heatmap" ? "bg-[var(--brand)] text-white" : "bg-muted"} ${hasVizMeta && !isVizViewAvailable("heatmap") ? "cursor-not-allowed opacity-50" : ""}`}
+              >
+                Heatmap
+              </button>
+            </div>
+          </div>
+
+          {activeDatasetId ? (
+            hasVizMeta && !availableVizViews.length ? (
+              <EmptyState text={selectedVizError ? `تعذر إنشاء ${vizView}: ${selectedVizError}` : "لا توجد مرئيات BERTopic متاحة لهذه التشغيله."} />
+            ) : selectedVizError && !isVizViewAvailable(vizView) ? (
+              <EmptyState text={`تعذر إنشاء ${vizView}: ${selectedVizError}`} />
+            ) : (
+            <iframe
+              src={visualizationUrl}
+              title={`BERTopic ${vizView}`}
+              className="h-[540px] w-full rounded-lg border border-border bg-background"
+              loading="lazy"
+            />
+            )
+          ) : (
+            <EmptyState text="لا يوجد dataset_id لعرض visualization." />
+          )}
         </div>
       </section>
+    </div>
+  );
+}
+
+function InsightCard({ card }: { card: Record<string, unknown> }) {
+  const title = String(card.business_label ?? card.label ?? card.topic_label ?? card.title ?? "Insight");
+  const insight = String(card.insight ?? card.insight_text ?? card.description ?? "");
+  const suggestion = String(card.suggested_action ?? card.suggested_next_step ?? card.recommendation ?? "");
+
+  return (
+    <div className="rounded-xl border border-border bg-card p-4 shadow-card">
+      <div className="text-sm font-semibold">{title}</div>
+      {insight && <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{insight}</p>}
+      {suggestion && <div className="mt-3 rounded-lg border border-[var(--brand)]/20 bg-accent/40 p-2.5 text-xs">{suggestion}</div>}
     </div>
   );
 }

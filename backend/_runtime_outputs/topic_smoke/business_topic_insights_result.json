@@ -1,0 +1,383 @@
+{
+  "summary": {
+    "input_path": "C:\\Users\\LEGION\\AppData\\Local\\Temp\\tmpa9vd1bwz.json",
+    "rows_loaded": 12,
+    "valid_posts_analyzed": 12,
+    "text_col": "caption_text",
+    "fit_method": "kmeans_fallback_after_bertopic_failure",
+    "target_topic_range": {
+      "min": 2,
+      "max": 4
+    },
+    "actual_non_outlier_topics": 3,
+    "outlier_posts": 0,
+    "outlier_ratio": 0.0,
+    "ranking_metric": "avg_views_count",
+    "best_theme": "Tonight Platter Book",
+    "weakest_theme": "Ingredients Ingredients Day",
+    "openai_used": false,
+    "openai_model_requested": "gpt-4.1-mini"
+  },
+  "topic_labels": [
+    {
+      "topic_id": 0,
+      "count": 1,
+      "top_words": "ingredients, ingredients day, day",
+      "representative_docs_sample": "fresh ingredients every day",
+      "business_label": "Ingredients Ingredients Day",
+      "short_description": "Keyword-driven content theme detected from captions.",
+      "content_strategy_meaning": "Test this theme with clearer creative, hook, and CTA; compare against KPI leaders."
+    },
+    {
+      "topic_id": 1,
+      "count": 4,
+      "top_words": "tonight, platter book, platter, special, special platter, table, table tonight, time, time package, package chef, package, book",
+      "representative_docs_sample": "discount on lunch combo || limited time dinner package || chef special seafood platter",
+      "business_label": "Tonight Platter Book",
+      "short_description": "Keyword-driven content theme detected from captions.",
+      "content_strategy_meaning": "Test this theme with clearer creative, hook, and CTA; compare against KPI leaders."
+    },
+    {
+      "topic_id": 2,
+      "count": 7,
+      "top_words": "weekend family, weekend, week weekend, week, try signature, try, town happy, town, signature best, order online, signature, online free",
+      "representative_docs_sample": "great coffee offer today || new menu launch this week || weekend family brunch deal",
+      "business_label": "Weekend Family Weekend",
+      "short_description": "Keyword-driven content theme detected from captions.",
+      "content_strategy_meaning": "Test this theme with clearer creative, hook, and CTA; compare against KPI leaders."
+    }
+  ],
+  "topic_kpis": [
+    {
+      "business_label": "Tonight Platter Book",
+      "post_count": 4,
+      "dominant_topic_id": 1,
+      "topic_id_list": "1",
+      "avg_topic_probability": 0.2097180187702179,
+      "avg_likes_count": 16.5,
+      "median_likes_count": 16.5,
+      "avg_comments_count": 2.75,
+      "median_comments_count": 2.5,
+      "avg_views_count": 173.75,
+      "median_views_count": 172.5,
+      "percentage_reels": 25.0,
+      "percentage_images": 0.0,
+      "percentage_carousels": 0.0,
+      "dominant_post_type": "post",
+      "representative_posts": "discount on lunch combo || limited time dinner package",
+      "performance_score": 1.0,
+      "scored_metrics": "avg_views_count, avg_likes_count, avg_comments_count",
+      "support_score": 0.5714285714285714,
+      "opportunity_score": 0.8714285714285713
+    },
+    {
+      "business_label": "Weekend Family Weekend",
+      "post_count": 7,
+      "dominant_topic_id": 2,
+      "topic_id_list": "2",
+      "avg_topic_probability": 0.06321379116603307,
+      "avg_likes_count": 14.285714285714286,
+      "median_likes_count": 14.0,
+      "avg_comments_count": 2.2857142857142856,
+      "median_comments_count": 2.0,
+      "avg_views_count": 148.57142857142858,
+      "median_views_count": 140.0,
+      "percentage_reels": 28.57142857142857,
+      "percentage_images": 0.0,
+      "percentage_carousels": 0.0,
+      "dominant_post_type": "post",
+      "representative_posts": "great coffee offer today || new menu launch this week",
+      "performance_score": 0.5033054800496664,
+      "scored_metrics": "avg_views_count, avg_likes_count, avg_comments_count",
+      "support_score": 1.0,
+      "opportunity_score": 0.6523138360347664
+    },
+    {
+      "business_label": "Ingredients Ingredients Day",
+      "post_count": 1,
+      "dominant_topic_id": 0,
+      "topic_id_list": "0",
+      "avg_topic_probability": 1.0,
+      "avg_likes_count": 11.0,
+      "median_likes_count": 11.0,
+      "avg_comments_count": 2.0,
+      "median_comments_count": 2.0,
+      "avg_views_count": 120.0,
+      "median_views_count": 120.0,
+      "percentage_reels": 100.0,
+      "percentage_images": 0.0,
+      "percentage_carousels": 0.0,
+      "dominant_post_type": "reel",
+      "representative_posts": "fresh ingredients every day",
+      "performance_score": 0.0,
+      "scored_metrics": "avg_views_count, avg_likes_count, avg_comments_count",
+      "support_score": 0.14285714285714285,
+      "opportunity_score": 0.04285714285714285
+    }
+  ],
+  "topic_recommendations": [
+    {
+      "business_label": "Tonight Platter Book",
+      "post_count": 4,
+      "performance_score": 1.0,
+      "opportunity_score": 0.8714285714285713,
+      "action": "Scale",
+      "reason": "Strong performance with enough repeated examples.",
+      "suggested_next_step": "Create more posts using this theme, then A/B test hook, creative, and CTA variants.",
+      "confidence": "Medium"
+    },
+    {
+      "business_label": "Weekend Family Weekend",
+      "post_count": 7,
+      "performance_score": 0.5033054800496664,
+      "opportunity_score": 0.6523138360347664,
+      "action": "Maintain",
+      "reason": "Average theme compared with the rest of the uploaded data.",
+      "suggested_next_step": "Keep it in the mix but prioritize stronger opportunity-score themes.",
+      "confidence": "Medium"
+    },
+    {
+      "business_label": "Ingredients Ingredients Day",
+      "post_count": 1,
+      "performance_score": 0.0,
+      "opportunity_score": 0.04285714285714285,
+      "action": "Monitor",
+      "reason": "Very few posts, so the theme is not reliable enough for a strong decision.",
+      "suggested_next_step": "Collect more examples before scaling or avoiding this theme.",
+      "confidence": "Low"
+    }
+  ],
+  "insight_cards": [
+    {
+      "insight_title": "Top Performing Theme",
+      "finding": "Tonight Platter Book is the strongest theme by avg_views_count.",
+      "evidence": "avg_views_count=173.7500",
+      "recommendation": "Scale this theme with consistent creative direction and test stronger CTA variants.",
+      "priority": "High",
+      "metric_used": "avg_views_count"
+    },
+    {
+      "insight_title": "Weakest Theme",
+      "finding": "Ingredients Ingredients Day is the weakest theme by avg_views_count.",
+      "evidence": "avg_views_count=120.0000",
+      "recommendation": "Do not scale this theme until the hook, visual, format, or offer framing is improved.",
+      "priority": "High",
+      "metric_used": "avg_views_count"
+    },
+    {
+      "insight_title": "Theme Performance Gap",
+      "finding": "The top theme outperforms the weakest theme by 1.45x.",
+      "evidence": "Tonight Platter Book vs Ingredients Ingredients Day",
+      "recommendation": "Shift content volume toward proven themes while redesigning weaker themes.",
+      "priority": "Medium",
+      "metric_used": "avg_views_count"
+    },
+    {
+      "insight_title": "Format Signal",
+      "finding": "Ingredients Ingredients Day uses reels the most among detected themes.",
+      "evidence": "Reel share=100.0%",
+      "recommendation": "Check whether reel-heavy themes also rank high in performance before increasing reel production.",
+      "priority": "Medium",
+      "metric_used": "percentage_reels"
+    }
+  ],
+  "posts_with_topics_preview": [
+    {
+      "caption_text": "great coffee offer today",
+      "hashtags": "#coffee",
+      "likes_count": 10,
+      "comments_count": 1,
+      "views_count": 100,
+      "post_type": "post",
+      "language": "English",
+      "_clean_text": "great offer today",
+      "topic_id": 2,
+      "topic_probability": 0.24197018146514893,
+      "business_label": "Weekend Family Weekend",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "new menu launch this week",
+      "hashtags": "#menu",
+      "likes_count": 15,
+      "comments_count": 2,
+      "views_count": 140,
+      "post_type": "reel",
+      "language": "English",
+      "_clean_text": "new launch this week",
+      "topic_id": 2,
+      "topic_probability": 0.02789205312728882,
+      "business_label": "Weekend Family Weekend",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "weekend family brunch deal",
+      "hashtags": "#brunch",
+      "likes_count": 12,
+      "comments_count": 3,
+      "views_count": 130,
+      "post_type": "post",
+      "language": "English",
+      "_clean_text": "weekend family deal",
+      "topic_id": 2,
+      "topic_probability": 0.06136888265609741,
+      "business_label": "Weekend Family Weekend",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "try our signature dessert",
+      "hashtags": "#dessert",
+      "likes_count": 9,
+      "comments_count": 1,
+      "views_count": 90,
+      "post_type": "story",
+      "language": "English",
+      "_clean_text": "try our signature",
+      "topic_id": 2,
+      "topic_probability": 0.005758166313171387,
+      "business_label": "Weekend Family Weekend",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "fresh ingredients every day",
+      "hashtags": "#fresh",
+      "likes_count": 11,
+      "comments_count": 2,
+      "views_count": 120,
+      "post_type": "reel",
+      "language": "English",
+      "_clean_text": "ingredients every day",
+      "topic_id": 0,
+      "topic_probability": 1.0,
+      "business_label": "Ingredients Ingredients Day",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "discount on lunch combo",
+      "hashtags": "#discount",
+      "likes_count": 20,
+      "comments_count": 4,
+      "views_count": 200,
+      "post_type": "post",
+      "language": "English",
+      "_clean_text": "on lunch combo",
+      "topic_id": 1,
+      "topic_probability": 0.29781007766723633,
+      "business_label": "Tonight Platter Book",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "best shawarma in town",
+      "hashtags": "#shawarma",
+      "likes_count": 18,
+      "comments_count": 2,
+      "views_count": 180,
+      "post_type": "reel",
+      "language": "English",
+      "_clean_text": "best in town",
+      "topic_id": 2,
+      "topic_probability": 0.0,
+      "business_label": "Weekend Family Weekend",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "happy hour drinks now",
+      "hashtags": "#happyhour",
+      "likes_count": 14,
+      "comments_count": 2,
+      "views_count": 160,
+      "post_type": "story",
+      "language": "English",
+      "_clean_text": "happy hour drinks now",
+      "topic_id": 2,
+      "topic_probability": 0.05402231216430664,
+      "business_label": "Weekend Family Weekend",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "order online with free delivery",
+      "hashtags": "#delivery",
+      "likes_count": 22,
+      "comments_count": 5,
+      "views_count": 240,
+      "post_type": "post",
+      "language": "English",
+      "_clean_text": "order online with free",
+      "topic_id": 2,
+      "topic_probability": 0.05148494243621826,
+      "business_label": "Weekend Family Weekend",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "limited time dinner package",
+      "hashtags": "#dinner",
+      "likes_count": 17,
+      "comments_count": 2,
+      "views_count": 170,
+      "post_type": "reel",
+      "language": "English",
+      "_clean_text": "limited time package",
+      "topic_id": 1,
+      "topic_probability": 0.11537688970565796,
+      "business_label": "Tonight Platter Book",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "chef special seafood platter",
+      "hashtags": "#seafood",
+      "likes_count": 13,
+      "comments_count": 2,
+      "views_count": 150,
+      "post_type": "post",
+      "language": "English",
+      "_clean_text": "chef special platter",
+      "topic_id": 1,
+      "topic_probability": 0.22060662508010864,
+      "business_label": "Tonight Platter Book",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    },
+    {
+      "caption_text": "book your table for tonight",
+      "hashtags": "#booking",
+      "likes_count": 16,
+      "comments_count": 3,
+      "views_count": 175,
+      "post_type": "story",
+      "language": "English",
+      "_clean_text": "book your table for tonight",
+      "topic_id": 1,
+      "topic_probability": 0.20507848262786865,
+      "business_label": "Tonight Platter Book",
+      "topic_description": "Keyword-driven content theme detected from captions."
+    }
+  ],
+  "visualizations": {
+    "available": false,
+    "reason": "BERTopic model was not available; the run used the KMeans fallback.",
+    "files": {},
+    "errors": []
+  },
+  "fit_attempts": [
+    {
+      "method": "bertopic",
+      "status": "failed_all",
+      "error": "All BERTopic attempts failed.",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\LEGION\\Desktop\\checkpoint\\marketing-backup-integrate-hanipull2-into-mohammad-final-2026-05-18\\notebooks\\business_topic_insights_backend.py\", line 1000, in fit_topics_adaptive\n    model, topics, probs, attempts = fit_bertopic_adaptive(texts, config, embedding_model)\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\LEGION\\Desktop\\checkpoint\\marketing-backup-integrate-hanipull2-into-mohammad-final-2026-05-18\\notebooks\\business_topic_insights_backend.py\", line 895, in fit_bertopic_adaptive\n    raise RuntimeError(\"All BERTopic attempts failed.\")\nRuntimeError: All BERTopic attempts failed.\n"
+    },
+    {
+      "method": "kmeans_fallback",
+      "status": "success",
+      "k": 3,
+      "silhouette_score": 0.0071078515611588955,
+      "reason": "BERTopic unavailable or failed"
+    }
+  ],
+  "files": {
+    "result_json": "backend\\_runtime_outputs\\topic_smoke\\business_topic_insights_result.json",
+    "posts_with_topics_csv": "backend\\_runtime_outputs\\topic_smoke\\posts_with_business_topics.csv",
+    "topic_labels_csv": "backend\\_runtime_outputs\\topic_smoke\\topic_business_labels.csv",
+    "topic_kpis_csv": "backend\\_runtime_outputs\\topic_smoke\\topic_kpi_benchmarks.csv",
+    "topic_recommendations_csv": "backend\\_runtime_outputs\\topic_smoke\\topic_recommendations.csv",
+    "insight_cards_csv": "backend\\_runtime_outputs\\topic_smoke\\topic_business_insights.csv"
+  }
+}

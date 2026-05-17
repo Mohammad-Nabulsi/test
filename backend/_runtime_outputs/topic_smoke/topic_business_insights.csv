@@ -1,0 +1,5 @@
+insight_title,finding,evidence,recommendation,priority,metric_used
+Top Performing Theme,Tonight Platter Book is the strongest theme by avg_views_count.,avg_views_count=173.7500,Scale this theme with consistent creative direction and test stronger CTA variants.,High,avg_views_count
+Weakest Theme,Ingredients Ingredients Day is the weakest theme by avg_views_count.,avg_views_count=120.0000,"Do not scale this theme until the hook, visual, format, or offer framing is improved.",High,avg_views_count
+Theme Performance Gap,The top theme outperforms the weakest theme by 1.45x.,Tonight Platter Book vs Ingredients Ingredients Day,Shift content volume toward proven themes while redesigning weaker themes.,Medium,avg_views_count
+Format Signal,Ingredients Ingredients Day uses reels the most among detected themes.,Reel share=100.0%,Check whether reel-heavy themes also rank high in performance before increasing reel production.,Medium,percentage_reels

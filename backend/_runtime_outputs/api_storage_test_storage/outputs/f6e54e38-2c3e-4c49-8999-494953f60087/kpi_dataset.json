@@ -1,0 +1,112 @@
+{
+  "records": [
+    {
+      "caption_text": "great coffee offer today",
+      "hashtags": "#food #offer",
+      "likes_count": 10,
+      "comments_count": 1,
+      "views_count": 100,
+      "post_type": "post",
+      "language": "English"
+    },
+    {
+      "caption_text": "new menu launch this week",
+      "hashtags": "#food #offer",
+      "likes_count": 11,
+      "comments_count": 2,
+      "views_count": 105,
+      "post_type": "reel",
+      "language": "English"
+    },
+    {
+      "caption_text": "weekend family brunch deal",
+      "hashtags": "#food #offer",
+      "likes_count": 12,
+      "comments_count": 3,
+      "views_count": 110,
+      "post_type": "post",
+      "language": "English"
+    },
+    {
+      "caption_text": "try our signature dessert",
+      "hashtags": "#food #offer",
+      "likes_count": 13,
+      "comments_count": 4,
+      "views_count": 115,
+      "post_type": "reel",
+      "language": "English"
+    },
+    {
+      "caption_text": "fresh ingredients every day",
+      "hashtags": "#food #offer",
+      "likes_count": 14,
+      "comments_count": 1,
+      "views_count": 120,
+      "post_type": "post",
+      "language": "English"
+    },
+    {
+      "caption_text": "discount on lunch combo",
+      "hashtags": "#food #offer",
+      "likes_count": 15,
+      "comments_count": 2,
+      "views_count": 125,
+      "post_type": "reel",
+      "language": "English"
+    },
+    {
+      "caption_text": "best shawarma in town",
+      "hashtags": "#food #offer",
+      "likes_count": 16,
+      "comments_count": 3,
+      "views_count": 130,
+      "post_type": "post",
+      "language": "English"
+    },
+    {
+      "caption_text": "happy hour drinks now",
+      "hashtags": "#food #offer",
+      "likes_count": 17,
+      "comments_count": 4,
+      "views_count": 135,
+      "post_type": "reel",
+      "language": "English"
+    },
+    {
+      "caption_text": "order online with free delivery",
+      "hashtags": "#food #offer",
+      "likes_count": 18,
+      "comments_count": 1,
+      "views_count": 140,
+      "post_type": "post",
+      "language": "English"
+    },
+    {
+      "caption_text": "limited time dinner package",
+      "hashtags": "#food #offer",
+      "likes_count": 19,
+      "comments_count": 2,
+      "views_count": 145,
+      "post_type": "reel",
+      "language": "English"
+    },
+    {
+      "caption_text": "chef special seafood platter",
+      "hashtags": "#food #offer",
+      "likes_count": 20,
+      "comments_count": 3,
+      "views_count": 150,
+      "post_type": "post",
+      "language": "English"
+    },
+    {
+      "caption_text": "book your table for tonight",
+      "hashtags": "#food #offer",
+      "likes_count": 21,
+      "comments_count": 4,
+      "views_count": 155,
+      "post_type": "reel",
+      "language": "English"
+    }
+  ]
+}
