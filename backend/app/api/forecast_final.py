@@ -6,7 +6,7 @@ from typing import Any, Dict
 
 import numpy as np
 import pandas as pd
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, HTTPException, Query, status
 from pydantic import BaseModel
 
 
@@ -193,7 +193,22 @@ def forecast_analyze_single(request: UploadedDatasetRequest) -> Dict[str, Any]:
 
 
 @router.get("/forecast/static-single", status_code=status.HTTP_200_OK)
-def forecast_static_single() -> Dict[str, Any]:
+def forecast_static_single(
+    uploaded_file_path: str | None = Query(
+        default=None,
+        description="Optional dataset path. If provided, static-single runs on this file instead of built-in defaults.",
+    )
+) -> Dict[str, Any]:
+    if uploaded_file_path:
+        try:
+            return _run_forecast_for_path(uploaded_file_path)
+        except FileNotFoundError as exc:
+            raise HTTPException(status_code=404, detail=str(exc))
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+        except Exception as exc:
+            raise HTTPException(status_code=500, detail=f"{type(exc).__name__}: {exc}")
+
     candidates = [
         "data/social_media_engagement_dataset.csv",
         "data/vanilla_kpi_dataset.json",
