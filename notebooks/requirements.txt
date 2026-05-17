@@ -1,0 +1,21 @@
+# Core project dependencies
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+pydantic==2.8.2
+pydantic-settings==2.4.0
+python-dotenv==1.0.1
+
+# Data mining and analytics
+numpy==2.0.1
+pandas==2.2.2
+scikit-learn==1.5.1
+mlxtend==0.23.1
+networkx==3.3
+statsmodels==0.14.2
+matplotlib==3.10.9
+seaborn==0.13.2
+
+# Notebook runtime
+jupyterlab==4.5.7
+ipykernel==7.2.0

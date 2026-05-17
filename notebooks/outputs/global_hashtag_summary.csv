@@ -1,0 +1,2 @@
+scope,n_transactions,n_unique_hashtags,n_rules,best_antecedent,best_consequent,best_support,best_confidence,best_lift
+global,680,16,51,#nablus,#عروض,0.016176470588235296,0.45833333333333337,1.7124542124542126

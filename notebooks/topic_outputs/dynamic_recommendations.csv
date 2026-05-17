@@ -1,0 +1,7 @@
+topic_id,posts,performance_score,opportunity_score,action,reason,suggested_next_step
+1,30,0.6336461183310533,0.7435522828317374,Scale,This topic has both solid support and above-average performance.,"Create more content around the strongest repeated language/themes: vanilla cake, vanilla taste, favorite cake"
+0,30,0.34377924139817684,0.5406454689787238,Maintain,This topic is around the middle of the dataset.,"Keep it in the mix, but prioritize topics with stronger opportunity scores."
+2,20,0.33104854891459257,0.43173398424021475,Rework,This topic appears often but underperforms relative to other topics.,"Change the hook, creative format, CTA, or posting time before increasing volume."
+4,15,0.3770030756759898,0.41390215297319277,Test more,"This topic performs well but has fewer posts, so confidence is lower.","Run a small content test with 3-5 new posts using related 2-gram/3-gram phrases: وكل يوم, اليوم وكل, فانيلا اليوم, نابلس للحجز, وفرع نابلس, علي البوفيه, فانيلا فرع, الرمضاني فانيلا"
+3,19,0.3070168912269162,0.4049118238588413,Maintain,This topic is around the middle of the dataset.,"Keep it in the mix, but prioritize topics with stronger opportunity scores."
+5,8,0.3394220801658604,0.31759545611610224,Maintain,This topic is around the middle of the dataset.,"Keep it in the mix, but prioritize topics with stronger opportunity scores."
