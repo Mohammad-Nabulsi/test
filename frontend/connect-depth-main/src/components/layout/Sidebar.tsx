@@ -1,5 +1,6 @@
 ﻿import { Link, useRouterState } from "@tanstack/react-router";
 import {
+  Activity,
   BarChart3,
   FileText,
   Hash,
@@ -27,6 +28,10 @@ const items = [
   { to: "/dashboard/benchmarking", label: "التوقعات", icon: Target },
   { to: "/dashboard/forecasting", label: "السيناريو", icon: TrendingUp },
   { to: "/dashboard/reports", label: "التقارير", icon: FileText },
+  { to: "/dashboard/recommendation-apis-single", label: "API: التوصيات", icon: Sparkles },
+  { to: "/dashboard/forecast-single", label: "API: التوقعات", icon: TrendingUp },
+  { to: "/dashboard/anomalies-single", label: "API: الشذوذ", icon: Activity },
+  { to: "/dashboard/business-momentum-single", label: "API: الزخم", icon: Target },
 ];
 
 export function Sidebar() {

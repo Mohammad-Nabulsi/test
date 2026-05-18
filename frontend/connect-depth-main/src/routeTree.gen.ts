@@ -18,12 +18,16 @@ import { Route as DashboardIndexRouteImport } from './routes/dashboard.index'
 import { Route as DashboardSimilarRouteImport } from './routes/dashboard.similar'
 import { Route as DashboardReportsRouteImport } from './routes/dashboard.reports'
 import { Route as DashboardRecommendationsRouteImport } from './routes/dashboard.recommendations'
+import { Route as DashboardRecommendationApisSingleRouteImport } from './routes/dashboard.recommendation-apis-single'
 import { Route as DashboardHashtagsRouteImport } from './routes/dashboard.hashtags'
 import { Route as DashboardForecastingRouteImport } from './routes/dashboard.forecasting'
+import { Route as DashboardForecastSingleRouteImport } from './routes/dashboard.forecast-single'
 import { Route as DashboardContentRouteImport } from './routes/dashboard.content'
 import { Route as DashboardClusteringRouteImport } from './routes/dashboard.clustering'
 import { Route as DashboardCaptionTipsRouteImport } from './routes/dashboard.caption-tips'
+import { Route as DashboardBusinessMomentumSingleRouteImport } from './routes/dashboard.business-momentum-single'
 import { Route as DashboardBenchmarkingRouteImport } from './routes/dashboard.benchmarking'
+import { Route as DashboardAnomaliesSingleRouteImport } from './routes/dashboard.anomalies-single'
 
 const ProcessingRoute = ProcessingRouteImport.update({
   id: '/processing',
@@ -71,6 +75,12 @@ const DashboardRecommendationsRoute =
     path: '/recommendations',
     getParentRoute: () => DashboardRoute,
   } as any)
+const DashboardRecommendationApisSingleRoute =
+  DashboardRecommendationApisSingleRouteImport.update({
+    id: '/recommendation-apis-single',
+    path: '/recommendation-apis-single',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardHashtagsRoute = DashboardHashtagsRouteImport.update({
   id: '/hashtags',
   path: '/hashtags',
@@ -79,6 +89,11 @@ const DashboardHashtagsRoute = DashboardHashtagsRouteImport.update({
 const DashboardForecastingRoute = DashboardForecastingRouteImport.update({
   id: '/forecasting',
   path: '/forecasting',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardForecastSingleRoute = DashboardForecastSingleRouteImport.update({
+  id: '/forecast-single',
+  path: '/forecast-single',
   getParentRoute: () => DashboardRoute,
 } as any)
 const DashboardContentRoute = DashboardContentRouteImport.update({
@@ -96,11 +111,23 @@ const DashboardCaptionTipsRoute = DashboardCaptionTipsRouteImport.update({
   path: '/caption-tips',
   getParentRoute: () => DashboardRoute,
 } as any)
+const DashboardBusinessMomentumSingleRoute =
+  DashboardBusinessMomentumSingleRouteImport.update({
+    id: '/business-momentum-single',
+    path: '/business-momentum-single',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardBenchmarkingRoute = DashboardBenchmarkingRouteImport.update({
   id: '/benchmarking',
   path: '/benchmarking',
   getParentRoute: () => DashboardRoute,
 } as any)
+const DashboardAnomaliesSingleRoute =
+  DashboardAnomaliesSingleRouteImport.update({
+    id: '/anomalies-single',
+    path: '/anomalies-single',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -108,12 +135,16 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof DashboardRouteWithChildren
   '/me': typeof MeRoute
   '/processing': typeof ProcessingRoute
+  '/dashboard/anomalies-single': typeof DashboardAnomaliesSingleRoute
   '/dashboard/benchmarking': typeof DashboardBenchmarkingRoute
+  '/dashboard/business-momentum-single': typeof DashboardBusinessMomentumSingleRoute
   '/dashboard/caption-tips': typeof DashboardCaptionTipsRoute
   '/dashboard/clustering': typeof DashboardClusteringRoute
   '/dashboard/content': typeof DashboardContentRoute
+  '/dashboard/forecast-single': typeof DashboardForecastSingleRoute
   '/dashboard/forecasting': typeof DashboardForecastingRoute
   '/dashboard/hashtags': typeof DashboardHashtagsRoute
+  '/dashboard/recommendation-apis-single': typeof DashboardRecommendationApisSingleRoute
   '/dashboard/recommendations': typeof DashboardRecommendationsRoute
   '/dashboard/reports': typeof DashboardReportsRoute
   '/dashboard/similar': typeof DashboardSimilarRoute
@@ -124,12 +155,16 @@ export interface FileRoutesByTo {
   '/cluster-visualization': typeof ClusterVisualizationRoute
   '/me': typeof MeRoute
   '/processing': typeof ProcessingRoute
+  '/dashboard/anomalies-single': typeof DashboardAnomaliesSingleRoute
   '/dashboard/benchmarking': typeof DashboardBenchmarkingRoute
+  '/dashboard/business-momentum-single': typeof DashboardBusinessMomentumSingleRoute
   '/dashboard/caption-tips': typeof DashboardCaptionTipsRoute
   '/dashboard/clustering': typeof DashboardClusteringRoute
   '/dashboard/content': typeof DashboardContentRoute
+  '/dashboard/forecast-single': typeof DashboardForecastSingleRoute
   '/dashboard/forecasting': typeof DashboardForecastingRoute
   '/dashboard/hashtags': typeof DashboardHashtagsRoute
+  '/dashboard/recommendation-apis-single': typeof DashboardRecommendationApisSingleRoute
   '/dashboard/recommendations': typeof DashboardRecommendationsRoute
   '/dashboard/reports': typeof DashboardReportsRoute
   '/dashboard/similar': typeof DashboardSimilarRoute
@@ -142,12 +177,16 @@ export interface FileRoutesById {
   '/dashboard': typeof DashboardRouteWithChildren
   '/me': typeof MeRoute
   '/processing': typeof ProcessingRoute
+  '/dashboard/anomalies-single': typeof DashboardAnomaliesSingleRoute
   '/dashboard/benchmarking': typeof DashboardBenchmarkingRoute
+  '/dashboard/business-momentum-single': typeof DashboardBusinessMomentumSingleRoute
   '/dashboard/caption-tips': typeof DashboardCaptionTipsRoute
   '/dashboard/clustering': typeof DashboardClusteringRoute
   '/dashboard/content': typeof DashboardContentRoute
+  '/dashboard/forecast-single': typeof DashboardForecastSingleRoute
   '/dashboard/forecasting': typeof DashboardForecastingRoute
   '/dashboard/hashtags': typeof DashboardHashtagsRoute
+  '/dashboard/recommendation-apis-single': typeof DashboardRecommendationApisSingleRoute
   '/dashboard/recommendations': typeof DashboardRecommendationsRoute
   '/dashboard/reports': typeof DashboardReportsRoute
   '/dashboard/similar': typeof DashboardSimilarRoute
@@ -161,12 +200,16 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/me'
     | '/processing'
+    | '/dashboard/anomalies-single'
     | '/dashboard/benchmarking'
+    | '/dashboard/business-momentum-single'
     | '/dashboard/caption-tips'
     | '/dashboard/clustering'
     | '/dashboard/content'
+    | '/dashboard/forecast-single'
     | '/dashboard/forecasting'
     | '/dashboard/hashtags'
+    | '/dashboard/recommendation-apis-single'
     | '/dashboard/recommendations'
     | '/dashboard/reports'
     | '/dashboard/similar'
@@ -177,12 +220,16 @@ export interface FileRouteTypes {
     | '/cluster-visualization'
     | '/me'
     | '/processing'
+    | '/dashboard/anomalies-single'
     | '/dashboard/benchmarking'
+    | '/dashboard/business-momentum-single'
     | '/dashboard/caption-tips'
     | '/dashboard/clustering'
     | '/dashboard/content'
+    | '/dashboard/forecast-single'
     | '/dashboard/forecasting'
     | '/dashboard/hashtags'
+    | '/dashboard/recommendation-apis-single'
     | '/dashboard/recommendations'
     | '/dashboard/reports'
     | '/dashboard/similar'
@@ -194,12 +241,16 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/me'
     | '/processing'
+    | '/dashboard/anomalies-single'
     | '/dashboard/benchmarking'
+    | '/dashboard/business-momentum-single'
     | '/dashboard/caption-tips'
     | '/dashboard/clustering'
     | '/dashboard/content'
+    | '/dashboard/forecast-single'
     | '/dashboard/forecasting'
     | '/dashboard/hashtags'
+    | '/dashboard/recommendation-apis-single'
     | '/dashboard/recommendations'
     | '/dashboard/reports'
     | '/dashboard/similar'
@@ -279,6 +330,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardRecommendationsRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/dashboard/recommendation-apis-single': {
+      id: '/dashboard/recommendation-apis-single'
+      path: '/recommendation-apis-single'
+      fullPath: '/dashboard/recommendation-apis-single'
+      preLoaderRoute: typeof DashboardRecommendationApisSingleRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/dashboard/hashtags': {
       id: '/dashboard/hashtags'
       path: '/hashtags'
@@ -291,6 +349,13 @@ declare module '@tanstack/react-router' {
       path: '/forecasting'
       fullPath: '/dashboard/forecasting'
       preLoaderRoute: typeof DashboardForecastingRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/forecast-single': {
+      id: '/dashboard/forecast-single'
+      path: '/forecast-single'
+      fullPath: '/dashboard/forecast-single'
+      preLoaderRoute: typeof DashboardForecastSingleRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/dashboard/content': {
@@ -314,6 +379,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardCaptionTipsRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/dashboard/business-momentum-single': {
+      id: '/dashboard/business-momentum-single'
+      path: '/business-momentum-single'
+      fullPath: '/dashboard/business-momentum-single'
+      preLoaderRoute: typeof DashboardBusinessMomentumSingleRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/dashboard/benchmarking': {
       id: '/dashboard/benchmarking'
       path: '/benchmarking'
@@ -321,16 +393,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardBenchmarkingRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/dashboard/anomalies-single': {
+      id: '/dashboard/anomalies-single'
+      path: '/anomalies-single'
+      fullPath: '/dashboard/anomalies-single'
+      preLoaderRoute: typeof DashboardAnomaliesSingleRouteImport
+      parentRoute: typeof DashboardRoute
+    }
   }
 }
 
 interface DashboardRouteChildren {
+  DashboardAnomaliesSingleRoute: typeof DashboardAnomaliesSingleRoute
   DashboardBenchmarkingRoute: typeof DashboardBenchmarkingRoute
+  DashboardBusinessMomentumSingleRoute: typeof DashboardBusinessMomentumSingleRoute
   DashboardCaptionTipsRoute: typeof DashboardCaptionTipsRoute
   DashboardClusteringRoute: typeof DashboardClusteringRoute
   DashboardContentRoute: typeof DashboardContentRoute
+  DashboardForecastSingleRoute: typeof DashboardForecastSingleRoute
   DashboardForecastingRoute: typeof DashboardForecastingRoute
   DashboardHashtagsRoute: typeof DashboardHashtagsRoute
+  DashboardRecommendationApisSingleRoute: typeof DashboardRecommendationApisSingleRoute
   DashboardRecommendationsRoute: typeof DashboardRecommendationsRoute
   DashboardReportsRoute: typeof DashboardReportsRoute
   DashboardSimilarRoute: typeof DashboardSimilarRoute
@@ -338,12 +421,17 @@ interface DashboardRouteChildren {
 }
 
 const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardAnomaliesSingleRoute: DashboardAnomaliesSingleRoute,
   DashboardBenchmarkingRoute: DashboardBenchmarkingRoute,
+  DashboardBusinessMomentumSingleRoute: DashboardBusinessMomentumSingleRoute,
   DashboardCaptionTipsRoute: DashboardCaptionTipsRoute,
   DashboardClusteringRoute: DashboardClusteringRoute,
   DashboardContentRoute: DashboardContentRoute,
+  DashboardForecastSingleRoute: DashboardForecastSingleRoute,
   DashboardForecastingRoute: DashboardForecastingRoute,
   DashboardHashtagsRoute: DashboardHashtagsRoute,
+  DashboardRecommendationApisSingleRoute:
+    DashboardRecommendationApisSingleRoute,
   DashboardRecommendationsRoute: DashboardRecommendationsRoute,
   DashboardReportsRoute: DashboardReportsRoute,
   DashboardSimilarRoute: DashboardSimilarRoute,
