@@ -1,10 +1,8 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   AlertCircle,
   AreaChart,
-  BarChart3,
   CalendarDays,
-  CheckCircle2,
   Database,
   Gauge,
   Loader2,
@@ -12,21 +10,28 @@ import {
   TrendingUp,
   Upload,
 } from "lucide-react";
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Line,
-  LineChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
 
 type ForecastRowRaw = {
   date: string;
   predicted_engagement_rate: number;
+  lower_bound?: number;
+  upper_bound?: number;
+};
+
+type TuningSummaryRow = {
+  model: string;
+  base_model?: string;
+  window?: number | null;
+  MAE?: number;
+  RMSE?: number;
+  MAPE?: number | null;
+};
+
+type TestPredictionRow = {
+  date: string;
+  actual_engagement_rate: number;
+  predicted_engagement_rate: number;
+  residual?: number;
 };
 
 type ForecastResponse = {
@@ -35,22 +40,18 @@ type ForecastResponse = {
   forecast_horizon_weeks: number;
   best_MAE: number;
   best_RMSE: number;
+  best_MAPE?: number | null;
   message: string;
   future_forecast: ForecastRowRaw[];
+  test_predictions?: TestPredictionRow[];
+  tuning_summary?: TuningSummaryRow[];
+  forecast_confidence_interval?: Array<{ date: string; lower_bound: number; upper_bound: number }>;
   chart_url: string;
 };
 
-type EndpointState = {
-  loading: boolean;
-  status?: number;
-  error?: string;
-  data?: ForecastResponse;
-  raw?: unknown;
-};
-
-type EndpointConfig = {
-  id: "analyze" | "static";
+type ForecastSectionConfig = {
   title: string;
+  description: string;
   method: "GET" | "POST";
   path: string;
 };
@@ -65,6 +66,8 @@ type NormalizedForecastRow = {
   compactDate: string;
   rawValue: number;
   displayValue: string;
+  displayLower: string;
+  displayUpper: string;
   chartValue: number;
 };
 
@@ -83,25 +86,17 @@ type ForecastQuality = {
   description: string;
 };
 
-const ENDPOINTS: EndpointConfig[] = [
-  {
-    id: "analyze",
-    title: "Analyze Forecast",
-    method: "POST",
-    path: "/api/forecast/analyze-single",
-  },
-  {
-    id: "static",
-    title: "Static Forecast",
-    method: "GET",
-    path: "/api/forecast/static-single",
-  },
-];
+const UPLOADED_ENDPOINT: ForecastSectionConfig = {
+  title: "Forecast Results",
+  description: "Runs POST /api/forecast/analyze-single on the selected dataset path.",
+  method: "POST",
+  path: "/api/forecast/analyze-single",
+};
 
 function formatDate(input: string): string {
   const d = new Date(input);
   if (Number.isNaN(d.getTime())) return input;
-  return new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "short", year: "numeric" }).format(d);
+  return new Intl.DateTimeFormat("en-US", { day: "2-digit", month: "short", year: "numeric" }).format(d);
 }
 
 function formatMetric(value: number | undefined | null, digits = 4): string {
@@ -128,6 +123,8 @@ function normalizeForecastRows(forecast: ForecastRowRaw[] | undefined): Normaliz
       rawValue: row.predicted_engagement_rate,
       chartValue: row.predicted_engagement_rate,
       displayValue: formatPrediction(row.predicted_engagement_rate),
+      displayLower: formatPrediction(row.lower_bound),
+      displayUpper: formatPrediction(row.upper_bound),
     }));
 }
 
@@ -168,10 +165,18 @@ function qualityToneClasses(tone: ForecastQuality["tone"]): string {
   return "border-rose-300/60 bg-rose-500/10 text-rose-700";
 }
 
-function resolveChartUrl(apiBase: string, chartUrl: string | undefined): string {
+function resolveChartUrl(apiBase: string, chartUrl: string | null | undefined): string {
   if (!chartUrl) return "";
   if (chartUrl.startsWith("http://") || chartUrl.startsWith("https://")) return chartUrl;
-  return `${apiBase.replace(/\/$/, "")}/${chartUrl.replace(/^\/+/, "")}`;
+  try {
+    const base = new URL(apiBase);
+    if (chartUrl.startsWith("/")) {
+      return `${base.origin}${chartUrl}`;
+    }
+    return new URL(chartUrl, `${base.origin}/`).toString();
+  } catch {
+    return `${apiBase.replace(/\/$/, "")}/${chartUrl.replace(/^\/+/, "")}`;
+  }
 }
 
 function buildInsights(resp: ForecastResponse, rows: NormalizedForecastRow[], stats: PredictionStats | null, quality: ForecastQuality): string[] {
@@ -189,7 +194,7 @@ function buildInsights(resp: ForecastResponse, rows: NormalizedForecastRow[], st
   }
   insights.push(`Forecast quality: ${quality.label}. ${quality.description}`);
   if (!resp.chart_url) {
-    insights.push("No backend chart URL was returned, so visuals are generated directly from future_forecast.");
+    insights.push("No chart generated yet.");
   }
   return insights.slice(0, 5);
 }
@@ -199,7 +204,7 @@ function EmptyForecastState({ title }: { title: string }) {
     <div className="rounded-2xl border border-dashed border-border/80 bg-muted/20 p-8 text-center">
       <AreaChart className="mx-auto h-8 w-8 text-muted-foreground" />
       <h4 className="mt-3 text-sm font-semibold">{title}</h4>
-      <p className="mt-1 text-sm text-muted-foreground">Run this endpoint to generate forecast analytics, charts, and insights.</p>
+      <p className="mt-1 text-sm text-muted-foreground">Upload a dataset to run forecasting.</p>
     </div>
   );
 }
@@ -221,75 +226,8 @@ function ForecastMetricCard({
         {icon}
         <span className="text-xs uppercase tracking-wide">{label}</span>
       </div>
-      <div className="mt-2 text-lg font-semibold num-display">{value}</div>
+      <div className="mt-2 text-lg font-semibold num-display" dir="ltr">{value}</div>
       <div className="mt-1 text-xs text-muted-foreground">{helper}</div>
-    </div>
-  );
-}
-
-function ForecastTrendChart({ rows }: { rows: NormalizedForecastRow[] }) {
-  if (!rows.length) return <EmptyForecastState title="Predicted Engagement Trend" />;
-  return (
-    <div className="rounded-2xl border border-border/80 bg-background p-4 shadow-card">
-      <h4 className="text-sm font-semibold mb-3">Predicted Engagement Trend</h4>
-      <div className="h-72">
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={rows} margin={{ top: 8, right: 16, left: 8, bottom: 8 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
-            <XAxis dataKey="compactDate" tick={{ fontSize: 11 }} minTickGap={20} />
-            <YAxis tickFormatter={(v) => formatPrediction(Number(v))} tick={{ fontSize: 11 }} width={80} />
-            <Tooltip
-              formatter={(v: number) => [formatPrediction(v), "Predicted Engagement"]}
-              labelFormatter={(label) => `Date: ${label}`}
-              contentStyle={{ borderRadius: 12, borderColor: "var(--color-border)" }}
-            />
-            <Line
-              type="monotone"
-              dataKey="chartValue"
-              stroke="url(#forecastLineGradient)"
-              strokeWidth={3}
-              dot={{ r: 3, fill: "var(--brand)" }}
-              activeDot={{ r: 5 }}
-            />
-            <defs>
-              <linearGradient id="forecastLineGradient" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="var(--brand)" />
-                <stop offset="100%" stopColor="var(--brand-3)" />
-              </linearGradient>
-            </defs>
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
-    </div>
-  );
-}
-
-function ForecastBarDistribution({ rows }: { rows: NormalizedForecastRow[] }) {
-  if (!rows.length) return <EmptyForecastState title="Weekly Forecast Distribution" />;
-  return (
-    <div className="rounded-2xl border border-border/80 bg-background p-4 shadow-card">
-      <h4 className="text-sm font-semibold mb-3">Weekly Forecast Distribution</h4>
-      <div className="h-72">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={rows} margin={{ top: 8, right: 16, left: 8, bottom: 8 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
-            <XAxis dataKey="compactDate" tick={{ fontSize: 11 }} minTickGap={20} />
-            <YAxis tickFormatter={(v) => formatPrediction(Number(v))} tick={{ fontSize: 11 }} width={80} />
-            <Tooltip
-              formatter={(v: number) => [formatPrediction(v), "Predicted Engagement"]}
-              labelFormatter={(label) => `Date: ${label}`}
-              contentStyle={{ borderRadius: 12, borderColor: "var(--color-border)" }}
-            />
-            <Bar dataKey="chartValue" fill="url(#forecastBarGradient)" radius={[6, 6, 0, 0]} />
-            <defs>
-              <linearGradient id="forecastBarGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="var(--brand-2)" />
-                <stop offset="100%" stopColor="var(--brand-3)" />
-              </linearGradient>
-            </defs>
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
     </div>
   );
 }
@@ -321,7 +259,8 @@ function ForecastTable({ rows }: { rows: NormalizedForecastRow[] }) {
               <th className="text-left px-3 py-2.5 font-semibold">Week</th>
               <th className="text-left px-3 py-2.5 font-semibold">Date</th>
               <th className="text-left px-3 py-2.5 font-semibold">Predicted Engagement</th>
-              <th className="text-left px-3 py-2.5 font-semibold">Raw Value</th>
+              <th className="text-left px-3 py-2.5 font-semibold">Lower Bound</th>
+              <th className="text-left px-3 py-2.5 font-semibold">Upper Bound</th>
             </tr>
           </thead>
           <tbody>
@@ -330,7 +269,8 @@ function ForecastTable({ rows }: { rows: NormalizedForecastRow[] }) {
                 <td className="px-3 py-2 num-display">{row.week}</td>
                 <td className="px-3 py-2">{row.compactDate}</td>
                 <td className="px-3 py-2 font-semibold">{row.displayValue}</td>
-                <td className="px-3 py-2">{formatMetric(row.rawValue, 8)}</td>
+                <td className="px-3 py-2">{row.displayLower}</td>
+                <td className="px-3 py-2">{row.displayUpper}</td>
               </tr>
             ))}
           </tbody>
@@ -340,73 +280,91 @@ function ForecastTable({ rows }: { rows: NormalizedForecastRow[] }) {
   );
 }
 
-function RawJsonDetails({ state, endpoint }: { state: EndpointState; endpoint: EndpointConfig }) {
+function TuningSummaryTable({ rows }: { rows?: TuningSummaryRow[] }) {
+  if (!rows?.length) return null;
   return (
-    <details className="rounded-2xl border border-border/80 bg-muted/15 p-4">
-      <summary className="cursor-pointer text-sm font-semibold">Developer Details</summary>
-      <div className="mt-3 space-y-3 text-xs">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-          <div className="rounded-lg border border-border/70 bg-background p-2.5">
-            <div className="text-muted-foreground">HTTP Status</div>
-            <div className="font-semibold mt-1">{state.status ?? "-"}</div>
-          </div>
-          <div className="rounded-lg border border-border/70 bg-background p-2.5">
-            <div className="text-muted-foreground">Method</div>
-            <div className="font-semibold mt-1">{endpoint.method}</div>
-          </div>
-          <div className="rounded-lg border border-border/70 bg-background p-2.5">
-            <div className="text-muted-foreground">Endpoint</div>
-            <div className="font-semibold mt-1 font-mono">{endpoint.path}</div>
-          </div>
-        </div>
-        <pre className="overflow-auto rounded-xl border border-border/70 bg-background p-3 text-xs leading-6 whitespace-pre-wrap break-words">
-          {JSON.stringify(state.raw ?? state.data ?? {}, null, 2)}
-        </pre>
+    <div className="rounded-2xl border border-border/80 bg-background p-4 shadow-card">
+      <h4 className="text-sm font-semibold mb-3">Model Tuning Summary</h4>
+      <div className="max-h-[320px] overflow-auto rounded-xl border border-border/80">
+        <table className="min-w-full text-sm">
+          <thead className="sticky top-0 z-10 bg-muted/80 backdrop-blur">
+            <tr>
+              <th className="text-left px-3 py-2.5 font-semibold">Model</th>
+              <th className="text-left px-3 py-2.5 font-semibold">Window</th>
+              <th className="text-left px-3 py-2.5 font-semibold">MAE</th>
+              <th className="text-left px-3 py-2.5 font-semibold">RMSE</th>
+              <th className="text-left px-3 py-2.5 font-semibold">MAPE</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.slice(0, 12).map((row, idx) => (
+              <tr key={`${row.model}-${idx}`} className="border-t border-border/70 hover:bg-muted/25 transition-colors">
+                <td className="px-3 py-2 font-medium">{row.model}</td>
+                <td className="px-3 py-2">{row.window ?? "-"}</td>
+                <td className="px-3 py-2">{formatMetric(row.MAE, 4)}</td>
+                <td className="px-3 py-2">{formatMetric(row.RMSE, 4)}</td>
+                <td className="px-3 py-2">{row.MAPE == null ? "-" : `${row.MAPE.toFixed(2)}%`}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-    </details>
+    </div>
   );
 }
 
-function ForecastEndpointCard({
-  endpoint,
-  state,
-  onRun,
+function ForecastResultSection({
+  config,
+  forecast,
+  loading,
+  error,
+  status,
   apiBase,
+  emptyMessage,
 }: {
-  endpoint: EndpointConfig;
-  state: EndpointState;
-  onRun: () => Promise<void>;
+  config: ForecastSectionConfig;
+  forecast: ForecastResponse | null;
+  loading: boolean;
+  error: string | null;
+  status: number | null;
   apiBase: string;
+  emptyMessage: string;
 }) {
-  const rows = useMemo(() => normalizeForecastRows(state.data?.future_forecast), [state.data?.future_forecast]);
+  const rows = useMemo(() => normalizeForecastRows(forecast?.future_forecast), [forecast?.future_forecast]);
   const stats = useMemo(() => getPredictionStats(rows), [rows]);
   const quality = useMemo(
-    () => getForecastQuality(state.data?.best_MAE, state.data?.best_RMSE),
-    [state.data?.best_MAE, state.data?.best_RMSE],
+    () => getForecastQuality(forecast?.best_MAE, forecast?.best_RMSE),
+    [forecast?.best_MAE, forecast?.best_RMSE],
   );
   const insights = useMemo(() => {
-    if (!state.data) return [];
-    return buildInsights(state.data, rows, stats, quality);
-  }, [quality, rows, state.data, stats]);
+    if (!forecast) return [];
+    return buildInsights(forecast, rows, stats, quality);
+  }, [forecast, quality, rows, stats]);
 
-  const statusOk = !!(state.status && state.status >= 200 && state.status < 300);
+  const statusOk = !!(status && status >= 200 && status < 300);
   const firstDate = rows[0]?.compactDate ?? "-";
   const lastDate = rows[rows.length - 1]?.compactDate ?? "-";
   const avgPrediction = stats ? formatPrediction(stats.avg) : "-";
   const peakPrediction = stats ? formatPrediction(stats.peak) : "-";
   const lowPrediction = stats ? formatPrediction(stats.low) : "-";
-  const backendChartSrc = resolveChartUrl(apiBase, state.data?.chart_url);
+  const backendChartSrc = resolveChartUrl(apiBase, forecast?.chart_url);
+  const [chartLoadFailed, setChartLoadFailed] = useState(false);
+
+  useEffect(() => {
+    setChartLoadFailed(false);
+  }, [backendChartSrc]);
 
   return (
     <section className="rounded-3xl border border-border/80 bg-card p-5 md:p-6 shadow-card space-y-4">
       <header className="flex items-center justify-between gap-3 flex-wrap">
         <div>
-          <h3 className="text-xl font-semibold font-display">{endpoint.title}</h3>
+          <h3 className="text-xl font-semibold font-display">{config.title}</h3>
+          <p className="mt-1 text-sm text-muted-foreground">{config.description}</p>
           <p className="text-xs text-muted-foreground mt-1">
             <span className="inline-flex items-center rounded-full border border-border/70 bg-muted/30 px-2 py-0.5 font-mono mr-2">
-              {endpoint.method}
+              {config.method}
             </span>
-            <span className="font-mono">{endpoint.path}</span>
+            <span className="font-mono">{config.path}</span>
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -414,188 +372,151 @@ function ForecastEndpointCard({
             className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium border ${
               statusOk
                 ? "border-emerald-300/60 bg-emerald-500/10 text-emerald-700"
-                : state.status
+                : status
                   ? "border-rose-300/60 bg-rose-500/10 text-rose-700"
                   : "border-border/70 bg-muted/30 text-muted-foreground"
             }`}
           >
-            HTTP {state.status ?? "-"}
+            HTTP {status ?? "-"}
           </span>
-          <button
-            type="button"
-            onClick={() => void onRun()}
-            disabled={state.loading}
-            className="h-9 px-4 rounded-xl border border-border bg-background hover:bg-muted/35 transition-colors text-sm font-medium disabled:opacity-60 inline-flex items-center"
-          >
-            {state.loading ? <Loader2 className="mr-2 h-3.5 w-3.5 animate-spin" /> : null}
-            {state.loading ? "Running..." : "Run"}
-          </button>
         </div>
       </header>
 
-      {state.error ? (
+      {error ? (
         <div className="rounded-2xl border border-rose-300/50 bg-rose-500/10 p-4 text-rose-700 text-sm flex items-start gap-2">
           <AlertCircle className="h-4 w-4 mt-0.5" />
-          <span>{state.error}</span>
+          <span>{error}</span>
         </div>
       ) : null}
 
-      {state.loading && !state.data ? (
+      {loading && !forecast ? (
         <div className="rounded-2xl border border-border/80 bg-muted/20 p-8 flex items-center justify-center text-sm text-muted-foreground">
           <Loader2 className="h-5 w-5 animate-spin mr-2" />
           Running forecast endpoint...
         </div>
       ) : null}
 
-      {!state.loading && !state.data && !state.error ? <EmptyForecastState title={endpoint.title} /> : null}
+      {!loading && !forecast && !error ? <EmptyForecastState title={emptyMessage} /> : null}
 
-      {state.data ? (
+      {forecast ? (
         <div className="space-y-4">
           <div className="rounded-2xl border border-border/80 bg-gradient-to-r from-accent/35 via-background to-background p-4 shadow-card">
             <div className="flex items-center flex-wrap gap-2">
               <span className="inline-flex items-center rounded-full border border-border/70 bg-background/80 px-3 py-1 text-xs font-medium">
                 <Database className="h-3.5 w-3.5 mr-1 text-[var(--brand)]" />
-                {state.data.business_name || "Unknown business"}
+                {forecast.business_name || "Unknown business"}
               </span>
               <span className={`inline-flex rounded-full border px-3 py-1 text-xs font-medium ${qualityToneClasses(quality.tone)}`}>
                 Forecast Quality: {quality.label}
               </span>
             </div>
-            <p className="mt-3 text-sm text-muted-foreground">{state.data.message || "Forecast completed."}</p>
+            <p className="mt-3 text-sm text-muted-foreground">{forecast.message || "Forecast completed."}</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
-            <ForecastMetricCard icon={<CalendarDays className="h-4 w-4" />} label="Forecast Horizon" value={`${state.data.forecast_horizon_weeks ?? rows.length} weeks`} helper="Forecast window length" />
+            <ForecastMetricCard icon={<CalendarDays className="h-4 w-4" />} label="Forecast Horizon" value={`${forecast.forecast_horizon_weeks ?? rows.length} weeks`} helper="Forecast window length" />
             <ForecastMetricCard icon={<TrendingUp className="h-4 w-4" />} label="Avg Prediction" value={avgPrediction} helper="Average expected engagement" />
-            <ForecastMetricCard icon={<BarChart3 className="h-4 w-4" />} label="Peak Prediction" value={peakPrediction} helper="Highest expected weekly value" />
-            <ForecastMetricCard icon={<BarChart3 className="h-4 w-4" />} label="Lowest Prediction" value={lowPrediction} helper="Lowest expected weekly value" />
-            <ForecastMetricCard icon={<Gauge className="h-4 w-4" />} label="MAE" value={formatMetric(state.data.best_MAE, 4)} helper="Mean Absolute Error" />
-            <ForecastMetricCard icon={<Gauge className="h-4 w-4" />} label="RMSE" value={formatMetric(state.data.best_RMSE, 4)} helper="Root Mean Squared Error" />
-            <ForecastMetricCard icon={<Sparkles className="h-4 w-4" />} label="Model" value={state.data.best_model || "-"} helper="Selected best model" />
-            <ForecastMetricCard icon={<CalendarDays className="h-4 w-4" />} label="Date Range" value={`${firstDate} -> ${lastDate}`} helper="First and last forecast date" />
+            <ForecastMetricCard icon={<TrendingUp className="h-4 w-4" />} label="Peak Prediction" value={peakPrediction} helper="Highest expected weekly value" />
+            <ForecastMetricCard icon={<TrendingUp className="h-4 w-4" />} label="Lowest Prediction" value={lowPrediction} helper="Lowest expected weekly value" />
+            <ForecastMetricCard icon={<Gauge className="h-4 w-4" />} label="MAE" value={formatMetric(forecast.best_MAE, 4)} helper="Mean Absolute Error" />
+            <ForecastMetricCard icon={<Gauge className="h-4 w-4" />} label="RMSE" value={formatMetric(forecast.best_RMSE, 4)} helper="Root Mean Squared Error" />
+            <ForecastMetricCard icon={<Gauge className="h-4 w-4" />} label="MAPE" value={forecast.best_MAPE == null ? "-" : `${forecast.best_MAPE.toFixed(2)}%`} helper="Mean Absolute Percentage Error" />
+            <ForecastMetricCard icon={<Sparkles className="h-4 w-4" />} label="Model" value={forecast.best_model || "-"} helper="Selected best model" />
+            <ForecastMetricCard icon={<CalendarDays className="h-4 w-4" />} label="Date Range" value={`${firstDate} → ${lastDate}`} helper="First and last forecast date" />
           </div>
 
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
-            <ForecastTrendChart rows={rows} />
-            <ForecastBarDistribution rows={rows} />
-          </div>
-
-          <ForecastInsights items={insights} />
           <ForecastTable rows={rows} />
+          <TuningSummaryTable rows={forecast.tuning_summary} />
 
-          {backendChartSrc ? (
+          {backendChartSrc && !chartLoadFailed ? (
             <div className="rounded-2xl border border-border/80 bg-background p-4 shadow-card">
               <h4 className="text-sm font-semibold mb-3">Backend Forecast Chart</h4>
               <img
                 src={backendChartSrc}
-                alt={`${endpoint.title} backend forecast chart`}
+                alt={`${config.title} backend forecast chart`}
+                onError={() => setChartLoadFailed(true)}
                 className="w-full max-h-[460px] object-contain rounded-xl border border-border/70 bg-muted/20"
               />
-              <p className="mt-2 text-xs text-muted-foreground break-all">{state.data.chart_url}</p>
             </div>
-          ) : null}
-
-          {state.data.chart_url ? (
+          ) : (
             <div className="rounded-2xl border border-border/80 bg-background p-4 shadow-card">
-              <h4 className="text-sm font-semibold mb-3">Backend Chart URL</h4>
-              <a className="text-sm text-blue-600 hover:underline break-all" href={state.data.chart_url} target="_blank" rel="noreferrer">
-                {state.data.chart_url}
-              </a>
+              <h4 className="text-sm font-semibold mb-3">Backend Forecast Chart</h4>
+              <div className="rounded-2xl border border-dashed border-border/80 bg-muted/20 p-8 text-center">
+                <AreaChart className="mx-auto h-8 w-8 text-muted-foreground" />
+                <p className="mt-3 text-sm font-medium">
+                  {backendChartSrc ? "Chart image could not be loaded." : "No chart generated yet."}
+                </p>
+              </div>
             </div>
-          ) : null}
+          )}
 
-          <RawJsonDetails state={state} endpoint={endpoint} />
+          <ForecastInsights items={insights} />
         </div>
       ) : null}
     </section>
   );
 }
 
-export function ForecastSingleDashboard({ apiBase, defaultDatasetPath }: { apiBase: string; defaultDatasetPath: string }) {
-  const [datasetPath, setDatasetPath] = useState(defaultDatasetPath);
+export function ForecastSingleDashboard({ apiBase }: { apiBase: string }) {
+  const [datasetPath, setDatasetPath] = useState("");
   const [businessName, setBusinessName] = useState("Vanilla Palestine");
   const [uploading, setUploading] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
-  const [states, setStates] = useState<Record<EndpointConfig["id"], EndpointState>>({
-    analyze: { loading: false },
-    static: { loading: false },
-  });
-  const [runAllLoading, setRunAllLoading] = useState(false);
+  const [uploadedForecast, setUploadedForecast] = useState<ForecastResponse | null>(null);
+  const [uploadedLoading, setUploadedLoading] = useState(false);
+  const [uploadedError, setUploadedError] = useState<string | null>(null);
+  const [uploadedStatus, setUploadedStatus] = useState<number | null>(null);
 
-  const runEndpoint = async (endpoint: EndpointConfig) => {
-    setStates((prev) => ({
-      ...prev,
-      [endpoint.id]: {
-        ...prev[endpoint.id],
-        loading: true,
-        error: undefined,
-      },
-    }));
-
+  const parseForecastResponse = async (res: Response): Promise<ForecastResponse> => {
+    const text = await res.text();
+    let payload: unknown = {};
     try {
-      const url = new URL(endpoint.path, `${apiBase.replace(/\/$/, "")}/`);
-      const init: RequestInit = {
-        method: endpoint.method,
-        headers: { Accept: "application/json" },
-      };
+      payload = text ? JSON.parse(text) : {};
+    } catch {
+      throw new Error(text || "Response was not valid JSON.");
+    }
 
-      if (endpoint.id === "analyze") {
-        init.headers = { ...init.headers, "Content-Type": "application/json" };
-        init.body = JSON.stringify({ uploaded_file_path: datasetPath });
-      }
+    if (!res.ok) {
+      const detail = payload && typeof payload === "object" && "detail" in payload ? String((payload as { detail: unknown }).detail) : "";
+      throw new Error(detail || `Request failed (${res.status}).`);
+    }
 
-      if (endpoint.id === "static") {
-        url.searchParams.set("uploaded_file_path", datasetPath);
-      }
+    if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+      throw new Error("Forecast response was not an object.");
+    }
 
-      const res = await fetch(url.toString(), init);
-      const text = await res.text();
-      let payload: unknown = text;
-      try {
-        payload = text ? JSON.parse(text) : {};
-      } catch {
-        payload = text;
-      }
+    return payload as ForecastResponse;
+  };
 
-      if (payload && typeof payload === "object" && !Array.isArray(payload)) {
-        const p = payload as Partial<ForecastResponse>;
-        if (typeof p.business_name === "string" && p.business_name.trim()) {
-          setBusinessName(p.business_name);
-        }
-      }
-
-      setStates((prev) => ({
-        ...prev,
-        [endpoint.id]: {
-          loading: false,
-          status: res.status,
-          raw: payload,
-          data:
-            payload && typeof payload === "object" && !Array.isArray(payload)
-              ? (payload as ForecastResponse)
-              : undefined,
-          error: res.ok ? undefined : "Request returned non-2xx status.",
-        },
-      }));
-    } catch (err) {
-      setStates((prev) => ({
-        ...prev,
-        [endpoint.id]: {
-          ...prev[endpoint.id],
-          loading: false,
-          error: err instanceof Error ? err.message : "Unknown error",
-        },
-      }));
+  const rememberBusinessName = (forecast: ForecastResponse) => {
+    if (forecast.business_name?.trim()) {
+      setBusinessName(forecast.business_name);
     }
   };
 
-  const runAll = async () => {
-    setRunAllLoading(true);
-    for (const endpoint of ENDPOINTS) {
-      // eslint-disable-next-line no-await-in-loop
-      await runEndpoint(endpoint);
+  const runUploadedForecast = async () => {
+    if (!datasetPath) {
+      setUploadedError("Upload a dataset to run forecasting.");
+      return;
     }
-    setRunAllLoading(false);
+    setUploadedLoading(true);
+    setUploadedError(null);
+    try {
+      const url = new URL(UPLOADED_ENDPOINT.path, `${apiBase.replace(/\/$/, "")}/`);
+      const res = await fetch(url.toString(), {
+        method: UPLOADED_ENDPOINT.method,
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify({ uploaded_file_path: datasetPath }),
+      });
+      setUploadedStatus(res.status);
+      const forecast = await parseForecastResponse(res);
+      setUploadedForecast(forecast);
+      rememberBusinessName(forecast);
+    } catch (err) {
+      setUploadedError(err instanceof Error ? err.message : "Uploaded forecast failed.");
+    } finally {
+      setUploadedLoading(false);
+    }
   };
 
   const uploadDataset = async (file: File) => {
@@ -609,6 +530,9 @@ export function ForecastSingleDashboard({ apiBase, defaultDatasetPath }: { apiBa
       const payload = (await res.json()) as UploadResponse;
       const ext = file.name.toLowerCase().endsWith(".json") ? "json" : "csv";
       setDatasetPath(`storage/raw/${payload.dataset_id}/raw.${ext}`);
+      setUploadedForecast(null);
+      setUploadedStatus(null);
+      setUploadedError(null);
     } catch (err) {
       setUploadError(err instanceof Error ? err.message : "Upload failed");
     } finally {
@@ -629,40 +553,27 @@ export function ForecastSingleDashboard({ apiBase, defaultDatasetPath }: { apiBa
               </div>
               <h1 className="mt-3 text-2xl md:text-3xl font-display font-semibold">Forecast Intelligence</h1>
               <p className="mt-2 text-sm text-muted-foreground max-w-3xl">
-                Predict future engagement trends from your selected dataset. Run analyze and static forecast endpoints with customer-ready charts and insights.
+                Upload a CSV or JSON dataset, then run a forecast with customer-ready metrics, tables, and chart output.
               </p>
             </div>
             <div className="flex items-center gap-2">
               <button
                 type="button"
-                onClick={() => void runEndpoint(ENDPOINTS[0])}
-                disabled={states.analyze.loading}
+                onClick={() => void runUploadedForecast()}
+                disabled={uploadedLoading || !datasetPath}
                 className="h-11 px-5 rounded-xl bg-gradient-brand text-white text-sm font-semibold shadow-glow disabled:opacity-60 inline-flex items-center"
               >
-                {states.analyze.loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <TrendingUp className="mr-2 h-4 w-4" />}
+                {uploadedLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <TrendingUp className="mr-2 h-4 w-4" />}
                 Run Forecast
-              </button>
-              <button
-                type="button"
-                onClick={() => void runAll()}
-                disabled={runAllLoading}
-                className="h-11 px-5 rounded-xl border border-border bg-background text-sm font-semibold hover:bg-muted/35 disabled:opacity-60 inline-flex items-center"
-              >
-                {runAllLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <CheckCircle2 className="mr-2 h-4 w-4" />}
-                Run All
               </button>
             </div>
           </div>
 
           <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
-            <label className="text-xs">
-              <div className="mb-1 text-muted-foreground">Active dataset path</div>
-              <input
-                value={datasetPath}
-                onChange={(e) => setDatasetPath(e.target.value)}
-                className="w-full rounded-xl border border-border bg-background/85 px-3 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand)]/25"
-              />
-            </label>
+            <div className="rounded-xl border border-border bg-background/85 px-3 py-2.5 text-xs shadow-sm">
+              <div className="mb-1 text-muted-foreground">Uploaded dataset path</div>
+              <div className="font-mono text-sm break-all">{datasetPath || "Upload a dataset to run forecasting."}</div>
+            </div>
             <label className="text-xs">
               <div className="mb-1 text-muted-foreground">Business name</div>
               <input
@@ -695,16 +606,22 @@ export function ForecastSingleDashboard({ apiBase, defaultDatasetPath }: { apiBa
           {uploadError ? <div className="mt-2 text-xs text-rose-700">{uploadError}</div> : null}
 
           <div className="mt-4 rounded-xl border border-border/70 bg-muted/20 p-3 text-[11px] text-muted-foreground">
-            Endpoints:
-            <span className="font-mono ml-1 mr-2">{ENDPOINTS[0].method} {ENDPOINTS[0].path}</span>
-            <span className="font-mono">{ENDPOINTS[1].method} {ENDPOINTS[1].path}</span>
+            Endpoint:
+            <span className="font-mono ml-1">{UPLOADED_ENDPOINT.method} {UPLOADED_ENDPOINT.path}</span>
           </div>
         </div>
       </section>
 
       <div className="grid grid-cols-1 gap-6">
-        <ForecastEndpointCard endpoint={ENDPOINTS[0]} state={states.analyze} onRun={() => runEndpoint(ENDPOINTS[0])} apiBase={apiBase} />
-        <ForecastEndpointCard endpoint={ENDPOINTS[1]} state={states.static} onRun={() => runEndpoint(ENDPOINTS[1])} apiBase={apiBase} />
+        <ForecastResultSection
+          config={UPLOADED_ENDPOINT}
+          forecast={uploadedForecast}
+          loading={uploadedLoading}
+          error={uploadedError}
+          status={uploadedStatus}
+          apiBase={apiBase}
+          emptyMessage="Upload a dataset to run forecasting."
+        />
       </div>
     </div>
   );

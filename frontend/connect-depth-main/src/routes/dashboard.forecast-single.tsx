@@ -9,9 +9,6 @@ export const Route = createFileRoute("/dashboard/forecast-single")({
 
 function ForecastSinglePage() {
   return (
-    <ForecastSingleDashboard
-      apiBase={API_BASE}
-      defaultDatasetPath="data/processed/vanilla_kpi_dataset.json"
-    />
+    <ForecastSingleDashboard apiBase={API_BASE} />
   );
 }

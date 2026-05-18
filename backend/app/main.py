@@ -1,7 +1,10 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from app.config import settings
 from app.api import (
@@ -43,7 +46,30 @@ def create_app() -> FastAPI:
     ensure_dir(storage / "raw")
     ensure_dir(storage / "cleaned")
     ensure_dir(storage / "outputs")
+    ensure_dir(storage / "outputs" / "forecast_outputs")
+    ensure_dir(storage / "outputs" / "business_momentum_single")
+    ensure_dir(storage / "outputs" / "business_momentum_single" / "business_momentum")
     ensure_dir(storage / "reports")
+    anomaly_outputs = (Path(__file__).resolve().parents[1] / "storage" / "outputs" / "anomaly_outputs").resolve()
+    ensure_dir(anomaly_outputs)
+    app.mount(
+        "/forecast_outputs",
+        StaticFiles(directory=str(storage / "outputs" / "forecast_outputs")),
+        name="forecast_outputs",
+    )
+    app.mount(
+        "/anomaly_outputs",
+        StaticFiles(directory=str(anomaly_outputs)),
+        name="anomaly_outputs",
+    )
+    # Serve business momentum outputs (charts and csvs)
+    business_momentum_outputs = (Path(__file__).resolve().parents[1] / "storage" / "outputs" / "business_momentum_single" / "business_momentum").resolve()
+    ensure_dir(business_momentum_outputs)
+    app.mount(
+        "/business_momentum_outputs",
+        StaticFiles(directory=str(business_momentum_outputs)),
+        name="business_momentum_outputs",
+    )
 
     @app.get("/health")
     def health():
