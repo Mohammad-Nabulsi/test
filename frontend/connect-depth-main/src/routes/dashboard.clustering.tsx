@@ -27,6 +27,23 @@ type BusinessComparison = { business_name: string; kmeans_cluster: number; summa
 type BusinessResult = { file_path: string; total_businesses: number; businesses: BusinessComparison[] };
 type UploadResponse = { dataset_id: string };
 
+function fmtNumber(value: number, digits = 4): string {
+  return Number.isFinite(value) ? value.toFixed(digits) : "-";
+}
+
+function fmtPercent(value: number): string {
+  return Number.isFinite(value) ? `${(value * 100).toFixed(2)}%` : "-";
+}
+
+function metricLabel(feature: string): string {
+  const labels: Record<string, string> = {
+    avg_engagement_rate: "Avg Engagement Rate",
+    avg_view_rate: "Avg View Rate",
+    avg_comment_rate: "Avg Comment Rate",
+  };
+  return labels[feature] ?? feature;
+}
+
 function Clustering() {
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
@@ -39,11 +56,46 @@ function Clustering() {
   const [dragOver, setDragOver] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const [originalPath, setOriginalPath] = useState("data/vanilla_kpi_dataset.json");
+  const [uploadedDatasetPath, setUploadedDatasetPath] = useState<string | null>(null);
+
+  const runContentStyleAi = useCallback(async (targetFilePath: string) => {
+    setLoadingAi(true);
+    try {
+      const res = await fetch(`${API_BASE}/api/content-style-clustering/analyze?file_path=${encodeURIComponent(targetFilePath)}`);
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(text || `فشل clustering-ai (${res.status})`);
+      }
+      setAiResult((await res.json()) as AiResult);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "فشل clustering-ai");
+    } finally {
+      setLoadingAi(false);
+    }
+  }, []);
+
+  const runBusinessClustering = useCallback(async (targetFilePath: string) => {
+    setLoadingBusiness(true);
+    try {
+      const res = await fetch(`${API_BASE}/api/business-clustering/analyze?file_path=${encodeURIComponent(targetFilePath)}`);
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(text || `فشل business-clustering (${res.status})`);
+      }
+      setBusinessResult((await res.json()) as BusinessResult);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "فشل business-clustering");
+    } finally {
+      setLoadingBusiness(false);
+    }
+  }, []);
 
   const runVisualization = useCallback(async (uploadFile: File) => {
     setLoading(true);
     setError(null);
     setResult(null);
+    setAiResult(null);
+    setBusinessResult(null);
     try {
       const form = new FormData();
       form.append("file", uploadFile);
@@ -62,9 +114,18 @@ function Clustering() {
         throw new Error("استجابة الرفع لا تحتوي على dataset_id");
       }
 
-      const res = await fetch(
+      const uploadedFilePath = `storage/raw/${uploadData.dataset_id}/raw${uploadFile.name.toLowerCase().endsWith(".json") ? ".json" : ".csv"}`;
+      setUploadedDatasetPath(uploadedFilePath);
+
+      const visualizationPromise = fetch(
         `${API_BASE}/api/cluster-visualization/${encodeURIComponent(uploadData.dataset_id)}?original_file_path=${encodeURIComponent(originalPath)}&include_base64=true`,
       );
+      const insightsPromise = Promise.all([
+        runContentStyleAi(uploadedFilePath),
+        runBusinessClustering(uploadedFilePath),
+      ]);
+
+      const res = await visualizationPromise;
       if (!res.ok) {
         const text = await res.text();
         throw new Error(text || `فشل تحليل التجميع (${res.status})`);
@@ -72,46 +133,13 @@ function Clustering() {
 
       const data = (await res.json()) as ClusteringResult;
       setResult(data);
+      await insightsPromise;
     } catch (e) {
       setError(e instanceof Error ? e.message : "فشل تحليل التجميع");
     } finally {
       setLoading(false);
     }
-  }, [originalPath]);
-
-  const runContentStyleAi = useCallback(async () => {
-    setLoadingAi(true);
-    setError(null);
-    try {
-      const res = await fetch(`${API_BASE}/api/content-style-clustering/analyze?file_path=${encodeURIComponent(originalPath)}`);
-      if (!res.ok) {
-        const text = await res.text();
-        throw new Error(text || `فشل clustering-ai (${res.status})`);
-      }
-      setAiResult((await res.json()) as AiResult);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "فشل clustering-ai");
-    } finally {
-      setLoadingAi(false);
-    }
-  }, [originalPath]);
-
-  const runBusinessClustering = useCallback(async () => {
-    setLoadingBusiness(true);
-    setError(null);
-    try {
-      const res = await fetch(`${API_BASE}/api/business-clustering/analyze?file_path=${encodeURIComponent(originalPath)}`);
-      if (!res.ok) {
-        const text = await res.text();
-        throw new Error(text || `فشل business-clustering (${res.status})`);
-      }
-      setBusinessResult((await res.json()) as BusinessResult);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "فشل business-clustering");
-    } finally {
-      setLoadingBusiness(false);
-    }
-  }, [originalPath]);
+  }, [originalPath, runBusinessClustering, runContentStyleAi]);
 
   useEffect(() => {
     const pending = getPendingDatasetFile();
@@ -137,6 +165,9 @@ function Clustering() {
   const clearFile = () => {
     setFile(null);
     setResult(null);
+    setAiResult(null);
+    setBusinessResult(null);
+    setUploadedDatasetPath(null);
     setError(null);
     if (inputRef.current) inputRef.current.value = "";
   };
@@ -192,11 +223,14 @@ function Clustering() {
 
       <div className="rounded-2xl border border-border bg-card shadow-card p-5">
         <h3 className="text-sm font-semibold mb-3">تحليلات إضافية بنفس الصفحة</h3>
+        <p className="text-xs text-muted-foreground mb-3">
+          Insights source: <span className="font-mono">{uploadedDatasetPath ?? originalPath}</span>
+        </p>
         <div className="flex flex-wrap gap-2">
-          <button onClick={runContentStyleAi} disabled={loadingAi} className="px-4 py-2 rounded-xl border border-border text-sm hover:bg-accent disabled:opacity-60">
+          <button onClick={() => runContentStyleAi(uploadedDatasetPath ?? originalPath)} disabled={loadingAi} className="px-4 py-2 rounded-xl border border-border text-sm hover:bg-accent disabled:opacity-60">
             {loadingAi ? "جاري تشغيل clustering-ai..." : "تشغيل clustering-ai"}
           </button>
-          <button onClick={runBusinessClustering} disabled={loadingBusiness} className="px-4 py-2 rounded-xl border border-border text-sm hover:bg-accent disabled:opacity-60">
+          <button onClick={() => runBusinessClustering(uploadedDatasetPath ?? originalPath)} disabled={loadingBusiness} className="px-4 py-2 rounded-xl border border-border text-sm hover:bg-accent disabled:opacity-60">
             {loadingBusiness ? "جاري تشغيل business-clustering..." : "تشغيل business-clustering"}
           </button>
         </div>
@@ -233,22 +267,96 @@ function Clustering() {
 
       {aiResult && (
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="rounded-2xl border border-border bg-card shadow-card p-5">
-          <h3 className="text-sm font-semibold mb-3">نتيجة clustering-ai</h3>
+          <h3 className="text-sm font-semibold mb-3">Content Style Insights</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
             <div className="rounded-lg border border-border p-3"><div className="text-[11px] text-muted-foreground">Rows</div><div className="font-semibold">{aiResult.total_rows}</div></div>
             <div className="rounded-lg border border-border p-3"><div className="text-[11px] text-muted-foreground">Clusters</div><div className="font-semibold">{aiResult.unique_clusters.length}</div></div>
             <div className="rounded-lg border border-border p-3"><div className="text-[11px] text-muted-foreground">Businesses</div><div className="font-semibold">{aiResult.businesses.length}</div></div>
             <div className="rounded-lg border border-border p-3"><div className="text-[11px] text-muted-foreground">File</div><div className="font-semibold truncate">{aiResult.file_path}</div></div>
           </div>
+          <div className="space-y-3">
+            {aiResult.businesses.map((biz) => (
+              <article key={biz.business_name} className="rounded-xl border border-border p-4 space-y-3">
+                <h4 className="text-sm font-semibold">{biz.business_name}</h4>
+                <div className="grid md:grid-cols-2 gap-3">
+                  <section className="rounded-lg border border-destructive/20 bg-destructive/5 p-3">
+                    <div className="text-xs text-muted-foreground mb-2">Low Performing Cluster #{biz.low_performing.cluster}</div>
+                    <div className="text-xs">Engagement: <span className="font-semibold">{fmtPercent(biz.low_performing.avg_engagement_rate)}</span></div>
+                    <div className="text-xs">View Rate: <span className="font-semibold">{fmtNumber(biz.low_performing.avg_view_rate, 3)}</span></div>
+                    <div className="text-xs">Posts: <span className="font-semibold">{biz.low_performing.low_cluster_post_count}</span></div>
+                    {biz.low_performing.meaning && <div className="text-xs mt-2 text-muted-foreground">{biz.low_performing.meaning}</div>}
+                  </section>
+                  <section className="rounded-lg border border-emerald-300/30 bg-emerald-500/5 p-3">
+                    <div className="text-xs text-muted-foreground mb-2">High Performing Cluster #{biz.high_performing.cluster}</div>
+                    <div className="text-xs">Engagement: <span className="font-semibold">{fmtPercent(biz.high_performing.avg_engagement_rate)}</span></div>
+                    <div className="text-xs">View Rate: <span className="font-semibold">{fmtNumber(biz.high_performing.avg_view_rate, 3)}</span></div>
+                    <div className="text-xs">Posts: <span className="font-semibold">{biz.high_performing.high_cluster_post_count}</span></div>
+                    {biz.high_performing.meaning && <div className="text-xs mt-2 text-muted-foreground">{biz.high_performing.meaning}</div>}
+                  </section>
+                </div>
+                <section className="rounded-lg border border-border bg-accent/30 p-3">
+                  <div className="text-xs text-muted-foreground mb-1">Recommendation</div>
+                  <p className="text-sm leading-6 whitespace-pre-wrap">{biz.recommendation}</p>
+                </section>
+              </article>
+            ))}
+          </div>
         </motion.div>
       )}
 
       {businessResult && (
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="rounded-2xl border border-border bg-card shadow-card p-5">
-          <h3 className="text-sm font-semibold mb-3">نتيجة business-clustering</h3>
+          <h3 className="text-sm font-semibold mb-3">Business Clustering Insights</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mb-4">
             <div className="rounded-lg border border-border p-3"><div className="text-[11px] text-muted-foreground">Businesses</div><div className="font-semibold">{businessResult.total_businesses}</div></div>
             <div className="rounded-lg border border-border p-3"><div className="text-[11px] text-muted-foreground">File</div><div className="font-semibold truncate">{businessResult.file_path}</div></div>
+          </div>
+          <div className="space-y-3">
+            {businessResult.businesses.map((biz) => (
+              <article key={biz.business_name} className="rounded-xl border border-border p-4 space-y-3">
+                <div className="flex items-center justify-between gap-3">
+                  <h4 className="text-sm font-semibold">{biz.business_name}</h4>
+                  <span className="text-xs rounded-full border border-border px-2 py-1">
+                    Cluster #{biz.kmeans_cluster}
+                  </span>
+                </div>
+                <div className="overflow-x-auto rounded-lg border border-border">
+                  <table className="w-full text-sm">
+                    <thead className="bg-accent/40 text-xs text-muted-foreground">
+                      <tr>
+                        <th className="text-left px-3 py-2 font-medium">Metric</th>
+                        <th className="text-left px-3 py-2 font-medium">Business</th>
+                        <th className="text-left px-3 py-2 font-medium">Cluster Avg</th>
+                        <th className="text-left px-3 py-2 font-medium">Comparison</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {biz.metrics.map((metric) => (
+                        <tr key={`${biz.business_name}-${metric.feature}`} className="border-t border-border/70">
+                          <td className="px-3 py-2">{metricLabel(metric.feature)}</td>
+                          <td className="px-3 py-2 font-medium">{fmtNumber(metric.business_value, 6)}</td>
+                          <td className="px-3 py-2">{fmtNumber(metric.cluster_avg, 6)}</td>
+                          <td className="px-3 py-2">
+                            <span
+                              className={`inline-flex rounded-full px-2 py-0.5 text-xs border ${
+                                metric.comparison.toLowerCase() === "higher"
+                                  ? "border-emerald-300/50 bg-emerald-500/10 text-emerald-700"
+                                  : metric.comparison.toLowerCase() === "lower"
+                                    ? "border-amber-300/50 bg-amber-500/10 text-amber-700"
+                                    : "border-border bg-background text-foreground"
+                              }`}
+                            >
+                              {metric.comparison}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {biz.summary && <p className="text-xs text-muted-foreground">{biz.summary}</p>}
+              </article>
+            ))}
           </div>
         </motion.div>
       )}
