@@ -1,0 +1,11 @@
+metric,value
+dataset_size_profile,small
+valid_transaction_posts,76
+adaptive_min_count,3
+adaptive_min_confidence,0.35
+adaptive_min_lift,1.15
+used_fallback,False
+all_rules,271
+recommended_rules,60
+warning_rules,29
+category_recommendations,34

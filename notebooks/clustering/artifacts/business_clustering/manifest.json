@@ -1,0 +1,9 @@
+{
+  "project": "business_clustering",
+  "artifacts": {
+    "json": "C:\\users\\hanib\\data_mining -project\\marketing\\notebooks\\clustering\\artifacts\\business_clustering\\json\\business_cluster_coordinates.json",
+    "kmeans_plot": "C:\\users\\hanib\\data_mining -project\\marketing\\notebooks\\clustering\\photos\\business_clustering\\business_kmeans_clusters.png",
+    "dbscan_plot": "C:\\users\\hanib\\data_mining -project\\marketing\\notebooks\\clustering\\photos\\business_clustering\\business_dbscan_clusters.png",
+    "script": "C:\\users\\hanib\\data_mining -project\\marketing\\notebooks\\clustering\\artifacts\\business_clustering\\scripts\\business_clustering_pipeline.py"
+  }
+}
