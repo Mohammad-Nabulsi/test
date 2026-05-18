@@ -1,0 +1,704 @@
+{
+  "project": "business_clustering",
+  "coordinates_type": "tsne_2d",
+  "dbscan_params": {
+    "eps": 3.1,
+    "min_samples": 4
+  },
+  "kmeans_params": {
+    "n_clusters": 3
+  },
+  "kmeans_cluster_avg_rates": [
+    {
+      "kmeans_cluster": 0,
+      "avg_engagement_rate": 0.008254747235864142,
+      "avg_view_rate": 23.808265981337783,
+      "avg_comment_rate": 0.0007273208308218855
+    },
+    {
+      "kmeans_cluster": 1,
+      "avg_engagement_rate": 0.007689596071182325,
+      "avg_view_rate": 2.499218283546175,
+      "avg_comment_rate": 0.00024309193426872577
+    },
+    {
+      "kmeans_cluster": 2,
+      "avg_engagement_rate": 0.011021016714777778,
+      "avg_view_rate": 0.5018073131346666,
+      "avg_comment_rate": 0.00024934256666666666
+    }
+  ],
+  "cluster_columns": {
+    "kmeans": "kmeans_cluster",
+    "dbscan": "dbscan_cluster"
+  },
+  "n_rows": 66,
+  "records": [
+    {
+      "business_name": "528 Fashion",
+      "sector": "unknown",
+      "tsne_1": -0.8797151446342468,
+      "tsne_2": 0.5312131643295288,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "99streetwear",
+      "sector": "unknown",
+      "tsne_1": -0.6513928174972534,
+      "tsne_2": -0.17685335874557495,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Abu shukri restaurant-مطعم حمص ابو شكري",
+      "sector": "unknown",
+      "tsne_1": 0.464534729719162,
+      "tsne_2": -3.5061862468719482,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Ahmed Sh Ajwa",
+      "sector": "unknown",
+      "tsne_1": 4.872962474822998,
+      "tsne_2": 0.5683596730232239,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Al Jazeera English",
+      "sector": "unknown",
+      "tsne_1": 4.8047285079956055,
+      "tsne_2": 1.087530255317688,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Angel shop PS",
+      "sector": "unknown",
+      "tsne_1": 0.3759323060512543,
+      "tsne_2": 1.7144899368286133,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Baby Bump",
+      "sector": "unknown",
+      "tsne_1": -1.4590562582015991,
+      "tsne_2": 0.2670147716999054,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Balcon Boutique & Cafe",
+      "sector": "unknown",
+      "tsne_1": 2.2287685871124268,
+      "tsne_2": -0.2595062553882599,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Bella Kids",
+      "sector": "unknown",
+      "tsne_1": -1.1627798080444336,
+      "tsne_2": 2.069603681564331,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Bravo Supermarket",
+      "sector": "unknown",
+      "tsne_1": -1.1709890365600586,
+      "tsne_2": -0.14293979108333588,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "EUROMODA",
+      "sector": "unknown",
+      "tsne_1": 0.2535547614097595,
+      "tsne_2": 0.4935224950313568,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "FPAIspal",
+      "sector": "unknown",
+      "tsne_1": 2.9417436122894287,
+      "tsne_2": 1.9202969074249268,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Farouj Abu Alabd",
+      "sector": "unknown",
+      "tsne_1": -0.45200803875923157,
+      "tsne_2": -2.585756778717041,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Fashion Shop Ramallah",
+      "sector": "unknown",
+      "tsne_1": -2.3480441570281982,
+      "tsne_2": -0.8414278030395508,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Fashion strawberry",
+      "sector": "unknown",
+      "tsne_1": 1.1238974332809448,
+      "tsne_2": -0.5814616084098816,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Fekreebrahem",
+      "sector": "unknown",
+      "tsne_1": 4.294601917266846,
+      "tsne_2": 0.9362209439277649,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Ghazala__store غزالة ستور",
+      "sector": "unknown",
+      "tsne_1": 1.1948727369308472,
+      "tsne_2": -0.28968545794487,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Gintifada",
+      "sector": "unknown",
+      "tsne_1": 4.731925964355469,
+      "tsne_2": 1.0529801845550537,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Grand Shop",
+      "sector": "unknown",
+      "tsne_1": 0.4331721067428589,
+      "tsne_2": -0.17135611176490784,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Grand Stores Mall",
+      "sector": "unknown",
+      "tsne_1": -0.07217158377170563,
+      "tsne_2": -0.5726698040962219,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Hala Fashion هلا فاشن",
+      "sector": "unknown",
+      "tsne_1": -0.10045060515403748,
+      "tsne_2": 0.44305339455604553,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Hamdan ElDahdouh",
+      "sector": "unknown",
+      "tsne_1": 3.5813851356506348,
+      "tsne_2": 0.8134180307388306,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Hijjawi Fashion - الحجاوي للأزياء",
+      "sector": "unknown",
+      "tsne_1": -1.1214756965637207,
+      "tsne_2": 1.3402752876281738,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Hind Khoudary",
+      "sector": "unknown",
+      "tsne_1": 3.573802947998047,
+      "tsne_2": 1.9274835586547852,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Hulk Gym / Diaa Shabaro",
+      "sector": "unknown",
+      "tsne_1": 1.4500232934951782,
+      "tsne_2": 2.6697518825531006,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Jericho Resort Village - قرية أريحا السياحية",
+      "sector": "unknown",
+      "tsne_1": -2.8655929565429688,
+      "tsne_2": 1.5631259679794312,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Jumbo Supermarket",
+      "sector": "unknown",
+      "tsne_1": 0.4980098307132721,
+      "tsne_2": 1.4032739400863647,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "KFC Palestine",
+      "sector": "unknown",
+      "tsne_1": -3.1305418014526367,
+      "tsne_2": 0.19665446877479553,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "KOTON Palestine",
+      "sector": "unknown",
+      "tsne_1": -0.22310872375965118,
+      "tsne_2": 0.7849644422531128,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Katusha Supermarket",
+      "sector": "unknown",
+      "tsne_1": -0.9651789665222168,
+      "tsne_2": 0.5160859227180481,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "LOFT Palestine",
+      "sector": "unknown",
+      "tsne_1": -0.7914866805076599,
+      "tsne_2": -1.4315494298934937,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Lujain fashion",
+      "sector": "unknown",
+      "tsne_1": -0.5283129811286926,
+      "tsne_2": 0.1288345605134964,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "MAS CO",
+      "sector": "unknown",
+      "tsne_1": 1.726562261581421,
+      "tsne_2": -0.1914527863264084,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "MIFTAH",
+      "sector": "unknown",
+      "tsne_1": 4.260824680328369,
+      "tsne_2": 1.597904086112976,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Mabella - مابيلا",
+      "sector": "unknown",
+      "tsne_1": -0.8405502438545227,
+      "tsne_2": -0.1160406693816185,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Mazaj Oriental - مزاج الشرقي",
+      "sector": "unknown",
+      "tsne_1": -1.1303684711456299,
+      "tsne_2": 0.8550665974617004,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Metro Market Nablus",
+      "sector": "unknown",
+      "tsne_1": -1.6502050161361694,
+      "tsne_2": 0.11695348471403122,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Mikkawi 1955",
+      "sector": "unknown",
+      "tsne_1": -2.947883129119873,
+      "tsne_2": 0.2231525331735611,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Moath Kahlout",
+      "sector": "unknown",
+      "tsne_1": 4.709634304046631,
+      "tsne_2": 1.0289177894592285,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Motaz Azaiza",
+      "sector": "unknown",
+      "tsne_1": 4.027718544006348,
+      "tsne_2": -0.2217734158039093,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Motaz Foundation",
+      "sector": "unknown",
+      "tsne_1": 4.192672252655029,
+      "tsne_2": 0.45280009508132935,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Noor Restaurant and Cafe",
+      "sector": "unknown",
+      "tsne_1": -0.5108174681663513,
+      "tsne_2": -2.6265523433685303,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Nour Alsaqa",
+      "sector": "unknown",
+      "tsne_1": 1.7516177892684937,
+      "tsne_2": 2.698209285736084,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Orgada Burgers",
+      "sector": "unknown",
+      "tsne_1": 0.4910350739955902,
+      "tsne_2": -2.238966464996338,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Pardo Cafe",
+      "sector": "unknown",
+      "tsne_1": -0.025394391268491745,
+      "tsne_2": -1.8777059316635132,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Plestia Alaqad",
+      "sector": "unknown",
+      "tsne_1": 4.717485427856445,
+      "tsne_2": 0.9776614904403687,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Pulse Gym & Fitness",
+      "sector": "unknown",
+      "tsne_1": 1.8484598398208618,
+      "tsne_2": -1.0713584423065186,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "REXOS Café & Restaurant",
+      "sector": "unknown",
+      "tsne_1": 0.07614044100046158,
+      "tsne_2": -2.4168262481689453,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "ROZAL",
+      "sector": "unknown",
+      "tsne_1": -1.1009575128555298,
+      "tsne_2": -0.06906159222126007,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Robian Restaurant",
+      "sector": "unknown",
+      "tsne_1": -1.5285656452178955,
+      "tsne_2": -2.260849952697754,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Ronza Elegant",
+      "sector": "unknown",
+      "tsne_1": 0.18240663409233093,
+      "tsne_2": -0.19481302797794342,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Shamsboutique",
+      "sector": "unknown",
+      "tsne_1": 1.5921543836593628,
+      "tsne_2": -0.7001861333847046,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Shawerma w Mashawi Al Helou",
+      "sector": "unknown",
+      "tsne_1": -2.7834720611572266,
+      "tsne_2": 1.470561146736145,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Supermarket 25st",
+      "sector": "unknown",
+      "tsne_1": 1.6506690979003906,
+      "tsne_2": -0.04597077518701553,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "The Tatreez Grove",
+      "sector": "unknown",
+      "tsne_1": 3.589482307434082,
+      "tsne_2": 1.9087750911712646,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Venus Boutique / فينوس بوتيك",
+      "sector": "unknown",
+      "tsne_1": -0.49145159125328064,
+      "tsne_2": -0.5008891820907593,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Vienna Restaurant & Cafe",
+      "sector": "unknown",
+      "tsne_1": 1.6344847679138184,
+      "tsne_2": 0.1632653921842575,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Wakeup coffee",
+      "sector": "unknown",
+      "tsne_1": 0.7020589709281921,
+      "tsne_2": -2.285586357116699,
+      "kmeans_cluster": 0,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Xtreme Fitness Ramallah",
+      "sector": "unknown",
+      "tsne_1": 0.849349856376648,
+      "tsne_2": 0.6121538281440735,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "Yalda Hakim and Motaz Azaiza",
+      "sector": "unknown",
+      "tsne_1": 4.8682475090026855,
+      "tsne_2": 1.0238345861434937,
+      "kmeans_cluster": 2,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "aburob",
+      "sector": "unknown",
+      "tsne_1": 2.8365142345428467,
+      "tsne_2": -1.5926916599273682,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "ahmedalhenawi1",
+      "sector": "unknown",
+      "tsne_1": 2.5072052478790283,
+      "tsne_2": -0.2764461934566498,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "drift.for.men",
+      "sector": "unknown",
+      "tsne_1": 1.916651964187622,
+      "tsne_2": 0.23178879916667938,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "جروان الدوار",
+      "sector": "unknown",
+      "tsne_1": 0.2097095400094986,
+      "tsne_2": -0.6246587038040161,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "متجر الأميرات للسيدات",
+      "sector": "unknown",
+      "tsne_1": -0.3936156630516052,
+      "tsne_2": 2.263124942779541,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    },
+    {
+      "business_name": "متجر تبارك للزي الشرعي",
+      "sector": "unknown",
+      "tsne_1": 0.31586605310440063,
+      "tsne_2": -0.2108541876077652,
+      "kmeans_cluster": 1,
+      "dbscan_cluster": -1
+    }
+  ],
+  "kmeans_centroids": {
+    "feature_columns": [
+      "log_followers_count",
+      "avg_engagement_rate",
+      "avg_view_rate",
+      "avg_comment_rate",
+      "posting_frequency",
+      "avg_caption_length",
+      "avg_hashtags_count",
+      "avg_emoji_count",
+      "percentage_reels",
+      "percentage_images",
+      "percentage_promo_posts",
+      "percentage_CTA_posts",
+      "percentage_location_posts",
+      "percentage_religious_theme",
+      "percentage_patriotic_theme",
+      "percentage_arabic_dialect_style"
+    ],
+    "scaled_space": [
+      {
+        "kmeans_cluster": 0,
+        "log_followers_count": -0.3108150721379044,
+        "avg_engagement_rate": -0.021366681092698736,
+        "avg_view_rate": 0.671260151324156,
+        "avg_comment_rate": 0.4855179465157738,
+        "posting_frequency": 0.4349131183972017,
+        "avg_caption_length": 0.7772901943425083,
+        "avg_hashtags_count": -0.24722642723951968,
+        "avg_emoji_count": 0.1704012702260725,
+        "percentage_reels": -2.248742365564337,
+        "percentage_images": 2.248742365564336,
+        "percentage_promo_posts": 0.06503106531703959,
+        "percentage_CTA_posts": 0.1652734224719678,
+        "percentage_location_posts": 0.05770053467428302,
+        "percentage_religious_theme": 0.49938350921953395,
+        "percentage_patriotic_theme": -0.1300156987410971,
+        "percentage_arabic_dialect_style": 0.1110554270110982
+      },
+      {
+        "kmeans_cluster": 1,
+        "log_followers_count": -0.42169140956539514,
+        "avg_engagement_rate": -0.052498272574651325,
+        "avg_view_rate": -0.09880103960914405,
+        "avg_comment_rate": -0.0678994957036614,
+        "posting_frequency": 0.1314884393201294,
+        "avg_caption_length": -0.12395462572498321,
+        "avg_hashtags_count": 0.15789168259211847,
+        "avg_emoji_count": 0.16054293129938624,
+        "percentage_reels": 0.3828233050878197,
+        "percentage_images": -0.38282330508782003,
+        "percentage_promo_posts": 0.41460851167214885,
+        "percentage_CTA_posts": 0.20218713157046211,
+        "percentage_location_posts": -0.1823360476728199,
+        "percentage_religious_theme": -0.11648061099711961,
+        "percentage_patriotic_theme": -0.5602564454539024,
+        "percentage_arabic_dialect_style": 0.4203549854577622
+      },
+      {
+        "kmeans_cluster": 2,
+        "log_followers_count": 1.3879459948750443,
+        "avg_engagement_rate": 0.16123961727082275,
+        "avg_view_rate": -0.17086385664383363,
+        "avg_comment_rate": -0.1335600430402638,
+        "posting_frequency": -0.6581097090278301,
+        "avg_caption_length": -0.17112051086505503,
+        "avg_hashtags_count": -0.2772790930982525,
+        "avg_emoji_count": -0.5631210544556635,
+        "percentage_reels": 0.42725632279699494,
+        "percentage_images": -0.4272563227969954,
+        "percentage_promo_posts": -1.2042578762267118,
+        "percentage_CTA_posts": -0.6763062500452725,
+        "percentage_location_posts": 0.47207391036770663,
+        "percentage_religious_theme": -0.0067766286877541495,
+        "percentage_patriotic_theme": 1.6553951797649906,
+        "percentage_arabic_dialect_style": -1.2510309106224657
+      }
+    ],
+    "original_space": [
+      {
+        "kmeans_cluster": 0,
+        "log_followers_count": 10.142611933254877,
+        "avg_engagement_rate": 0.008254747235864142,
+        "avg_view_rate": 23.808265981337787,
+        "avg_comment_rate": 0.0007273208308218856,
+        "posting_frequency": 16.7,
+        "avg_caption_length": 195.72878956228956,
+        "avg_hashtags_count": 0.49361111111111095,
+        "avg_emoji_count": 3.045794612794613,
+        "percentage_reels": 36.26936026936026,
+        "percentage_images": 63.73063973063972,
+        "percentage_promo_posts": 73.4104377104377,
+        "percentage_CTA_posts": 66.22373737373738,
+        "percentage_location_posts": 60.91111111111111,
+        "percentage_religious_theme": 22.357070707070708,
+        "percentage_patriotic_theme": 21.049999999999997,
+        "percentage_arabic_dialect_style": 73.34545454545454
+      },
+      {
+        "kmeans_cluster": 1,
+        "log_followers_count": 9.851190013167678,
+        "avg_engagement_rate": 0.007783140439612821,
+        "avg_view_rate": 2.4962036856901895,
+        "avg_comment_rate": 0.00030003781826483383,
+        "posting_frequency": 12.952380952380953,
+        "avg_caption_length": 126.14600082115089,
+        "avg_hashtags_count": 1.2612377106010382,
+        "avg_emoji_count": 3.0092054796426613,
+        "percentage_reels": 98.94179894179895,
+        "percentage_images": 1.0582010582010533,
+        "percentage_promo_posts": 87.11047076390878,
+        "percentage_CTA_posts": 67.62740081712917,
+        "percentage_location_posts": 51.59120271644525,
+        "percentage_religious_theme": 10.431197740196044,
+        "percentage_patriotic_theme": 3.7921191868560236,
+        "percentage_arabic_dialect_style": 85.83748557902695
+      },
+      {
+        "kmeans_cluster": 2,
+        "log_followers_count": 14.607552094558843,
+        "avg_engagement_rate": 0.011021016714777777,
+        "avg_view_rate": 0.5018073131346661,
+        "avg_comment_rate": 0.00024934256666666666,
+        "posting_frequency": 3.200000000000003,
+        "avg_caption_length": 122.50444444444445,
+        "avg_hashtags_count": 0.4366666666666663,
+        "avg_emoji_count": 0.32333333333333325,
+        "percentage_reels": 100.0,
+        "percentage_images": 0.0,
+        "percentage_promo_posts": 23.666666666666664,
+        "percentage_CTA_posts": 34.22222222222223,
+        "percentage_location_posts": 77.0,
+        "percentage_religious_theme": 12.555555555555555,
+        "percentage_patriotic_theme": 92.66666666666666,
+        "percentage_arabic_dialect_style": 18.333333333333336
+      }
+    ]
+  }
+}

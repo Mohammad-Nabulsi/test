@@ -1,0 +1,22 @@
+{
+  "canonical_upload_name": "vanilla.json",
+  "hashtag_output_files": [
+    "prepared_posts_with_labels.csv",
+    "hashtag_frequency.csv",
+    "hashtag_association_all_rules.csv",
+    "hashtag_association_recommended_rules.csv",
+    "hashtag_association_warning_rules.csv",
+    "hashtag_association_top_recommendations.csv",
+    "hashtag_association_fallback_recommendations.csv",
+    "hashtag_association_category_recommendations.csv",
+    "hashtag_recommendation_summary.csv"
+  ],
+  "topic_output_files": [
+    "business_topic_labels.csv",
+    "business_topic_kpis.csv",
+    "business_topic_recommendations.csv",
+    "business_topic_insight_cards.csv",
+    "business_topic_posts_preview.csv"
+  ],
+  "saved_from_dataset_id": "2c44ce37-a606-4389-a2be-55ff8a1f7397"
+}

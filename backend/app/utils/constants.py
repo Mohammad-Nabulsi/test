@@ -1,0 +1,51 @@
+REQUIRED_COLUMNS = [
+    "business_name",
+    "sector",
+    "followers_count",
+    "post_date",
+    "posting_hour",
+    "day_of_week",
+    "month",
+    "post_type",
+    "caption_text",
+    "caption_length",
+    "hashtags_count",
+    "emoji_count",
+    "likes_count",
+    "comments_count",
+    "views_count",
+    "language",
+    "CTA_present",
+    "promo_post",
+    "discount_percent",
+    "mentions_location",
+    "religious_theme",
+    "patriotic_theme",
+    "arabic_dialect_style",
+]
+
+VALID_POST_TYPES = {"image", "reel", "carousel", "video"}
+VALID_LANGUAGES = {"Arabic", "English", "Mixed"}
+
+OUTPUT_FILES = {
+    "clean_dataset": "clean_dataset.csv",
+    "kpis": "kpis.csv",
+    "eda": "eda_summary.json",
+    "post_clusters": "post_clusters.csv",
+    "business_clusters": "business_clusters.csv",
+    "post_pca": "post_pca.csv",
+    "business_pca": "business_pca.csv",
+    "transactions": "transactions.csv",
+    "association_rules": "association_rules.csv",
+    "business_value_rules": "business_value_rules.csv",
+    "weekly_trends": "weekly_trends.csv",
+    "business_momentum": "business_momentum.csv",
+    "forecast": "forecast.csv",
+    "anomalies": "anomalies.csv",
+    "network_nodes": "network_nodes.csv",
+    "network_edges": "network_edges.csv",
+    "network_summary": "network_summary.json",
+    "recommendations": "recommendations.csv",
+    "pipeline_summary": "pipeline_summary.json",
+}
+

@@ -1,0 +1,9 @@
+PASS 00_kpi_engineering.ipynb
+PASS 01_recommendation_system.ipynb
+FAIL 02_association_rule_mining.ipynb exit=1
+PASS 03_sector_benchmarking.ipynb
+PASS 04_business_momentum_weekly_trends.ipynb
+PASS 05_anomaly_detection.ipynb
+PASS 06_forecasting.ipynb
+PASS 07_post_content_clustering.ipynb
+PASS 08_business_clustering.ipynb
