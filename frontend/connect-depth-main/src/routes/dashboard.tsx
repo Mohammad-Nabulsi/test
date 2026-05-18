@@ -12,6 +12,10 @@ const titles: Record<string, { t: string; s: string }> = {
   "/dashboard/benchmarking": { t: "التوقعات", s: "قارن مؤشراتك بقطاعك" },
   "/dashboard/forecasting": { t: "السيناريو", s: "توقعات التفاعل ونمو المتابعين" },
   "/dashboard/reports": { t: "التقارير", s: "ملخصات جاهزة للإدارة والتصدير" },
+  "/dashboard/recommendation-apis-single": { t: "API التوصيات", s: "تشغيل وعرض كامل استجابات recommendation-apis-single" },
+  "/dashboard/forecast-single": { t: "API التوقعات", s: "تشغيل وعرض كامل استجابات forecast-single" },
+  "/dashboard/anomalies-single": { t: "API الشذوذ", s: "تشغيل وعرض كامل استجابات anomalies-single" },
+  "/dashboard/business-momentum-single": { t: "API زخم الأعمال", s: "تشغيل وعرض كامل استجابات business-momentum-single" },
 };
 
 export const Route = createFileRoute("/dashboard")({
