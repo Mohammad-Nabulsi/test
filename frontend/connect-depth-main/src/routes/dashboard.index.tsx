@@ -10,8 +10,13 @@ import { fetchMeData, formatCompactArabic, resolveDatasetId, type MeBusiness, ty
 export const Route = createFileRoute("/dashboard/")({ component: Overview });
 
 function Overview() {
+  const [hydrated, setHydrated] = useState(false);
   const [meBusiness, setMeBusiness] = useState<MeBusiness>(fallbackBusiness);
   const [meKpis, setMeKpis] = useState<MeKpi[]>(fallbackKpis as MeKpi[]);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
 
   useEffect(() => {
     const datasetId = resolveDatasetId();
@@ -72,6 +77,8 @@ function Overview() {
       })),
     [],
   );
+
+  if (!hydrated) return null;
 
   return (
     <div className="space-y-6">
@@ -162,96 +169,6 @@ function Overview() {
         </div>
       </div>
 
-      {/* Heatmap */}
-      <div className="rounded-2xl border border-border bg-card shadow-card p-5">
-        <div className="flex items-center justify-between mb-4">
-          <div>
-            <h3 className="text-sm font-semibold">Best Posting Hours</h3>
-            <p className="text-xs text-muted-foreground">Engagement intensity by day and hour</p>
-          </div>
-          <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
-            <span>Low</span>
-            <div className="flex gap-0.5">
-              {[0.15, 0.3, 0.45, 0.65, 0.85].map((o, i) => (<span key={i} className="h-3 w-3 rounded-sm" style={{ background: `oklch(0.55 0.22 277 / ${o})` }} />))}
-            </div>
-            <span>High</span>
-          </div>
-        </div>
-        <div className="overflow-x-auto">
-          <div className="min-w-[640px]">
-            <div className="grid grid-cols-[60px_repeat(24,1fr)] gap-1 text-[10px] text-muted-foreground mb-1">
-              <div></div>
-              {Array.from({ length: 24 }, (_, h) => <div key={h} className="text-center">{h}</div>)}
-            </div>
-            {safeDays.map((day) => (
-              <div key={day} className="grid grid-cols-[60px_repeat(24,1fr)] gap-1 mb-1">
-                <div className="text-[11px] text-muted-foreground flex items-center">{day}</div>
-                {safeHeatmapData.filter(d => d.day === day).map((d, i) => {
-                  const o = Math.min(0.95, 0.08 + d.value / 110);
-                  return <motion.div key={i} initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: i * 0.005 }} className="h-7 rounded-md" style={{ background: `oklch(0.55 0.22 277 / ${o})` }} title={`${day} ${d.hour}:00 â€” ${d.value}`} />;
-                })}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Row */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div className="lg:col-span-2 rounded-2xl border border-border bg-card shadow-card p-5">
-          <h3 className="text-sm font-semibold mb-1">Top Hashtags by Engagement</h3>
-          <p className="text-xs text-muted-foreground mb-3">Engagement rate per hashtag usage</p>
-          <div className="h-60">
-            <ResponsiveContainer>
-              <BarChart data={safeTopHashtags} margin={{ left: -10 }}>
-                <CartesianGrid stroke="var(--border)" strokeDasharray="3 3" vertical={false} />
-                <XAxis dataKey="tag" tick={{ fontSize: 10, fill: "var(--muted-foreground)" }} tickLine={false} axisLine={false} angle={-15} height={48} reversed />
-                <YAxis tick={{ fontSize: 11, fill: "var(--muted-foreground)" }} tickLine={false} axisLine={false} orientation="right" />
-                <Tooltip cursor={{ fill: "var(--muted)" }} contentStyle={{ background: "var(--popover)", border: "1px solid var(--border)", borderRadius: 12, fontSize: 12 }} />
-                <Bar dataKey="eng" radius={[8,8,0,0]} fill="var(--brand)" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-
-        <div className="rounded-2xl border border-border bg-card shadow-card p-5">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="h-7 w-7 rounded-lg bg-gradient-brand flex items-center justify-center"><Sparkles className="h-3.5 w-3.5 text-white" /></div>
-            <div>
-              <h3 className="text-sm font-semibold">Live Insights</h3>
-              <p className="text-[11px] text-muted-foreground">AI-generated and continuously refreshed</p>
-            </div>
-          </div>
-          <div className="space-y-2">
-            {safeInsightStream.slice(0, 5).map((t, i) => (
-              <motion.div key={i} initial={{ opacity: 0, x: 8 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.15 }} className="flex gap-2 p-3 rounded-xl bg-muted/40 border border-border/60 text-xs leading-relaxed">
-                <TrendingUp className="h-3.5 w-3.5 mt-0.5 text-[var(--brand)] shrink-0" />
-                <span>{t}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Top Posts This Week */}
-      <div className="rounded-2xl border border-border bg-card shadow-card p-5">
-        <h3 className="text-sm font-semibold mb-3">Top Posts This Week</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {safePosts.slice(0, 4).map((p, i) => (
-            <motion.div key={p.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }} className="group relative rounded-xl overflow-hidden border border-border">
-              <div className="aspect-square relative" style={{ background: `linear-gradient(135deg, oklch(0.7 0.18 ${p.hue}), oklch(0.55 0.22 ${(p.hue + 60) % 360}))` }}>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <div className="absolute top-2 right-2 px-1.5 py-0.5 text-[10px] uppercase tracking-wider rounded bg-black/40 text-white backdrop-blur-md">{p.typeLabel}</div>
-                <div className="absolute bottom-2 left-2 right-2 text-white text-[11px] line-clamp-2">{p.caption}</div>
-              </div>
-              <div className="px-3 py-2 flex items-center justify-between text-[11px]">
-                <span className="text-muted-foreground">{p.likes.toLocaleString("en-US")} likes</span>
-                <span className="text-success font-medium">{p.engagement}%</span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }
